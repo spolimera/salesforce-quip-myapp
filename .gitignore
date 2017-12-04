@@ -1,0 +1,16 @@
+# Mac stuff
+.DS_Store
+
+# Temporary files
+tmp
+
+# Sublime Text
+*sublime-workspace
+*.sublime-project
+
+# dev mode logs
+*.log
+
+# node_modules
+npm-debug.log*
+node_modules
