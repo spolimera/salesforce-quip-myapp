@@ -9094,17 +9094,13 @@ _quip2.default.apps.initialize({
             description: {}
         }]);
 
-        ReactDOM.render(React.createElement(
-            "div",
-            {
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 34
-                },
-                __self: undefined
+        ReactDOM.render(React.createElement(_App2.default, {
+            __source: {
+                fileName: _jsxFileName,
+                lineNumber: 34
             },
-            "Hello World"
-        ), root);
+            __self: undefined
+        }), root);
     }
 });
 

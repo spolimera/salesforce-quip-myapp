@@ -31,6 +31,6 @@ quip.apps.initialize({
                   description: {}, 
                 }]);
         
-            ReactDOM.render(<div>Hello World</div>, root);
+            ReactDOM.render(<App/>, root);
         }
     });

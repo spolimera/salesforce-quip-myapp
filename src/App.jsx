@@ -5,12 +5,12 @@ export default class App extends React.Component {
       super(props);
       this.state = {
         rowCount: 0,
-        cards: quip.app.getRootRecord().get("cards")
+        cards: 
       };
     }
 
     render() {
-        let { cards } = this.state;
+        let cards = this.getCards();
         
         return (
             
@@ -20,6 +20,9 @@ export default class App extends React.Component {
                 Obstacle 
                  <button onClick={this.addRow.bind(this)}>
                     AddRow
+                  </button>
+                 <button onClick={this.deleteRow.bind(this)}>
+                    Delete Row
                   </button>
               </div>
               Hello
@@ -72,6 +75,22 @@ export default class App extends React.Component {
     }
 
     addRow(){
-         
+        let cards = this.getCards();
+        cards.add({
+            name: {},
+            description: {},
+        });
+    }
+
+    deleteRow() {
+        let cards = this.getCards();
+        if(cards.length > 0) {
+            cards.remove(cards.length - 1);
+        }
+    }
+
+    getCards() {
+        let cards = quip.app.getRootRecord().get("cards");
+        return cards;
     }
 }
