@@ -5,13 +5,13 @@ export default class App extends React.Component {
       super(props);
       this.state = {
         rowCount: 0,
-        cards: 
+        cards: this.getCards()
       };
     }
 
     render() {
-        let cards = this.getCards();
-        
+        let cards = this.state.cards;
+
         return (
             
             <div>
@@ -29,15 +29,15 @@ export default class App extends React.Component {
               <table className={Styles.table}>
                     
                    <thead>
-                        <tr>
-                        <td colspan = "4">Name</td>
-                        <td colspan = "4">Description</td>
+                        <tr className={Styles.tableRow}>
+                        <td className={Styles.tableColumn}>Name</td>
+                        <td className={Styles.tableColumn}>Description</td>
                         </tr>
                    </thead>
                      
-                   {   cards.getRecords().map((card) => {
+                   {   cards && cards.getRecords().map((card) => {
                             return(
-                                <tr>
+                                <tr className={Styles.tableRow}>
                                     <td style={{ border: "solid 1px black"}}>
                                         <quip.apps.ui.RichTextBox
                                          key={cards.getId()}
@@ -80,17 +80,23 @@ export default class App extends React.Component {
             name: {},
             description: {},
         });
+
+        this.setState({
+            cards: cards
+        });
     }
 
     deleteRow() {
         let cards = this.getCards();
-        if(cards.length > 0) {
-            cards.remove(cards.length - 1);
-        }
+        cards.remove(cards.getRecords()[cards.getRecords().length - 1]);
+
+        this.setState({
+            cards: cards
+        });
     }
 
     getCards() {
-        let cards = quip.app.getRootRecord().get("cards");
+        let cards = quip.apps.getRootRecord().get("cards");
         return cards;
     }
 }

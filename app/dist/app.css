@@ -6,5 +6,14 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+.App__table {
+  border: 1px solid black;
+}
+.App__tableRow {
+  border: 1px solid black;
+}
+.App__tableColumn {
+  border: 1px solid black;
+}
 
 /*# sourceMappingURL=app.css.map*/

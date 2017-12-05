@@ -9146,7 +9146,7 @@ var App = function (_React$Component) {
 
         _this.state = {
             rowCount: 0,
-            cards: quip.app.getRootRecord().get("cards")
+            cards: _this.getCards()
         };
         return _this;
     }
@@ -9157,7 +9157,6 @@ var App = function (_React$Component) {
             var _this2 = this;
 
             var cards = this.state.cards;
-
 
             return React.createElement(
                 "div",
@@ -9187,6 +9186,16 @@ var App = function (_React$Component) {
                             __self: this
                         },
                         "AddRow"
+                    ),
+                    React.createElement(
+                        "button",
+                        { onClick: this.deleteRow.bind(this), __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 24
+                            },
+                            __self: this
+                        },
+                        "Delete Row"
                     )
                 ),
                 "Hello",
@@ -9194,7 +9203,7 @@ var App = function (_React$Component) {
                     "table",
                     { className: _App2.default.table, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 26
+                            lineNumber: 29
                         },
                         __self: this
                     },
@@ -9203,24 +9212,23 @@ var App = function (_React$Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 28
+                                lineNumber: 31
                             },
                             __self: this
                         },
                         React.createElement(
                             "tr",
-                            {
-                                __source: {
+                            { className: _App2.default.tableRow, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 29
+                                    lineNumber: 32
                                 },
                                 __self: this
                             },
                             React.createElement(
                                 "td",
-                                { colspan: "4", __source: {
+                                { className: _App2.default.tableColumn, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 30
+                                        lineNumber: 33
                                     },
                                     __self: this
                                 },
@@ -9228,9 +9236,9 @@ var App = function (_React$Component) {
                             ),
                             React.createElement(
                                 "td",
-                                { colspan: "4", __source: {
+                                { className: _App2.default.tableColumn, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 31
+                                        lineNumber: 34
                                     },
                                     __self: this
                                 },
@@ -9238,13 +9246,12 @@ var App = function (_React$Component) {
                             )
                         )
                     ),
-                    cards.getRecords().map(function (card) {
+                    cards && cards.getRecords().map(function (card) {
                         return React.createElement(
                             "tr",
-                            {
-                                __source: {
+                            { className: _App2.default.tableRow, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 37
+                                    lineNumber: 40
                                 },
                                 __self: _this2
                             },
@@ -9252,7 +9259,7 @@ var App = function (_React$Component) {
                                 "td",
                                 { style: { border: "solid 1px black" }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 38
+                                        lineNumber: 41
                                     },
                                     __self: _this2
                                 },
@@ -9266,7 +9273,7 @@ var App = function (_React$Component) {
                                     align: "center",
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 39
+                                        lineNumber: 42
                                     },
                                     __self: _this2
                                 })
@@ -9276,7 +9283,7 @@ var App = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 50
+                                        lineNumber: 53
                                     },
                                     __self: _this2
                                 },
@@ -9290,7 +9297,7 @@ var App = function (_React$Component) {
                                     align: "center",
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 51
+                                        lineNumber: 54
                                     },
                                     __self: _this2
                                 })
@@ -9302,7 +9309,33 @@ var App = function (_React$Component) {
         }
     }, {
         key: "addRow",
-        value: function addRow() {}
+        value: function addRow() {
+            var cards = this.getCards();
+            cards.add({
+                name: {},
+                description: {}
+            });
+
+            this.setState({
+                cards: cards
+            });
+        }
+    }, {
+        key: "deleteRow",
+        value: function deleteRow() {
+            var cards = this.getCards();
+            cards.remove(cards.getRecords()[cards.getRecords().length - 1]);
+
+            this.setState({
+                cards: cards
+            });
+        }
+    }, {
+        key: "getCards",
+        value: function getCards() {
+            var cards = quip.apps.getRootRecord().get("cards");
+            return cards;
+        }
     }]);
 
     return App;
@@ -9315,7 +9348,7 @@ exports.default = App;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"hello":"App__hello"};
+module.exports = {"hello":"App__hello","table":"App__table","tableRow":"App__tableRow","tableColumn":"App__tableColumn"};
 
 /***/ })
 /******/ ]);
