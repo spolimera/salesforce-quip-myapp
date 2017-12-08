@@ -9297,20 +9297,29 @@ var App = function (_React$Component) {
                                     },
                                     __self: _this2
                                 },
-                                React.createElement(quip.apps.ui.RichTextBox, {
-                                    key: card.getId(),
-                                    record: card.get("description"),
-                                    color: "BLUE",
-                                    width: 200,
-                                    minHeight: 50,
-                                    maxHeight: 280,
-                                    align: "center",
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 52
+                                React.createElement(
+                                    "div",
+                                    { style: { float: "left" }, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 52
+                                        },
+                                        __self: _this2
                                     },
-                                    __self: _this2
-                                }),
+                                    React.createElement(quip.apps.ui.RichTextBox, {
+                                        key: card.getId(),
+                                        record: card.get("description"),
+                                        color: "BLUE",
+                                        width: 200,
+                                        minHeight: 50,
+                                        maxHeight: 280,
+                                        align: "center",
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 53
+                                        },
+                                        __self: _this2
+                                    })
+                                ),
                                 React.createElement("span", {
                                     className: _App2.default.showContextMenu,
                                     onClick: function onClick(e) {
@@ -9318,7 +9327,7 @@ var App = function (_React$Component) {
                                     },
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 61
+                                        lineNumber: 63
                                     },
                                     __self: _this2
                                 })

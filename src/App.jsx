@@ -49,6 +49,7 @@ export default class App extends React.Component {
                                     </td>
 
                                     <td>
+                                        <div style={{ float: "left" }}>
                                         <quip.apps.ui.RichTextBox
                                          key={card.getId()}
                                          record={card.get("description")}
@@ -58,6 +59,7 @@ export default class App extends React.Component {
                                          maxHeight={280}
                                          align={"center" }  
                                         />
+                                        </div>
                                         <span 
                                             className={Styles.showContextMenu}
                                             onClick={(e) => this.handleClick(e, card)}
