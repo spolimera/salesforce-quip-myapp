@@ -37,7 +37,10 @@ quip.apps.initialize({
         {
             id: "deleteItem",
             label: "Delete Row",
-            handler: (card) => console.log("Delete item called ## "+card),
+            handler: (name, payload) => {
+                payload.card.delete();
+                payload.callback();
+            },
         },
     ],
     });

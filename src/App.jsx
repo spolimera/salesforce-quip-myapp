@@ -38,7 +38,7 @@ export default class App extends React.Component {
                                 <tr className={Styles.tableRow}>
                                     <td style={{ border: "solid 1px black"}}>
                                         <quip.apps.ui.RichTextBox
-                                         key={cards.getId()}
+                                         key={card.getId()}
                                          record={card.get("name")}
                                          color={"BLUE"}
                                          width={200}
@@ -50,7 +50,7 @@ export default class App extends React.Component {
 
                                     <td>
                                         <quip.apps.ui.RichTextBox
-                                         key={cards.getId()}
+                                         key={card.getId()}
                                          record={card.get("description")}
                                          color={"BLUE"}
                                          width={200}
@@ -90,8 +90,8 @@ export default class App extends React.Component {
             ],
             [], // No highlighted commands
             disabledCommands, // Disabled commands based on state
-            () => this.deleteRow(card),
-            { "name": "Sitaram"},
+            () => {},
+            { card, callback: this.deleteRow.bind(this)},
         );
     }
 
@@ -109,11 +109,8 @@ export default class App extends React.Component {
 
     deleteRow(card) {
         let cards = this.getCards();
-        console.log("###$$$$  "+cards);
-        cards.remove(card);
-        console.log("###1  "+cards);
         this.setState({
-            cards: cards
+            cards
         });
     }
 

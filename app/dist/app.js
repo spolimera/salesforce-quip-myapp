@@ -9105,8 +9105,9 @@ _quip2.default.apps.initialize({
     menuCommands: [{
         id: "deleteItem",
         label: "Delete Row",
-        handler: function handler(card) {
-            return console.log("Delete item called ## " + card);
+        handler: function handler(name, payload) {
+            payload.card.delete();
+            payload.callback();
         }
     }]
 });
@@ -9161,9 +9162,7 @@ var App = function (_React$Component) {
             quip.apps.showContextMenu(e, ["deleteItem", // id from menuCommand in Initialization,
             quip.apps.DocumentMenuCommands.SEPARATOR, quip.apps.DocumentMenuCommands.DELETE_APP], [], // No highlighted commands
             disabledCommands, // Disabled commands based on state
-            function () {
-                return _this.deleteRow(card);
-            }, { "name": "Sitaram" });
+            function () {}, { card: card, callback: _this.deleteRow.bind(_this) });
         };
 
         _this.state = {
@@ -9275,7 +9274,7 @@ var App = function (_React$Component) {
                                     __self: _this2
                                 },
                                 React.createElement(quip.apps.ui.RichTextBox, {
-                                    key: cards.getId(),
+                                    key: card.getId(),
                                     record: card.get("name"),
                                     color: "BLUE",
                                     width: 200,
@@ -9299,7 +9298,7 @@ var App = function (_React$Component) {
                                     __self: _this2
                                 },
                                 React.createElement(quip.apps.ui.RichTextBox, {
-                                    key: cards.getId(),
+                                    key: card.getId(),
                                     record: card.get("description"),
                                     color: "BLUE",
                                     width: 200,
@@ -9346,9 +9345,6 @@ var App = function (_React$Component) {
         key: "deleteRow",
         value: function deleteRow(card) {
             var cards = this.getCards();
-            console.log("###$$$$  " + cards);
-            cards.remove(card);
-            console.log("###1  " + cards);
             this.setState({
                 cards: cards
             });
