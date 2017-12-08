@@ -16,16 +16,14 @@ export default class App extends React.Component {
             
             <div>
 
-             <div>
+              <div>
                 Obstacle 
-                 <button onClick={this.addRow.bind(this)}>
+                <button onClick={this.addRow.bind(this)}>
                     AddRow
-                  </button>
-                 <button onClick={this.deleteRow.bind(this)}>
-                    Delete Row
-                  </button>
+                </button>
+              
               </div>
-              Hello
+
               <table className={Styles.table}>
                     
                    <thead>
@@ -60,6 +58,11 @@ export default class App extends React.Component {
                                          maxHeight={280}
                                          align={"center" }  
                                         />
+                                        <span 
+                                            className={Styles.showContextMenu}
+                                            onClick={(e) => this.handleClick(e, card)}
+                                            >
+                                        </span>
                                     </td>
                                 </tr>
                             );
@@ -71,6 +74,24 @@ export default class App extends React.Component {
                 </table>         
             </div>
             
+        );
+    }
+
+    handleClick = (e, card) => {
+        const { canAdd, canDelete } = this.state;
+        const disabledCommands = [];
+
+        quip.apps.showContextMenu(
+            e,
+            [
+                "deleteItem", // id from menuCommand in Initialization,
+                quip.apps.DocumentMenuCommands.SEPARATOR,
+                quip.apps.DocumentMenuCommands.DELETE_APP,
+            ],
+            [], // No highlighted commands
+            disabledCommands, // Disabled commands based on state
+            () => this.deleteRow(card),
+            { "name": "Sitaram"},
         );
     }
 
@@ -86,10 +107,11 @@ export default class App extends React.Component {
         });
     }
 
-    deleteRow() {
+    deleteRow(card) {
         let cards = this.getCards();
-        cards.remove(cards.getRecords()[cards.getRecords().length - 1]);
-
+        console.log("###$$$$  "+cards);
+        cards.remove(card);
+        console.log("###1  "+cards);
         this.setState({
             cards: cards
         });

@@ -9101,7 +9101,14 @@ _quip2.default.apps.initialize({
             },
             __self: undefined
         }), root);
-    }
+    },
+    menuCommands: [{
+        id: "deleteItem",
+        label: "Delete Row",
+        handler: function handler(card) {
+            return console.log("Delete item called ## " + card);
+        }
+    }]
 });
 
 /***/ }),
@@ -9143,6 +9150,21 @@ var App = function (_React$Component) {
         _classCallCheck(this, App);
 
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+        _this.handleClick = function (e, card) {
+            var _this$state = _this.state,
+                canAdd = _this$state.canAdd,
+                canDelete = _this$state.canDelete;
+
+            var disabledCommands = [];
+
+            quip.apps.showContextMenu(e, ["deleteItem", // id from menuCommand in Initialization,
+            quip.apps.DocumentMenuCommands.SEPARATOR, quip.apps.DocumentMenuCommands.DELETE_APP], [], // No highlighted commands
+            disabledCommands, // Disabled commands based on state
+            function () {
+                return _this.deleteRow(card);
+            }, { "name": "Sitaram" });
+        };
 
         _this.state = {
             rowCount: 0,
@@ -9186,24 +9208,13 @@ var App = function (_React$Component) {
                             __self: this
                         },
                         "AddRow"
-                    ),
-                    React.createElement(
-                        "button",
-                        { onClick: this.deleteRow.bind(this), __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 24
-                            },
-                            __self: this
-                        },
-                        "Delete Row"
                     )
                 ),
-                "Hello",
                 React.createElement(
                     "table",
                     { className: _App2.default.table, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 29
+                            lineNumber: 27
                         },
                         __self: this
                     },
@@ -9212,7 +9223,7 @@ var App = function (_React$Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 31
+                                lineNumber: 29
                             },
                             __self: this
                         },
@@ -9220,7 +9231,7 @@ var App = function (_React$Component) {
                             "tr",
                             { className: _App2.default.tableRow, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 32
+                                    lineNumber: 30
                                 },
                                 __self: this
                             },
@@ -9228,7 +9239,7 @@ var App = function (_React$Component) {
                                 "td",
                                 { className: _App2.default.tableColumn, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 33
+                                        lineNumber: 31
                                     },
                                     __self: this
                                 },
@@ -9238,7 +9249,7 @@ var App = function (_React$Component) {
                                 "td",
                                 { className: _App2.default.tableColumn, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 34
+                                        lineNumber: 32
                                     },
                                     __self: this
                                 },
@@ -9251,7 +9262,7 @@ var App = function (_React$Component) {
                             "tr",
                             { className: _App2.default.tableRow, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 40
+                                    lineNumber: 38
                                 },
                                 __self: _this2
                             },
@@ -9259,7 +9270,7 @@ var App = function (_React$Component) {
                                 "td",
                                 { style: { border: "solid 1px black" }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 41
+                                        lineNumber: 39
                                     },
                                     __self: _this2
                                 },
@@ -9273,7 +9284,7 @@ var App = function (_React$Component) {
                                     align: "center",
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 42
+                                        lineNumber: 40
                                     },
                                     __self: _this2
                                 })
@@ -9283,7 +9294,7 @@ var App = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 53
+                                        lineNumber: 51
                                     },
                                     __self: _this2
                                 },
@@ -9297,7 +9308,18 @@ var App = function (_React$Component) {
                                     align: "center",
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 54
+                                        lineNumber: 52
+                                    },
+                                    __self: _this2
+                                }),
+                                React.createElement("span", {
+                                    className: _App2.default.showContextMenu,
+                                    onClick: function onClick(e) {
+                                        return _this2.handleClick(e, card);
+                                    },
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 61
                                     },
                                     __self: _this2
                                 })
@@ -9322,10 +9344,11 @@ var App = function (_React$Component) {
         }
     }, {
         key: "deleteRow",
-        value: function deleteRow() {
+        value: function deleteRow(card) {
             var cards = this.getCards();
-            cards.remove(cards.getRecords()[cards.getRecords().length - 1]);
-
+            console.log("###$$$$  " + cards);
+            cards.remove(card);
+            console.log("###1  " + cards);
             this.setState({
                 cards: cards
             });
@@ -9348,7 +9371,7 @@ exports.default = App;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"hello":"App__hello","table":"App__table","tableRow":"App__tableRow","tableColumn":"App__tableColumn"};
+module.exports = {"hello":"App__hello","table":"App__table","tableRow":"App__tableRow","tableColumn":"App__tableColumn","showContextMenu":"App__showContextMenu"};
 
 /***/ })
 /******/ ]);

@@ -32,5 +32,12 @@ quip.apps.initialize({
                 }]);
         
             ReactDOM.render(<App/>, root);
-        }
+        },
+    menuCommands: [
+        {
+            id: "deleteItem",
+            label: "Delete Row",
+            handler: (card) => console.log("Delete item called ## "+card),
+        },
+    ],
     });

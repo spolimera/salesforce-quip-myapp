@@ -15,5 +15,11 @@
 .App__tableColumn {
   border: 1px solid black;
 }
+.App__showContextMenu {
+  float: left;
+}
+.App__showContextMenu::after {
+  content: "\22C1";
+}
 
 /*# sourceMappingURL=app.css.map*/
