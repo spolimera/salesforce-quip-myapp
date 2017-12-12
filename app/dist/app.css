@@ -1,4 +1,16 @@
-.App__hello {
+.Method__methodContainer {
+  margin-bottom: 100px;
+}
+.Method__tableRow {
+  border: 1px solid black;
+}
+.Method__tableCell {
+  border: 1px solid black;
+}
+.Method__eachMethod {
+  padding-bottom: 10px;
+}
+.Obstacle__hello {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,19 +18,19 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-.App__table {
+.Obstacle__table {
   border: 1px solid black;
 }
-.App__tableRow {
+.Obstacle__tableRow {
   border: 1px solid black;
 }
-.App__tableColumn {
+.Obstacle__tableColumn {
   border: 1px solid black;
 }
-.App__showContextMenu {
+.Obstacle__showContextMenu {
   float: left;
 }
-.App__showContextMenu::after {
+.Obstacle__showContextMenu::after {
   content: "\22C1";
   cursor: pointer;
 }
