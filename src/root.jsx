@@ -6,6 +6,18 @@ class Row extends quip.apps.Record {
         name: quip.apps.RichTextRecord,
         description: quip.apps.RichTextRecord,
     })
+
+    getDom() {
+        return this.node;
+    }
+
+    setDom(node) {
+        this.node = node;
+    }
+
+    supportsComments() {
+        return true;
+    }
 }
 
 quip.apps.registerClass(Row, "table-row");
@@ -19,6 +31,18 @@ class RootRecord extends quip.apps.RootRecord {
     static getDefaultProperties = () => ({
         cards: [],
     })
+
+    getDom() {
+        return this.node;
+    }
+
+    setDom(node) {
+        this.node = node;
+    }
+
+    supportsComments() {
+        return true;
+    }
 }
 
 quip.apps.registerClass(RootRecord, "root");
@@ -26,13 +50,19 @@ quip.apps.registerClass(RootRecord, "root");
 quip.apps.initialize({
     initializationCallback: (root, params) => {
         const rootRecord = quip.apps.getRootRecord();
-        rootRecord.set("cards", [{
+        
+        if (params.isCreation) {
+            rootRecord.set("cards", [{
+                  name: {},
+                  description: {}, 
+                }, {
                   name: {},
                   description: {}, 
                 }]);
-        
-            ReactDOM.render(<App/>, root);
-        },
+        }    
+
+        ReactDOM.render(<App/>, root);
+    },
     menuCommands: [
         {
             id: "deleteItem",

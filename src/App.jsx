@@ -11,9 +11,9 @@ export default class App extends React.Component {
 
     render() {
         let cards = this.state.cards;
+        let rootRecord = quip.apps.getRootRecord();
 
         return (
-            
             <div>
 
               <div>
@@ -22,6 +22,13 @@ export default class App extends React.Component {
                     AddRow
                 </button>
               
+              </div>
+
+              <div ref={(c) => rootRecord.setDom(c)}>
+                <quip.apps.ui.CommentsTrigger
+                    record={rootRecord}
+                    showEmpty={true}
+                />
               </div>
 
               <table className={Styles.table}>
@@ -60,16 +67,26 @@ export default class App extends React.Component {
                                          align={"center" }  
                                         />
                                         </div>
-                                        <span 
-                                            className={Styles.showContextMenu}
-                                            onClick={(e) => this.handleClick(e, card)}
-                                            >
-                                        </span>
+
+                                      <span 
+                                        className={Styles.showContextMenu}
+                                        onClick={(e) => this.handleClick(e, card)}
+                                        >
+                                      </span>
+                                    </td>
+                                    <td style={{ border: "solid 1px black"}}>
+                                      
+                                      <div ref={(c) => card.setDom(c)}>
+                                        <quip.apps.ui.CommentsTrigger
+                                            record={card}
+                                            showEmpty={true}
+                                        />
+                                      </div>
                                     </td>
                                 </tr>
                             );
 
-                        }) 
+                        })
                     }
                     
                 

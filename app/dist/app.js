@@ -9022,6 +9022,8 @@ module.exports = function (regExp, replace) {
 
 var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/root.jsx";
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _quip = __webpack_require__(328);
 
 var _quip2 = _interopRequireDefault(_quip);
@@ -9047,6 +9049,23 @@ var Row = function (_quip$apps$Record) {
         return _possibleConstructorReturn(this, (Row.__proto__ || Object.getPrototypeOf(Row)).apply(this, arguments));
     }
 
+    _createClass(Row, [{
+        key: "getDom",
+        value: function getDom() {
+            return this.node;
+        }
+    }, {
+        key: "setDom",
+        value: function setDom(node) {
+            this.node = node;
+        }
+    }, {
+        key: "supportsComments",
+        value: function supportsComments() {
+            return true;
+        }
+    }]);
+
     return Row;
 }(_quip2.default.apps.Record);
 
@@ -9067,6 +9086,23 @@ var RootRecord = function (_quip$apps$RootRecord) {
 
         return _possibleConstructorReturn(this, (RootRecord.__proto__ || Object.getPrototypeOf(RootRecord)).apply(this, arguments));
     }
+
+    _createClass(RootRecord, [{
+        key: "getDom",
+        value: function getDom() {
+            return this.node;
+        }
+    }, {
+        key: "setDom",
+        value: function setDom(node) {
+            this.node = node;
+        }
+    }, {
+        key: "supportsComments",
+        value: function supportsComments() {
+            return true;
+        }
+    }]);
 
     return RootRecord;
 }(_quip2.default.apps.RootRecord);
@@ -9089,15 +9125,21 @@ _quip2.default.apps.registerClass(RootRecord, "root");
 _quip2.default.apps.initialize({
     initializationCallback: function initializationCallback(root, params) {
         var rootRecord = _quip2.default.apps.getRootRecord();
-        rootRecord.set("cards", [{
-            name: {},
-            description: {}
-        }]);
+
+        if (params.isCreation) {
+            rootRecord.set("cards", [{
+                name: {},
+                description: {}
+            }, {
+                name: {},
+                description: {}
+            }]);
+        }
 
         ReactDOM.render(React.createElement(_App2.default, {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 34
+                lineNumber: 64
             },
             __self: undefined
         }), root);
@@ -9178,6 +9220,7 @@ var App = function (_React$Component) {
             var _this2 = this;
 
             var cards = this.state.cards;
+            var rootRecord = quip.apps.getRootRecord();
 
             return React.createElement(
                 "div",
@@ -9210,10 +9253,30 @@ var App = function (_React$Component) {
                     )
                 ),
                 React.createElement(
+                    "div",
+                    { ref: function ref(c) {
+                            return rootRecord.setDom(c);
+                        }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 27
+                        },
+                        __self: this
+                    },
+                    React.createElement(quip.apps.ui.CommentsTrigger, {
+                        record: rootRecord,
+                        showEmpty: true,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 28
+                        },
+                        __self: this
+                    })
+                ),
+                React.createElement(
                     "table",
                     { className: _App2.default.table, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 27
+                            lineNumber: 34
                         },
                         __self: this
                     },
@@ -9222,7 +9285,7 @@ var App = function (_React$Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 29
+                                lineNumber: 36
                             },
                             __self: this
                         },
@@ -9230,7 +9293,7 @@ var App = function (_React$Component) {
                             "tr",
                             { className: _App2.default.tableRow, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 30
+                                    lineNumber: 37
                                 },
                                 __self: this
                             },
@@ -9238,7 +9301,7 @@ var App = function (_React$Component) {
                                 "td",
                                 { className: _App2.default.tableColumn, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 31
+                                        lineNumber: 38
                                     },
                                     __self: this
                                 },
@@ -9248,7 +9311,7 @@ var App = function (_React$Component) {
                                 "td",
                                 { className: _App2.default.tableColumn, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 32
+                                        lineNumber: 39
                                     },
                                     __self: this
                                 },
@@ -9261,7 +9324,7 @@ var App = function (_React$Component) {
                             "tr",
                             { className: _App2.default.tableRow, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 38
+                                    lineNumber: 45
                                 },
                                 __self: _this2
                             },
@@ -9269,7 +9332,7 @@ var App = function (_React$Component) {
                                 "td",
                                 { style: { border: "solid 1px black" }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 39
+                                        lineNumber: 46
                                     },
                                     __self: _this2
                                 },
@@ -9283,7 +9346,7 @@ var App = function (_React$Component) {
                                     align: "center",
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 40
+                                        lineNumber: 47
                                     },
                                     __self: _this2
                                 })
@@ -9293,7 +9356,7 @@ var App = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 51
+                                        lineNumber: 58
                                     },
                                     __self: _this2
                                 },
@@ -9301,7 +9364,7 @@ var App = function (_React$Component) {
                                     "div",
                                     { style: { float: "left" }, __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 52
+                                            lineNumber: 59
                                         },
                                         __self: _this2
                                     },
@@ -9315,7 +9378,7 @@ var App = function (_React$Component) {
                                         align: "center",
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 53
+                                            lineNumber: 60
                                         },
                                         __self: _this2
                                     })
@@ -9327,10 +9390,39 @@ var App = function (_React$Component) {
                                     },
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 63
+                                        lineNumber: 71
                                     },
                                     __self: _this2
                                 })
+                            ),
+                            React.createElement(
+                                "td",
+                                { style: { border: "solid 1px black" }, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 77
+                                    },
+                                    __self: _this2
+                                },
+                                React.createElement(
+                                    "div",
+                                    { ref: function ref(c) {
+                                            return card.setDom(c);
+                                        }, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 79
+                                        },
+                                        __self: _this2
+                                    },
+                                    React.createElement(quip.apps.ui.CommentsTrigger, {
+                                        record: card,
+                                        showEmpty: true,
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 80
+                                        },
+                                        __self: _this2
+                                    })
+                                )
                             )
                         );
                     })
