@@ -69,11 +69,17 @@ export default class Method extends React.Component {
                                         />
                                     </td>
                                 </tr>
-                                 <span 
-                                    className={Styles.showContextMenu}
-                                    onClick={(e) => this.handleClick(e, method)}
-                                    >
-                                  </span>
+                                <span 
+	                              className={Styles.showContextMenu}
+	                              onClick={(e) => this.handleClick(e, method)}
+	                              >
+	                            </span>
+                              	<div ref={(c) => method.setDom(c)}>
+                                 <quip.apps.ui.CommentsTrigger
+                                   record={method}
+                                   showEmpty={true}
+                                  />
+                              	</div>
                             </div>
                             );
 

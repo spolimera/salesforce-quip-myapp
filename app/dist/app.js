@@ -9507,7 +9507,27 @@ var Method = function (_React$Component) {
                                     lineNumber: 72
                                 },
                                 __self: _this2
-                            })
+                            }),
+                            React.createElement(
+                                "div",
+                                { ref: function ref(c) {
+                                        return method.setDom(c);
+                                    }, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 77
+                                    },
+                                    __self: _this2
+                                },
+                                React.createElement(quip.apps.ui.CommentsTrigger, {
+                                    record: method,
+                                    showEmpty: true,
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 78
+                                    },
+                                    __self: _this2
+                                })
+                            )
                         );
                     })
                 )
