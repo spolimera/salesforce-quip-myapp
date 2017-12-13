@@ -1,5 +1,5 @@
 .Method__methodContainer {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 .Method__tableRow {
   border: 1px solid black;
@@ -9,6 +9,10 @@
 }
 .Method__eachMethod {
   padding-bottom: 10px;
+}
+.Method__showContextMenu::after {
+  content: "\22C1";
+  cursor: pointer;
 }
 .Obstacle__hello {
   display: -webkit-box;

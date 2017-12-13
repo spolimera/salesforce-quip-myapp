@@ -97,5 +97,13 @@ quip.apps.initialize({
                 payload.callback();
             },
         },
+        {
+            id: "deleteMethod",
+            label: "Delete Method",
+            handler: (name, payload) => {
+                payload.method.delete();
+                payload.callback();
+            },
+        },
     ],
     });

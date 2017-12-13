@@ -9193,6 +9193,13 @@ _quip2.default.apps.initialize({
             payload.card.delete();
             payload.callback();
         }
+    }, {
+        id: "deleteMethod",
+        label: "Delete Method",
+        handler: function handler(name, payload) {
+            payload.method.delete();
+            payload.callback();
+        }
     }]
 });
 
@@ -9216,11 +9223,11 @@ var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Method = __webpack_require__(339);
+var _Method = __webpack_require__(330);
 
 var _Method2 = _interopRequireDefault(_Method);
 
-var _Obstacle = __webpack_require__(335);
+var _Obstacle = __webpack_require__(332);
 
 var _Obstacle2 = _interopRequireDefault(_Obstacle);
 
@@ -9277,12 +9284,278 @@ var App = function (_React$Component) {
 exports.default = App;
 
 /***/ }),
-/* 330 */,
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/components/Method.jsx";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Method = __webpack_require__(331);
+
+var _Method2 = _interopRequireDefault(_Method);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Method = function (_React$Component) {
+    _inherits(Method, _React$Component);
+
+    function Method(props) {
+        _classCallCheck(this, Method);
+
+        var _this = _possibleConstructorReturn(this, (Method.__proto__ || Object.getPrototypeOf(Method)).call(this, props));
+
+        _this.handleClick = function (e, method) {
+            var _this$state = _this.state,
+                canAdd = _this$state.canAdd,
+                canDelete = _this$state.canDelete;
+
+            var disabledCommands = [];
+
+            quip.apps.showContextMenu(e, ["deleteMethod", // id from menuCommand in Initialization,
+            quip.apps.DocumentMenuCommands.SEPARATOR, quip.apps.DocumentMenuCommands.DELETE_APP], [], // No highlighted commands
+            disabledCommands, // Disabled commands based on state
+            function () {}, { method: method, callback: _this.deleteRow.bind(_this) });
+        };
+
+        _this.state = {
+            methods: _this.getMethods()
+        };
+        return _this;
+    }
+
+    _createClass(Method, [{
+        key: "render",
+        value: function render() {
+            var _this2 = this;
+
+            var methods = this.state.methods;
+            var rootRecord = quip.apps.getRootRecord();
+
+            return React.createElement(
+                "div",
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 16
+                    },
+                    __self: this
+                },
+                React.createElement(
+                    "div",
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 18
+                        },
+                        __self: this
+                    },
+                    "METHODS",
+                    React.createElement(
+                        "button",
+                        { onClick: this.addRow.bind(this), __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 20
+                            },
+                            __self: this
+                        },
+                        "AddRow"
+                    )
+                ),
+                React.createElement(
+                    "div",
+                    { ref: function ref(c) {
+                            return rootRecord.setDom(c);
+                        }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 26
+                        },
+                        __self: this
+                    },
+                    React.createElement(quip.apps.ui.CommentsTrigger, {
+                        record: rootRecord,
+                        showEmpty: true,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 27
+                        },
+                        __self: this
+                    })
+                ),
+                React.createElement(
+                    "table",
+                    { className: _Method2.default.methodContainer, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 33
+                        },
+                        __self: this
+                    },
+                    methods && methods.getRecords().map(function (method) {
+                        return React.createElement(
+                            "div",
+                            { className: _Method2.default.eachMethod, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 38
+                                },
+                                __self: _this2
+                            },
+                            React.createElement(
+                                "tr",
+                                { className: _Method2.default.tableRow, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 39
+                                    },
+                                    __self: _this2
+                                },
+                                React.createElement(
+                                    "td",
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 40
+                                        },
+                                        __self: _this2
+                                    },
+                                    "Method Title"
+                                ),
+                                React.createElement(
+                                    "td",
+                                    { className: _Method2.default.tableCell, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 44
+                                        },
+                                        __self: _this2
+                                    },
+                                    React.createElement(quip.apps.ui.RichTextBox, {
+                                        key: method.getId(),
+                                        record: method.get("title"),
+                                        color: "BLUE",
+                                        width: 200,
+                                        minHeight: 50,
+                                        maxHeight: 280,
+                                        align: "center",
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 45
+                                        },
+                                        __self: _this2
+                                    })
+                                )
+                            ),
+                            React.createElement(
+                                "tr",
+                                { className: _Method2.default.tableRow, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 56
+                                    },
+                                    __self: _this2
+                                },
+                                React.createElement(
+                                    "td",
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 57
+                                        },
+                                        __self: _this2
+                                    },
+                                    "Method Description"
+                                ),
+                                React.createElement(
+                                    "td",
+                                    { className: _Method2.default.tableCell, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 60
+                                        },
+                                        __self: _this2
+                                    },
+                                    React.createElement(quip.apps.ui.RichTextBox, {
+                                        key: method.getId(),
+                                        record: method.get("description"),
+                                        color: "BLUE",
+                                        width: 200,
+                                        minHeight: 50,
+                                        maxHeight: 280,
+                                        align: "center",
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 61
+                                        },
+                                        __self: _this2
+                                    })
+                                )
+                            ),
+                            React.createElement("span", {
+                                className: _Method2.default.showContextMenu,
+                                onClick: function onClick(e) {
+                                    return _this2.handleClick(e, method);
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 72
+                                },
+                                __self: _this2
+                            })
+                        );
+                    })
+                )
+            );
+        }
+    }, {
+        key: "addRow",
+        value: function addRow() {
+            var methods = this.getMethods();
+            methods.add({
+                title: {},
+                description: {}
+            });
+
+            this.setState({
+                methods: methods
+            });
+        }
+    }, {
+        key: "deleteRow",
+        value: function deleteRow() {
+            var methods = this.getMethods();
+            this.setState({
+                methods: methods
+            });
+        }
+    }, {
+        key: "getMethods",
+        value: function getMethods() {
+            var methods = quip.apps.getRootRecord().get("methods");
+            return methods;
+        }
+    }]);
+
+    return Method;
+}(React.Component);
+
+exports.default = Method;
+
+/***/ }),
+/* 331 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"methodContainer":"Method__methodContainer","tableRow":"Method__tableRow","tableCell":"Method__tableCell","eachMethod":"Method__eachMethod","showContextMenu":"Method__showContextMenu"};
+
+/***/ }),
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9295,7 +9568,7 @@ var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Obstacle = __webpack_require__(336);
+var _Obstacle = __webpack_require__(333);
 
 var _Obstacle2 = _interopRequireDefault(_Obstacle);
 
@@ -9584,284 +9857,11 @@ var Obstacle = function (_React$Component) {
 exports.default = Obstacle;
 
 /***/ }),
-/* 336 */
+/* 333 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 module.exports = {"hello":"Obstacle__hello","table":"Obstacle__table","tableRow":"Obstacle__tableRow","tableColumn":"Obstacle__tableColumn","showContextMenu":"Obstacle__showContextMenu"};
-
-/***/ }),
-/* 337 */,
-/* 338 */,
-/* 339 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/components/Method.jsx";
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _Method = __webpack_require__(340);
-
-var _Method2 = _interopRequireDefault(_Method);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Method = function (_React$Component) {
-    _inherits(Method, _React$Component);
-
-    function Method(props) {
-        _classCallCheck(this, Method);
-
-        var _this = _possibleConstructorReturn(this, (Method.__proto__ || Object.getPrototypeOf(Method)).call(this, props));
-
-        _this.handleClick = function (e, method) {
-            var _this$state = _this.state,
-                canAdd = _this$state.canAdd,
-                canDelete = _this$state.canDelete;
-
-            var disabledCommands = [];
-
-            quip.apps.showContextMenu(e, ["deleteItem", // id from menuCommand in Initialization,
-            quip.apps.DocumentMenuCommands.SEPARATOR, quip.apps.DocumentMenuCommands.DELETE_APP], [], // No highlighted commands
-            disabledCommands, // Disabled commands based on state
-            function () {}, { method: method, callback: _this.deleteRow.bind(_this) });
-        };
-
-        _this.state = {
-            methods: _this.getMethods()
-        };
-        return _this;
-    }
-
-    _createClass(Method, [{
-        key: "render",
-        value: function render() {
-            var _this2 = this;
-
-            var methods = this.state.methods;
-            var rootRecord = quip.apps.getRootRecord();
-
-            return React.createElement(
-                "div",
-                {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 16
-                    },
-                    __self: this
-                },
-                React.createElement(
-                    "div",
-                    {
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 18
-                        },
-                        __self: this
-                    },
-                    "METHODS",
-                    React.createElement(
-                        "button",
-                        { onClick: this.addRow.bind(this), __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 20
-                            },
-                            __self: this
-                        },
-                        "AddRow"
-                    )
-                ),
-                React.createElement(
-                    "div",
-                    { ref: function ref(c) {
-                            return rootRecord.setDom(c);
-                        }, __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 26
-                        },
-                        __self: this
-                    },
-                    React.createElement(quip.apps.ui.CommentsTrigger, {
-                        record: rootRecord,
-                        showEmpty: true,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 27
-                        },
-                        __self: this
-                    })
-                ),
-                React.createElement(
-                    "table",
-                    { className: _Method2.default.methodContainer, __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 33
-                        },
-                        __self: this
-                    },
-                    methods && methods.getRecords().map(function (method) {
-                        return React.createElement(
-                            "div",
-                            { className: _Method2.default.eachMethod, __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 38
-                                },
-                                __self: _this2
-                            },
-                            React.createElement(
-                                "tr",
-                                { className: _Method2.default.tableRow, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 39
-                                    },
-                                    __self: _this2
-                                },
-                                React.createElement(
-                                    "td",
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 40
-                                        },
-                                        __self: _this2
-                                    },
-                                    "Method Title"
-                                ),
-                                React.createElement(
-                                    "td",
-                                    { className: _Method2.default.tableCell, __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 44
-                                        },
-                                        __self: _this2
-                                    },
-                                    React.createElement(quip.apps.ui.RichTextBox, {
-                                        key: method.getId(),
-                                        record: method.get("title"),
-                                        color: "BLUE",
-                                        width: 200,
-                                        minHeight: 50,
-                                        maxHeight: 280,
-                                        align: "center",
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 45
-                                        },
-                                        __self: _this2
-                                    })
-                                )
-                            ),
-                            React.createElement(
-                                "tr",
-                                { className: _Method2.default.tableRow, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 56
-                                    },
-                                    __self: _this2
-                                },
-                                React.createElement(
-                                    "td",
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 57
-                                        },
-                                        __self: _this2
-                                    },
-                                    "Method Description"
-                                ),
-                                React.createElement(
-                                    "td",
-                                    { className: _Method2.default.tableCell, __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 60
-                                        },
-                                        __self: _this2
-                                    },
-                                    React.createElement(quip.apps.ui.RichTextBox, {
-                                        key: method.getId(),
-                                        record: method.get("description"),
-                                        color: "BLUE",
-                                        width: 200,
-                                        minHeight: 50,
-                                        maxHeight: 280,
-                                        align: "center",
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 61
-                                        },
-                                        __self: _this2
-                                    }),
-                                    React.createElement("span", {
-                                        className: _Method2.default.showContextMenu,
-                                        onClick: function onClick(e) {
-                                            return _this2.handleClick(e, card);
-                                        },
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 71
-                                        },
-                                        __self: _this2
-                                    })
-                                )
-                            )
-                        );
-                    })
-                )
-            );
-        }
-    }, {
-        key: "addRow",
-        value: function addRow() {
-            var methods = this.getMethods();
-            methods.add({
-                title: {},
-                description: {}
-            });
-
-            this.setState({
-                methods: methods
-            });
-        }
-    }, {
-        key: "deleteRow",
-        value: function deleteRow(card) {
-            var methods = this.getMethods();
-            this.setState({
-                methods: methods
-            });
-        }
-    }, {
-        key: "getMethods",
-        value: function getMethods() {
-            var methods = quip.apps.getRootRecord().get("methods");
-            return methods;
-        }
-    }]);
-
-    return Method;
-}(React.Component);
-
-exports.default = Method;
-
-/***/ }),
-/* 340 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-module.exports = {"methodContainer":"Method__methodContainer","tableRow":"Method__tableRow","tableCell":"Method__tableCell","eachMethod":"Method__eachMethod"};
 
 /***/ })
 /******/ ]);

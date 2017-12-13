@@ -67,14 +67,13 @@ export default class Method extends React.Component {
                                          maxHeight={280}
                                          align={"center" }  
                                         />
-
-                                      <span 
-                                        className={Styles.showContextMenu}
-                                        onClick={(e) => this.handleClick(e, card)}
-                                        >
-                                      </span>
                                     </td>
                                 </tr>
+                                 <span 
+                                    className={Styles.showContextMenu}
+                                    onClick={(e) => this.handleClick(e, method)}
+                                    >
+                                  </span>
                             </div>
                             );
 
@@ -93,7 +92,7 @@ export default class Method extends React.Component {
         quip.apps.showContextMenu(
             e,
             [
-                "deleteItem", // id from menuCommand in Initialization,
+                "deleteMethod", // id from menuCommand in Initialization,
                 quip.apps.DocumentMenuCommands.SEPARATOR,
                 quip.apps.DocumentMenuCommands.DELETE_APP,
             ],
@@ -116,7 +115,7 @@ export default class Method extends React.Component {
         });
     }
 
-    deleteRow(card) {
+    deleteRow() {
         let methods = this.getMethods();
         this.setState({
             methods
