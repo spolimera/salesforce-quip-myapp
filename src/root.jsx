@@ -1,5 +1,6 @@
 import quip from "quip";
 import App from "./App.jsx";
+import { SalesforceClient } from "./components/client.js";
 
 class Method extends quip.apps.Record {
     static getProperties = () => ({
@@ -71,7 +72,9 @@ quip.apps.registerClass(RootRecord, "root");
 quip.apps.initialize({
     initializationCallback: (root, params) => {
         const rootRecord = quip.apps.getRootRecord();
-        
+        let auth = quip.apps.auth("salesforce");
+        let client = new SalesforceClient(auth);
+        console.log("### ", client);
         if (params.isCreation) {
             rootRecord.set("obstacles", [{
                   name: {},
