@@ -74,7 +74,7 @@ quip.apps.initialize({
         const rootRecord = quip.apps.getRootRecord();
         let auth = quip.apps.auth("salesforce");
         let client = new SalesforceClient(auth);
-        console.log("### ", client);
+       
         if (params.isCreation) {
             rootRecord.set("obstacles", [{
                   name: {},

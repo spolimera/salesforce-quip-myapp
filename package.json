@@ -12,6 +12,8 @@
     "quip-apps-webpack-config": ">=0.0.6"
   },
   "dependencies": {
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "quip-apps-chevron": "^0.0.8",
+    "classnames": "^2.2.5"
   }
 }

@@ -82,6 +82,7 @@ export class SalesforceClient {
                     },
                     result => {
                         if (result) {
+                            console.log("!!!! ", result);
                             this.setAPIEndpoints_();
                             onAuthenticated();
                         }

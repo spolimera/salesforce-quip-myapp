@@ -1,25 +1,63 @@
-.hello {
+.obstacle {
+    flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    font-weight: bold;
+    word-break: break-word;
+    
+    &:hover .commentsTrigger {
+        visibility: initial;
+    }
+}
+
+.title{
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-size: 17px;
+    font-weight:bolder;
+}
+
+.titleContents {
+    display: flex;
+    width: 100%;
+    align-items: center;
 }
 
 .table {
-	border: 1px solid black;
+    border: 1px solid cadetblue;
+    border-radius: 5px; 
+    background-color:aliceblue;
+    width: 900px;
 }
 
 .tableRow {
-	border: 1px solid black;
+    border-bottom: 1px solid cadetblue;
+    font-weight:bold;
+    width: 860px;
 }
 
 .tableColumn {
-	border: 1px solid black;
+    padding:5px;
+    font-size: 15px;
+    font-weight:bolder;
+    border-right: 1px solid cadetblue;
 }
 
 .showContextMenu {
-	float: left;
+    float: left;
 }
 
 .showContextMenu::after {
-	content: "\22C1";
-	cursor: pointer;
+    content: "\22C1";
+    cursor: pointer;
+    color:cadetblue;
+}
+
+.chevron {
+    align-self: center;
+    cursor: pointer;
+    height: 20px;
+    text-align: center;
+    width: 20px;
 }

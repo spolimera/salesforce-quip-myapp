@@ -1,35 +1,133 @@
-.Method__methodContainer {
-  margin-bottom: 50px;
-}
-.Method__tableRow {
-  border: 1px solid black;
-}
-.Method__tableCell {
-  border: 1px solid black;
-}
-.Method__eachMethod {
-  padding-bottom: 10px;
-}
-.Method__showContextMenu::after {
-  content: "\22C1";
-  cursor: pointer;
-}
-.Obstacle__hello {
+.Method__method {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border: 1px solid cadetblue;
+  margin-bottom: 5px;
+  font-weight: bold;
+  background-color: aliceblue;
+  word-break: break-word;
+}
+.Method__method:hover .Method__commentsTrigger {
+  visibility: initial;
+}
+.Method__methodContainer {
+  margin-bottom: 5px;
+  border: 1px solid black;
+}
+.Method__title {
+  margin-bottom: 8px;
+  font-size: 17px;
+  font-weight: bolder;
+}
+.Method__tableRow {
+  border-bottom: 1px solid cadetblue;
+}
+.Method__tableCell {
+  border-left: 1px solid cadetblue;
+}
+.Method__methodHeader {
+  font-size: 15px;
+  font-weight: bolder;
+  padding: 5px;
+}
+.Method__commentCell {
+  border-top: 1px solid cadetblue;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-right: 5px;
+}
+.Method__comments {
+  height: 50px;
+}
+.Method__eachMethod {
+  background-color: aliceblue;
+  border: 1px solid;
+  border-color: cadetblue;
+}
+.Method__commentsTrigger {
+  height: 50px;
+  margin-left: 8px;
+  visibility: hidden;
+  width: 16px;
+}
+.Method__commentsTrigger.Method__commented {
+  visibility: visible;
+}
+.Method__showContextMenu::after {
+  color: cadetblue;
+  content: "\22C1";
+  cursor: pointer;
+}
+.Method__chevron {
+  -ms-flex-item-align: center;
+      align-self: center;
+  cursor: pointer;
+  height: 20px;
+  text-align: center;
+  width: 20px;
+}
+.Obstacle__obstacle {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+  word-break: break-word;
+}
+.Obstacle__obstacle:hover .Obstacle__commentsTrigger {
+  visibility: initial;
+}
+.Obstacle__title {
+  margin-top: 25px;
+  margin-bottom: 8px;
+  font-size: 17px;
+  font-weight: bolder;
+}
+.Obstacle__titleContents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .Obstacle__table {
-  border: 1px solid black;
+  border: 1px solid cadetblue;
+  border-radius: 5px;
+  background-color: aliceblue;
+  width: 900px;
 }
 .Obstacle__tableRow {
-  border: 1px solid black;
+  border-bottom: 1px solid cadetblue;
+  font-weight: bold;
+  width: 860px;
 }
 .Obstacle__tableColumn {
-  border: 1px solid black;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: bolder;
+  border-right: 1px solid cadetblue;
 }
 .Obstacle__showContextMenu {
   float: left;
@@ -37,6 +135,15 @@
 .Obstacle__showContextMenu::after {
   content: "\22C1";
   cursor: pointer;
+  color: cadetblue;
+}
+.Obstacle__chevron {
+  -ms-flex-item-align: center;
+      align-self: center;
+  cursor: pointer;
+  height: 20px;
+  text-align: center;
+  width: 20px;
 }
 
 /*# sourceMappingURL=app.css.map*/
