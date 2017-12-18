@@ -59,7 +59,7 @@ export default class Obstacle extends React.Component {
     render() {
         let cards = this.state.cards;
         return (
-            <div>
+            <div className={Styles.obstacle}>
 
                 <div className={Styles.title}>
                     OBSTACLES
@@ -83,15 +83,27 @@ export default class Obstacle extends React.Component {
                             return(
                                 <tr className={Styles.tableRow}>
                                     <td className={Styles.tableColumn}>
-                                        <quip.apps.ui.RichTextBox
-                                         key={card.getId()}
-                                         record={card.get("name")}
-                                         color={"BLUE"}
-                                         width={180}
-                                         minHeight={50}
-                                         maxHeight={280}
-                                         align={"center" }  
-                                        />
+                                        <div style={{ float: "left" }}>
+                                            <quip.apps.ui.RichTextBox
+                                             key={card.getId()}
+                                             record={card.get("name")}
+                                             color={"BLUE"}
+                                             width={140}
+                                             minHeight={50}
+                                             maxHeight={280}
+                                             align={"center" }  
+                                            />
+                                        </div>
+                                        <span ref={(c) => card.get("name").setDom(c)} style={{ float: "left" }} 
+                                        className={cx(Styles.commentsTrigger, {
+                                            [Styles.commented]:
+                                            card.get("name").getCommentCount() > 0,
+                                            })}>
+                                            <quip.apps.ui.CommentsTrigger
+                                                record={card.get("name")}
+                                                showEmpty={true}
+                                            />
+                                        </span>
                                     </td>
 
                                     <td className={Styles.tableColumn}>
@@ -121,9 +133,15 @@ export default class Obstacle extends React.Component {
                                             />
                                     </span>
 
-                                      <span ref={(c) => card.setDom(c)} style={{ float: "left" }}>
+                                      <span ref={(c) => card.get("description").setDom(c)}
+                                        className={cx(Styles.commentsTrigger, {
+                                                [Styles.commented]:
+                                                card.get("description").getCommentCount() > 0,
+                                            })}
+                                        style={{ float: "left" }}
+                                        >
                                         <quip.apps.ui.CommentsTrigger
-                                            record={card}
+                                            record={card.get("description")}
                                             showEmpty={true}
                                         />
                                       </span>
@@ -136,7 +154,7 @@ export default class Obstacle extends React.Component {
                     }
                 </table>   
 
-                <button onClick={this.addRow.bind(this)} style={{margin:"5px"}}>
+                <button onClick={this.addRow.bind(this)} style={{margin:"5px", width: "15%"}}>
                     Add Obstacle
                 </button>       
             </div>

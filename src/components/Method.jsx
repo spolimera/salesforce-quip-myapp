@@ -61,100 +61,98 @@ export default class Method extends React.Component {
         let rootRecord = quip.apps.getRootRecord();
 
         return (
-            <div >
+            <div>
                 <div className={Styles.title}>
                     METHODS 
                 </div>
 
-                <table>
-                    {   
-                        methods && methods.getRecords().map((method) => {
-                            return(
-                                <div  className={cx(Styles.method, {
-                                        [Styles.method]: method,
-                                    })}
-                                    ref={node => {
-                                        this._node = node;
-                                        method.setDom(node);
-                                    }}>
-                                    <thead>
-                                        <tr className={Styles.tableRow}>
-                                            <td className={Styles.methodHeader}>
-                                                Method Title
-                                            </td>
-                                            <td className={Styles.tableCell}>
-                                                <quip.apps.ui.RichTextBox
-                                                    key={method.getId()}
-                                                    record={method.get("title")}
-                                                    color={"BLUE"}
-                                                    width={200}
-                                                    minHeight={50}
-                                                    maxHeight={280}
-                                                    align={"center" }  
+                <div >
+                    <table className={Styles.method}>
+                        {   
+                            methods && methods.getRecords().map((method) => {
+                                return(
+                                    <div className={Styles.eachMethod}>
+                                    <tr className={Styles.tableRow}>
+                                        <td>
+                                            <b>Method Title</b>
+                                        </td>
+
+                                        <td className={Styles.tableCell}>
+                                            <quip.apps.ui.RichTextBox
+                                             key={method.getId()}
+                                             record={method.get("title")}
+                                             color={"BLUE"}
+                                             width={770}
+                                             minHeight={50}
+                                             maxHeight={280}
+                                             align={"center" }  
+                                            />
+
+                                            <span 
+                                            ref={(c) => method.get("title").setDom(c)}
+                                            className={cx(Styles.commentsTrigger, {
+                                                [Styles.commented]:
+                                                method.get("title").getCommentCount() > 0,
+                                            })}>
+                                             <quip.apps.ui.CommentsTrigger
+                                               record={method.get("title")}
+                                               showEmpty={true}
+                                              />
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr className={Styles.tableRow}>
+                                        <td>
+                                            <b>Method Description</b>
+                                        </td>
+                                        <td className={Styles.tableCell}>
+                                            <quip.apps.ui.RichTextBox
+                                             key={method.getId()}
+                                             record={method.get("description")}
+                                             color={"BLUE"}
+                                             width={770}
+                                             minHeight={50}
+                                             maxHeight={280}
+                                             align={"center" }  
+                                            />
+
+                                           <span 
+                                                className={Styles.chevron}
+                                                onClick={(e) => this.handleClick(e, method)}
+                                                style={{ float: "left" }}
+                                                >
+                                                <Chevron
+                                                    color={
+                                                        method
+                                                            ? quip.apps.ui.ColorMap.BLUE.VALUE
+                                                        : quip.apps.ui.ColorMap[color].VALUE
+                                                    }
                                                     />
-                                            </td>
+                                            </span>
 
-                                        </tr>
-
-                                        <tr className={Styles.tableRow}>
-                                            <td className={Styles.methodHeader}>
-                                                Method Description
-                                            </td>
-                                            <td className={Styles.tableCell}>
-                                                <quip.apps.ui.RichTextBox
-                                                    key={method.getId()}
-                                                    record={method.get("description")}
-                                                    color={"BLUE"}
-                                                    width={695}
-                                                    minHeight={50}
-                                                    maxHeight={280}
-                                                    align={"center" }  
-                                                    /> 
-
-                                            </td>
-                                            <thead className={Styles.commentCell}>
-                                                <td>
-                                                    <span 
-                                                        // className={Styles.showContextMenu}
-                                                        className={Styles.chevron}
-                                                        onClick={(e) => this.handleClick(e, method)}
-                                                        >
-                                                        <Chevron
-                                                            color={
-                                                                method
-                                                                    ? quip.apps.ui.ColorMap.BLUE.VALUE
-                                                                : quip.apps.ui.ColorMap[color].VALUE
-                                                            }
-                                                            />
-                                                    </span> 
-
-                                                </td>
-                                                <td>
-                                                    <div
-                                                        className={cx(Styles.commentsTrigger, {
-                                                            [Styles.commented]:
-                                                            method.getCommentCount() > 0,
-                                                        })}
-
-                                                        >
-                                                        <quip.apps.ui.CommentsTrigger
-                                                            //className={Styles.comments}
-
-                                                            record={method}
-                                                            showEmpty={true}
-                                                            color={"BLUE"}
-                                                            />
-                                                    </div>
-                                                </td>
-                                            </thead>
-                                        </tr>
-                                    </thead>
+                                            <span 
+                                            ref={(c) => method.get("description").setDom(c)}
+                                            className={cx(Styles.commentsTrigger, {
+                                                [Styles.commented]:
+                                                method.get("description").getCommentCount() > 0,
+                                            })}
+                                            >
+                                             <quip.apps.ui.CommentsTrigger
+                                               record={method.get("description")}
+                                               showEmpty={true}
+                                              />
+                                            </span>
+                                        </td>
+                                    </tr>
                                 </div>
-                            );
-                        })
-                    }
-                </table>  
-                <button onClick={this.addRow.bind(this)}>
+                                );
+
+                            })
+                        }
+                    </table>  
+                </div>
+
+                <button onClick={this.addRow.bind(this)} style={{ width: "15%" }}>
                     Add Method
                 </button>       
             </div>

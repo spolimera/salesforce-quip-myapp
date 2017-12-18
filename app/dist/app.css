@@ -12,7 +12,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid cadetblue;
   margin-bottom: 5px;
   font-weight: bold;
   background-color: aliceblue;
@@ -54,6 +53,7 @@
   background-color: aliceblue;
   border: 1px solid;
   border-color: cadetblue;
+  margin-bottom: 10px;
 }
 .Method__commentsTrigger {
   height: 50px;
@@ -136,6 +136,15 @@
   content: "\22C1";
   cursor: pointer;
   color: cadetblue;
+}
+.Obstacle__commentsTrigger {
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 3px 6px;
+  visibility: hidden;
+}
+.Obstacle__commentsTrigger.Obstacle__commented {
+  visibility: initial;
 }
 .Obstacle__chevron {
   -ms-flex-item-align: center;
