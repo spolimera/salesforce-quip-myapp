@@ -17,9 +17,6 @@
   background-color: aliceblue;
   word-break: break-word;
 }
-.Method__method:hover .Method__commentsTrigger {
-  visibility: initial;
-}
 .Method__methodContainer {
   margin-bottom: 5px;
   border: 1px solid black;
@@ -31,6 +28,9 @@
 }
 .Method__tableRow {
   border-bottom: 1px solid cadetblue;
+}
+.Method__tableRow:hover .Method__commentsTrigger {
+  visibility: initial;
 }
 .Method__tableCell {
   border-left: 1px solid cadetblue;
@@ -94,9 +94,6 @@
   font-weight: bold;
   word-break: break-word;
 }
-.Obstacle__obstacle:hover .Obstacle__commentsTrigger {
-  visibility: initial;
-}
 .Obstacle__title {
   margin-top: 25px;
   margin-bottom: 8px;
@@ -128,6 +125,9 @@
   font-size: 15px;
   font-weight: bolder;
   border-right: 1px solid cadetblue;
+}
+.Obstacle__tableColumn:hover .Obstacle__commentsTrigger {
+  visibility: initial;
 }
 .Obstacle__showContextMenu {
   float: left;

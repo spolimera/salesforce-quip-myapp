@@ -136,6 +136,7 @@ export default class Method extends React.Component {
                                                 [Styles.commented]:
                                                 method.get("description").getCommentCount() > 0,
                                             })}
+                                            style={{ float: "left" }}
                                             >
                                              <quip.apps.ui.CommentsTrigger
                                                record={method.get("description")}
