@@ -74,7 +74,7 @@ export default class Method extends React.Component {
                                     <div className={Styles.eachMethod}>
                                     <tr className={Styles.tableRow}>
                                         <td>
-                                            <b>Method Title</b>
+                                            <span>Method Title</span>
                                         </td>
 
                                         <td className={Styles.tableCell}>
@@ -103,9 +103,10 @@ export default class Method extends React.Component {
                                     </tr>
                                     <tr className={Styles.tableRow}>
                                         <td>
-                                            <b>Method Description</b>
+                                            <span>Method Description</span>
                                         </td>
                                         <td className={Styles.tableCell}>
+                                          <div style={{ float: "left" }}>
                                             <quip.apps.ui.RichTextBox
                                              key={method.getId()}
                                              record={method.get("description")}
@@ -115,7 +116,7 @@ export default class Method extends React.Component {
                                              maxHeight={280}
                                              align={"center" }  
                                             />
-
+                                            </div>
                                            <span 
                                                 className={Styles.chevron}
                                                 onClick={(e) => this.handleClick(e, method)}
@@ -136,7 +137,7 @@ export default class Method extends React.Component {
                                                 [Styles.commented]:
                                                 method.get("description").getCommentCount() > 0,
                                             })}
-                                            style={{ float: "left" }}
+                                            style={{ float: "left", marginTop: "15px", marginRight: "8px"  }}
                                             >
                                              <quip.apps.ui.CommentsTrigger
                                                record={method.get("description")}

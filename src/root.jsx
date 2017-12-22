@@ -10,7 +10,7 @@ quip.apps.initialize({
         const rootRecord = quip.apps.getRootRecord();
         let auth = quip.apps.auth("salesforce");
         let client = new SalesforceClient(auth);
-
+    
         if (params.isCreation) {
             rootRecord.set("obstacles", [{
                   name: {},
@@ -19,9 +19,16 @@ quip.apps.initialize({
                   name: {},
                   description: {}, 
                 }]);
+
             rootRecord.set("methods", [{
                   title: { },
                   description: { }, 
+                }]);
+
+            rootRecord.set("vision", [{
+                }]);
+
+            rootRecord.set("values", [{
                 }]);
         }    
 

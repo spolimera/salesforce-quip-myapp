@@ -59,7 +59,9 @@ class Obstacle extends quip.apps.Record {
 class RootRecord extends quip.apps.RootRecord {
     static getProperties = () => ({
         obstacles: quip.apps.RecordList.Type(Obstacle),
-        methods: quip.apps.RecordList.Type(Method)
+        methods: quip.apps.RecordList.Type(Method),
+        vision: quip.apps.RecordList.Type(CommentRichText),
+        values: quip.app.RecordList.Type(CommentRichText),
     })
 
     static getDefaultProperties = () => ({

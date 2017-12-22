@@ -73,14 +73,16 @@ export class SalesforceClient {
 
     login(onAuthenticated) {
         if (this.isLoggedIn()) {
+            console.log("*****1 ");
             onAuthenticated();
         } else {
+            console.log("****2 ");
             this.auth_
                 .login(
                     {
                         prompt: "login",
                     },
-                    result => {
+                    result => { console.log("##3 ", result);
                         if (result) {
                             console.log("!!!! ", result);
                             this.setAPIEndpoints_();
@@ -192,11 +194,11 @@ export class SalesforceClient {
             window.setTimeout(
                 reject,
                 TIMEOUT,
-                new TimeoutError("Request timed out"));
+                new Error("Request timed out"));
         });
-
+        console.log("###1 ");
         let fetcher;
-        if (!this.auth_) {
+        if (!this.auth_) { console.log("####2 ");
             fetcher = fetch(url, {
                 method: method,
                 mode: "cors",
@@ -211,12 +213,13 @@ export class SalesforceClient {
                 }
                 return response.json();
             });
-        } else {
+        } else { console.log("###3 ");
             if (!this.auth_.isLoggedIn()) {
                 return new Promise((resolve, reject) => {
                     reject("Unauthorized access");
                 });
             }
+            
             fetcher = new Promise((resolve, reject) => {
                 this.auth_.request(
                     {
@@ -225,7 +228,7 @@ export class SalesforceClient {
                         method: method,
                     },
                     resolve);
-            }).then(response => {
+            }).then(response => { console.log("###5 ", response);
                 if (response.status == 401 && tryRefreshToken) {
                     // refetch the endpoint after refresh
                     return this.refreshToken_().then(response =>

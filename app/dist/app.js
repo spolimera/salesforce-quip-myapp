@@ -9122,16 +9122,21 @@ _quip2.default.apps.initialize({
                 name: {},
                 description: {}
             }]);
+
             rootRecord.set("methods", [{
                 title: {},
                 description: {}
             }]);
+
+            rootRecord.set("vision", [{}]);
+
+            rootRecord.set("values", [{}]);
         }
 
         ReactDOM.render(React.createElement(_App2.default, {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 28
+                lineNumber: 35
             },
             __self: undefined
         }), root);
@@ -9175,6 +9180,14 @@ var _Obstacle = __webpack_require__(334);
 
 var _Obstacle2 = _interopRequireDefault(_Obstacle);
 
+var _Vision = __webpack_require__(344);
+
+var _Vision2 = _interopRequireDefault(_Vision);
+
+var _Values = __webpack_require__(345);
+
+var _Values2 = _interopRequireDefault(_Values);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9200,21 +9213,35 @@ var App = function (_React$Component) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 11
+            lineNumber: 13
           },
           __self: this
         },
+        React.createElement(_Vision2.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14
+          },
+          __self: this
+        }),
+        React.createElement(_Values2.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 15
+          },
+          __self: this
+        }),
         React.createElement(_Method2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 12
+            lineNumber: 16
           },
           __self: this
         }),
         React.createElement(_Obstacle2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 13
+            lineNumber: 17
           },
           __self: this
         })
@@ -9392,7 +9419,7 @@ var Method = function (_React$Component) {
                                             __self: _this2
                                         },
                                         React.createElement(
-                                            "b",
+                                            "span",
                                             {
                                                 __source: {
                                                     fileName: _jsxFileName,
@@ -9467,7 +9494,7 @@ var Method = function (_React$Component) {
                                             __self: _this2
                                         },
                                         React.createElement(
-                                            "b",
+                                            "span",
                                             {
                                                 __source: {
                                                     fileName: _jsxFileName,
@@ -9486,20 +9513,29 @@ var Method = function (_React$Component) {
                                             },
                                             __self: _this2
                                         },
-                                        React.createElement(quip.apps.ui.RichTextBox, {
-                                            key: method.getId(),
-                                            record: method.get("description"),
-                                            color: "BLUE",
-                                            width: 770,
-                                            minHeight: 50,
-                                            maxHeight: 280,
-                                            align: "center",
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 109
+                                        React.createElement(
+                                            "div",
+                                            { style: { float: "left" }, __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 109
+                                                },
+                                                __self: _this2
                                             },
-                                            __self: _this2
-                                        }),
+                                            React.createElement(quip.apps.ui.RichTextBox, {
+                                                key: method.getId(),
+                                                record: method.get("description"),
+                                                color: "BLUE",
+                                                width: 770,
+                                                minHeight: 50,
+                                                maxHeight: 280,
+                                                align: "center",
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 110
+                                                },
+                                                __self: _this2
+                                            })
+                                        ),
                                         React.createElement(
                                             "span",
                                             {
@@ -9510,7 +9546,7 @@ var Method = function (_React$Component) {
                                                 style: { float: "left" },
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 119
+                                                    lineNumber: 120
                                                 },
                                                 __self: _this2
                                             },
@@ -9518,7 +9554,7 @@ var Method = function (_React$Component) {
                                                 color: method ? quip.apps.ui.ColorMap.BLUE.VALUE : quip.apps.ui.ColorMap[color].VALUE,
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 124
+                                                    lineNumber: 125
                                                 },
                                                 __self: _this2
                                             })
@@ -9530,10 +9566,10 @@ var Method = function (_React$Component) {
                                                     return method.get("description").setDom(c);
                                                 },
                                                 className: (0, _classnames2.default)(_Method2.default.commentsTrigger, _defineProperty({}, _Method2.default.commented, method.get("description").getCommentCount() > 0)),
-                                                style: { float: "left" },
+                                                style: { float: "left", marginTop: "15px", marginRight: "8px" },
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 133
+                                                    lineNumber: 134
                                                 },
                                                 __self: _this2
                                             },
@@ -9542,7 +9578,7 @@ var Method = function (_React$Component) {
                                                 showEmpty: true,
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 141
+                                                    lineNumber: 142
                                                 },
                                                 __self: _this2
                                             })
@@ -9557,7 +9593,7 @@ var Method = function (_React$Component) {
                     "button",
                     { onClick: this.addRow.bind(this), style: { width: "15%" }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 156
+                            lineNumber: 157
                         },
                         __self: this
                     },
@@ -10010,11 +10046,14 @@ var SalesforceClient = exports.SalesforceClient = function () {
             var _this = this;
 
             if (this.isLoggedIn()) {
+                console.log("*****1 ");
                 onAuthenticated();
             } else {
+                console.log("****2 ");
                 this.auth_.login({
                     prompt: "login"
                 }, function (result) {
+                    console.log("##3 ", result);
                     if (result) {
                         console.log("!!!! ", result);
                         _this.setAPIEndpoints_();
@@ -10129,11 +10168,12 @@ var SalesforceClient = exports.SalesforceClient = function () {
             }
 
             var timeout = new Promise(function (resolve, reject) {
-                window.setTimeout(reject, TIMEOUT, new TimeoutError("Request timed out"));
+                window.setTimeout(reject, TIMEOUT, new Error("Request timed out"));
             });
-
+            console.log("###1 ");
             var fetcher = void 0;
             if (!this.auth_) {
+                console.log("####2 ");
                 fetcher = fetch(url, {
                     method: method,
                     mode: "cors",
@@ -10149,11 +10189,13 @@ var SalesforceClient = exports.SalesforceClient = function () {
                     return response.json();
                 });
             } else {
+                console.log("###3 ");
                 if (!this.auth_.isLoggedIn()) {
                     return new Promise(function (resolve, reject) {
                         reject("Unauthorized access");
                     });
                 }
+
                 fetcher = new Promise(function (resolve, reject) {
                     _this2.auth_.request({
                         url: url,
@@ -10161,6 +10203,7 @@ var SalesforceClient = exports.SalesforceClient = function () {
                         method: method
                     }, resolve);
                 }).then(function (response) {
+                    console.log("###5 ", response);
                     if (response.status == 401 && tryRefreshToken) {
                         // refetch the endpoint after refresh
                         return _this2.refreshToken_().then(function (response) {
@@ -10849,7 +10892,9 @@ var RootRecord = function (_quip$apps$RootRecord) {
 RootRecord.getProperties = function () {
     return {
         obstacles: _quip2.default.apps.RecordList.Type(Obstacle),
-        methods: _quip2.default.apps.RecordList.Type(Method)
+        methods: _quip2.default.apps.RecordList.Type(Method),
+        vision: _quip2.default.apps.RecordList.Type(CommentRichText),
+        values: _quip2.default.app.RecordList.Type(CommentRichText)
     };
 };
 
@@ -10865,6 +10910,394 @@ exports.default = function () {
     _quip2.default.apps.registerClass(Obstacle, "obstacle");
     _quip2.default.apps.registerClass(RootRecord, "root");
 };
+
+/***/ }),
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/components/Vision.jsx";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Vision = __webpack_require__(346);
+
+var _Vision2 = _interopRequireDefault(_Vision);
+
+var _quipAppsChevron = __webpack_require__(125);
+
+var _quipAppsChevron2 = _interopRequireDefault(_quipAppsChevron);
+
+var _classnames = __webpack_require__(126);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Vision = function (_React$Component) {
+    _inherits(Vision, _React$Component);
+
+    function Vision(props) {
+        _classCallCheck(this, Vision);
+
+        var _this = _possibleConstructorReturn(this, (Vision.__proto__ || Object.getPrototypeOf(Vision)).call(this, props));
+
+        _this.handleClick = function (e, vision) {
+            var _this$state = _this.state,
+                canAdd = _this$state.canAdd,
+                canDelete = _this$state.canDelete;
+
+            var disabledCommands = [];
+
+            quip.apps.showContextMenu(e, ["deleteMethod", // id from menuCommand in Initialization,
+            quip.apps.DocumentMenuCommands.SEPARATOR, quip.apps.DocumentMenuCommands.DELETE_APP], [], // No highlighted commands
+            disabledCommands, // Disabled commands based on state
+            function () {}, { vision: vision, callback: _this.deleteRow.bind(_this) });
+        };
+
+        _this.state = {
+            vision: _this.getVision()
+        };
+        return _this;
+    }
+
+    _createClass(Vision, [{
+        key: "addRow",
+        value: function addRow() {
+            var vision = this.getVision();
+            vision.add({});
+
+            this.setState({
+                vision: vision
+            });
+        }
+    }, {
+        key: "deleteRow",
+        value: function deleteRow() {
+            var vision = this.getVision();
+            this.setState({
+                vision: vision
+            });
+        }
+    }, {
+        key: "getVision",
+        value: function getVision() {
+            var vision = quip.apps.getRootRecord().get("vision");
+            return vision;
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var _this2 = this;
+
+            var vision = this.state.vision;
+            var rootRecord = quip.apps.getRootRecord();
+
+            return React.createElement(
+                "div",
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 59
+                    },
+                    __self: this
+                },
+                React.createElement(
+                    "div",
+                    { className: _Vision2.default.title, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 60
+                        },
+                        __self: this
+                    },
+                    "VISION"
+                ),
+                React.createElement(
+                    "div",
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 64
+                        },
+                        __self: this
+                    },
+                    React.createElement(
+                        "table",
+                        { className: _Vision2.default.method, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 65
+                            },
+                            __self: this
+                        },
+                        vision && vision.getRecords().map(function (visionItem) {
+                            return React.createElement(
+                                "tr",
+                                { className: _Vision2.default.eachMethod, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 69
+                                    },
+                                    __self: _this2
+                                },
+                                React.createElement(
+                                    "td",
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 70
+                                        },
+                                        __self: _this2
+                                    },
+                                    React.createElement(quip.apps.ui.RichTextBox, {
+                                        key: visionItem.getId(),
+                                        record: visionItem,
+                                        color: "BLUE",
+                                        width: 770,
+                                        minHeight: 50,
+                                        maxHeight: 280,
+                                        align: "center",
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 71
+                                        },
+                                        __self: _this2
+                                    })
+                                )
+                            );
+                        })
+                    )
+                ),
+                React.createElement(
+                    "button",
+                    { onClick: this.addRow.bind(this), style: { width: "15%" }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 89
+                        },
+                        __self: this
+                    },
+                    "Add Vision"
+                )
+            );
+        }
+    }]);
+
+    return Vision;
+}(React.Component);
+
+exports.default = Vision;
+
+/***/ }),
+/* 345 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/components/Values.jsx";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Values = __webpack_require__(348);
+
+var _Values2 = _interopRequireDefault(_Values);
+
+var _quipAppsChevron = __webpack_require__(125);
+
+var _quipAppsChevron2 = _interopRequireDefault(_quipAppsChevron);
+
+var _classnames = __webpack_require__(126);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Values = function (_React$Component) {
+    _inherits(Values, _React$Component);
+
+    function Values(props) {
+        _classCallCheck(this, Values);
+
+        var _this = _possibleConstructorReturn(this, (Values.__proto__ || Object.getPrototypeOf(Values)).call(this, props));
+
+        _this.handleClick = function (e, value) {
+            var _this$state = _this.state,
+                canAdd = _this$state.canAdd,
+                canDelete = _this$state.canDelete;
+
+            var disabledCommands = [];
+
+            quip.apps.showContextMenu(e, ["deleteMethod", // id from menuCommand in Initialization,
+            quip.apps.DocumentMenuCommands.SEPARATOR, quip.apps.DocumentMenuCommands.DELETE_APP], [], // No highlighted commands
+            disabledCommands, // Disabled commands based on state
+            function () {}, { value: value, callback: _this.deleteRow.bind(_this) });
+        };
+
+        _this.state = {
+            values: _this.getValues()
+        };
+        return _this;
+    }
+
+    _createClass(Values, [{
+        key: "addRow",
+        value: function addRow() {
+            var values = this.getValues();
+            values.add({});
+
+            this.setState({
+                values: values
+            });
+        }
+    }, {
+        key: "deleteRow",
+        value: function deleteRow() {
+            var values = this.getValues();
+            this.setState({
+                values: values
+            });
+        }
+    }, {
+        key: "getValues",
+        value: function getValues() {
+            var values = quip.apps.getRootRecord().get("values");
+            return values;
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var _this2 = this;
+
+            var values = this.state.values;
+            var rootRecord = quip.apps.getRootRecord();
+
+            return React.createElement(
+                "div",
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 59
+                    },
+                    __self: this
+                },
+                React.createElement(
+                    "div",
+                    { className: _Values2.default.title, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 60
+                        },
+                        __self: this
+                    },
+                    "VALUES"
+                ),
+                React.createElement(
+                    "div",
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 64
+                        },
+                        __self: this
+                    },
+                    React.createElement(
+                        "table",
+                        { className: _Values2.default.method, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 65
+                            },
+                            __self: this
+                        },
+                        values && values.getRecords().map(function (value) {
+                            return React.createElement(
+                                "tr",
+                                { className: _Values2.default.eachMethod, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 69
+                                    },
+                                    __self: _this2
+                                },
+                                React.createElement(
+                                    "td",
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 70
+                                        },
+                                        __self: _this2
+                                    },
+                                    React.createElement(quip.apps.ui.RichTextBox, {
+                                        key: value.getId(),
+                                        record: value,
+                                        color: "BLUE",
+                                        width: 770,
+                                        minHeight: 50,
+                                        maxHeight: 280,
+                                        align: "center",
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 71
+                                        },
+                                        __self: _this2
+                                    })
+                                )
+                            );
+                        })
+                    )
+                ),
+                React.createElement(
+                    "button",
+                    { onClick: this.addRow.bind(this), style: { width: "15%" }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 89
+                        },
+                        __self: this
+                    },
+                    "Add Value"
+                )
+            );
+        }
+    }]);
+
+    return Values;
+}(React.Component);
+
+exports.default = Values;
+
+/***/ }),
+/* 346 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 347 */,
+/* 348 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
