@@ -1,4 +1,4 @@
-import Styles from "./Vision.less";
+import Styles from "./Method.less";
 import Chevron from "quip-apps-chevron";
 import cx from "classnames";
 

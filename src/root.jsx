@@ -24,7 +24,7 @@ quip.apps.initialize({
                   title: { },
                   description: { }, 
                 }]);
-
+            console.log("##3 ", rootRecord);
             rootRecord.set("vision", [{
                 }]);
 

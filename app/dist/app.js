@@ -9127,7 +9127,7 @@ _quip2.default.apps.initialize({
                 title: {},
                 description: {}
             }]);
-
+            console.log("##3 ", rootRecord);
             rootRecord.set("vision", [{}]);
 
             rootRecord.set("values", [{}]);
@@ -10894,7 +10894,7 @@ RootRecord.getProperties = function () {
         obstacles: _quip2.default.apps.RecordList.Type(Obstacle),
         methods: _quip2.default.apps.RecordList.Type(Method),
         vision: _quip2.default.apps.RecordList.Type(CommentRichText),
-        values: _quip2.default.app.RecordList.Type(CommentRichText)
+        values: _quip2.default.apps.RecordList.Type(CommentRichText)
     };
 };
 
@@ -10930,9 +10930,9 @@ var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Vision = __webpack_require__(346);
+var _Method = __webpack_require__(333);
 
-var _Vision2 = _interopRequireDefault(_Vision);
+var _Method2 = _interopRequireDefault(_Method);
 
 var _quipAppsChevron = __webpack_require__(125);
 
@@ -11020,7 +11020,7 @@ var Vision = function (_React$Component) {
                 },
                 React.createElement(
                     "div",
-                    { className: _Vision2.default.title, __source: {
+                    { className: _Method2.default.title, __source: {
                             fileName: _jsxFileName,
                             lineNumber: 60
                         },
@@ -11039,7 +11039,7 @@ var Vision = function (_React$Component) {
                     },
                     React.createElement(
                         "table",
-                        { className: _Vision2.default.method, __source: {
+                        { className: _Method2.default.method, __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 65
                             },
@@ -11048,7 +11048,7 @@ var Vision = function (_React$Component) {
                         vision && vision.getRecords().map(function (visionItem) {
                             return React.createElement(
                                 "tr",
-                                { className: _Vision2.default.eachMethod, __source: {
+                                { className: _Method2.default.eachMethod, __source: {
                                         fileName: _jsxFileName,
                                         lineNumber: 69
                                     },
@@ -11115,9 +11115,9 @@ var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Values = __webpack_require__(348);
+var _Method = __webpack_require__(333);
 
-var _Values2 = _interopRequireDefault(_Values);
+var _Method2 = _interopRequireDefault(_Method);
 
 var _quipAppsChevron = __webpack_require__(125);
 
@@ -11205,7 +11205,7 @@ var Values = function (_React$Component) {
                 },
                 React.createElement(
                     "div",
-                    { className: _Values2.default.title, __source: {
+                    { className: _Method2.default.title, __source: {
                             fileName: _jsxFileName,
                             lineNumber: 60
                         },
@@ -11224,7 +11224,7 @@ var Values = function (_React$Component) {
                     },
                     React.createElement(
                         "table",
-                        { className: _Values2.default.method, __source: {
+                        { className: _Method2.default.method, __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 65
                             },
@@ -11233,7 +11233,7 @@ var Values = function (_React$Component) {
                         values && values.getRecords().map(function (value) {
                             return React.createElement(
                                 "tr",
-                                { className: _Values2.default.eachMethod, __source: {
+                                { className: _Method2.default.eachMethod, __source: {
                                         fileName: _jsxFileName,
                                         lineNumber: 69
                                     },
@@ -11285,19 +11285,6 @@ var Values = function (_React$Component) {
 }(React.Component);
 
 exports.default = Values;
-
-/***/ }),
-/* 346 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 347 */,
-/* 348 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
