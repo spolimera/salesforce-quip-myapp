@@ -21,7 +21,8 @@ class CommentRichText extends quip.apps.RichTextRecord {
 class Method extends quip.apps.Record {
     static getProperties = () => ({
         title: CommentRichText,
-        description: CommentRichText
+        description: CommentRichText,
+        id: "string"
     })
 
     getDom() {
@@ -41,6 +42,7 @@ class Obstacle extends quip.apps.Record {
     static getProperties = () => ({
         name: CommentRichText,
         description: CommentRichText,
+        id: "string"
     })
 
     getDom() {
@@ -78,6 +80,14 @@ class RootRecord extends quip.apps.RootRecord {
 
     supportsComments() {
         return true;
+    }
+
+    setClient(client) {
+        this.salesforceClient_ = client;
+    }
+
+    getClient() {
+        return this.salesforceClient_;
     }
 }
 

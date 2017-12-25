@@ -55,7 +55,7 @@ export default class Method extends React.Component {
         let methods = quip.apps.getRootRecord().get("methods");
         return methods;
     }
-    
+
     render() {
         let methods = this.state.methods;
         let rootRecord = quip.apps.getRootRecord();
@@ -63,12 +63,14 @@ export default class Method extends React.Component {
         return (
             <div>
                 <div className={Styles.title}>
-                    METHODS 
+                    METHODS
                 </div>
-
+                <button onClick={this.saveToSalesforce.bind(this)}>
+                  save
+                </button>
                 <div >
                     <table className={Styles.method}>
-                        {   
+                        {
                             methods && methods.getRecords().map((method) => {
                                 return(
                                     <div className={Styles.eachMethod}>
@@ -85,10 +87,10 @@ export default class Method extends React.Component {
                                              width={770}
                                              minHeight={50}
                                              maxHeight={280}
-                                             align={"center" }  
+                                             align={"center" }
                                             />
 
-                                            <span 
+                                            <span
                                             ref={(c) => method.get("title").setDom(c)}
                                             className={cx(Styles.commentsTrigger, {
                                                 [Styles.commented]:
@@ -114,10 +116,10 @@ export default class Method extends React.Component {
                                              width={770}
                                              minHeight={50}
                                              maxHeight={280}
-                                             align={"center" }  
+                                             align={"center" }
                                             />
                                             </div>
-                                           <span 
+                                           <span
                                                 className={Styles.chevron}
                                                 onClick={(e) => this.handleClick(e, method)}
                                                 style={{ float: "left" }}
@@ -131,7 +133,7 @@ export default class Method extends React.Component {
                                                     />
                                             </span>
 
-                                            <span 
+                                            <span
                                             ref={(c) => method.get("description").setDom(c)}
                                             className={cx(Styles.commentsTrigger, {
                                                 [Styles.commented]:
@@ -151,14 +153,38 @@ export default class Method extends React.Component {
 
                             })
                         }
-                    </table>  
+                    </table>
                 </div>
 
                 <button onClick={this.addRow.bind(this)} style={{ width: "15%" }}>
                     Add Method
-                </button>       
+                </button>
             </div>
 
         );
+    }
+
+    saveToSalesforce() {
+      let client = quip.apps.getRootRecord().getClient();
+      let methods = this.getMethods().getRecords();
+
+      methods.forEach((method) => {
+        let body = {
+          "fields": {
+            "play2win__Text__c": method.get("title").getTextContent(),
+            "play2win__Description__c": method.get("description").getTextContent()
+          }
+        }
+
+        if(!method.get("id")) {
+          body["apiName"] = "play2win__Methods__c";
+          client.createRecord(body).then((response) => {
+            method.set("id", response.id);
+          });
+        } else {
+          client.updateRecord(method.get("id"), body).then((response) => {
+          });
+        }
+      });
     }
 }

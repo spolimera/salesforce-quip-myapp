@@ -73,16 +73,14 @@ export class SalesforceClient {
 
     login(onAuthenticated) {
         if (this.isLoggedIn()) {
-            console.log("*****1 ");
             onAuthenticated();
         } else {
-            console.log("****2 ");
             this.auth_
                 .login(
                     {
                         prompt: "login",
                     },
-                    result => { console.log("##3 ", result);
+                    result => {
                         if (result) {
                             console.log("!!!! ", result);
                             this.setAPIEndpoints_();
@@ -179,6 +177,16 @@ export class SalesforceClient {
         return this.request("PATCH", url, body);
     }
 
+    createRecord(body = {}) {
+        const url = `${this.apiUrl_}/${RECORDS_ENDPOINT}`;
+        return this.request("POST", url, body);
+    }   
+
+    deleteRecord(recordId) {
+        const url = `${this.apiUrl_}/${RECORDS_ENDPOINT}/${recordId}`;
+        return this.request("DELETE", url);
+    }
+
     request(fetchMethod, baseUrl, data = {}, tryRefreshToken = true) {
         const method = fetchMethod.trim().toUpperCase();
         let url = baseUrl;
@@ -196,7 +204,7 @@ export class SalesforceClient {
                 TIMEOUT,
                 new Error("Request timed out"));
         });
-        console.log("###1 ");
+       
         let fetcher;
         if (!this.auth_) { console.log("####2 ");
             fetcher = fetch(url, {
@@ -228,7 +236,7 @@ export class SalesforceClient {
                         method: method,
                     },
                     resolve);
-            }).then(response => { console.log("###5 ", response);
+            }).then(response => {
                 if (response.status == 401 && tryRefreshToken) {
                     // refetch the endpoint after refresh
                     return this.refreshToken_().then(response =>

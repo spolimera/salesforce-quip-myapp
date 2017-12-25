@@ -161,4 +161,28 @@ export default class Obstacle extends React.Component {
 
         );
     }
+
+    saveToSalesforce() {
+      let client = quip.apps.getRootRecord().getClient();
+      let cards = this.getCards().getRecords();
+
+      cards.forEach((card) => {
+        let body = {
+          "fields": {
+            "play2win__Text__c": card.get("title").getTextContent(),
+            "play2win__Description__c": card.get("description").getTextContent()
+          }
+        }
+
+        if(!card.get("id")) {
+          body["apiName"] = "play2win__Methods__c";
+          client.createRecord(body).then((response) => {
+            card.set("id", response.id);
+          });
+        } else {
+          client.updateRecord(card.get("id"), body).then((response) => {
+          });
+        }
+      });
+    }
 }

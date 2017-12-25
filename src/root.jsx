@@ -10,7 +10,9 @@ quip.apps.initialize({
         const rootRecord = quip.apps.getRootRecord();
         let auth = quip.apps.auth("salesforce");
         let client = new SalesforceClient(auth);
-    
+
+        rootRecord.setClient(client);
+
         if (params.isCreation) {
             rootRecord.set("obstacles", [{
                   name: {},
@@ -24,7 +26,7 @@ quip.apps.initialize({
                   title: { },
                   description: { }, 
                 }]);
-            console.log("##3 ", rootRecord);
+            
             rootRecord.set("vision", [{
                 }]);
 
@@ -39,6 +41,7 @@ quip.apps.initialize({
             id: "deleteItem",
             label: "Delete Row",
             handler: (name, payload) => {
+                deleteRecord(payload.card);
                 payload.card.delete();
                 payload.callback();
             },
@@ -47,9 +50,15 @@ quip.apps.initialize({
             id: "deleteMethod",
             label: "Delete Method",
             handler: (name, payload) => {
+                deleteRecord(payload.method);
                 payload.method.delete();
                 payload.callback();
             },
         },
     ],
     });
+
+    function deleteRecord(record) {
+        let client = quip.apps.getRootRecord().getClient();
+        client.deleteRecord(record.get("id"));
+    }
