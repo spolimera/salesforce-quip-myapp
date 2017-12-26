@@ -27,11 +27,9 @@ quip.apps.initialize({
                   description: { }, 
                 }]);
             
-            rootRecord.set("vision", [{
-                }]);
+            rootRecord.set("vision", {});
 
-            rootRecord.set("values", [{
-                }]);
+            rootRecord.set("values", {});
         }    
 
         ReactDOM.render(<App/>, root);

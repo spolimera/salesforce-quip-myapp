@@ -9137,15 +9137,15 @@ _quip2.default.apps.initialize({
                 description: {}
             }]);
 
-            rootRecord.set("vision", [{}]);
+            rootRecord.set("vision", {});
 
-            rootRecord.set("values", [{}]);
+            rootRecord.set("values", {});
         }
 
         ReactDOM.render(React.createElement(_App2.default, {
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 37
+                lineNumber: 35
             },
             __self: undefined
         }), root);
@@ -9224,6 +9224,8 @@ var App = function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return React.createElement(
         "div",
         {
@@ -9233,35 +9235,76 @@ var App = function (_React$Component) {
           },
           __self: this
         },
+        React.createElement(
+          "button",
+          { onClick: this.pushToSalesforce.bind(this), __source: {
+              fileName: _jsxFileName,
+              lineNumber: 14
+            },
+            __self: this
+          },
+          "Push to Salesforce"
+        ),
         React.createElement(_Vision2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 14
+            lineNumber: 18
           },
           __self: this
         }),
         React.createElement(_Values2.default, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 15
+            lineNumber: 19
           },
           __self: this
         }),
-        React.createElement(_Method2.default, {
-          __source: {
+        React.createElement(_Method2.default, { ref: function ref(ele) {
+            return _this2.method = ele;
+          }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 16
+            lineNumber: 20
           },
           __self: this
         }),
-        React.createElement(_Obstacle2.default, {
-          __source: {
+        React.createElement(_Obstacle2.default, { ref: function ref(ele) {
+            return _this2.obstacle = ele;
+          }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 17
+            lineNumber: 21
           },
           __self: this
         })
       );
+    }
+  }, {
+    key: "pushToSalesforce",
+    value: function pushToSalesforce() {
+      var rootRecord = quip.apps.getRootRecord();
+      var client = rootRecord.getClient();
+
+      var vision = rootRecord.get("vision").getTextContent();
+      var values = rootRecord.get("values").getTextContent();
+      var id = rootRecord.get("id");
+
+      var body = {
+        "fields": {
+          "play2win__Vision__c": vision,
+          "play2win__Values__c": values
+        }
+      };
+
+      if (!id) {
+        body["apiName"] = "play2win__V2MOB__c";
+        client.createRecord(body).then(function (response) {
+          rootRecord.set("id", response.id);
+        });
+      } else {
+        client.updateRecord(rootRecord.get("id"), body).then(function (response) {});
+      }
+
+      this.method.saveToSalesforce(id);
+      this.obstacle.saveToSalesforce(id);
     }
   }]);
 
@@ -9392,21 +9435,11 @@ var Method = function (_React$Component) {
                     "METHODS"
                 ),
                 React.createElement(
-                    "button",
-                    { onClick: this.saveToSalesforce.bind(this), __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 68
-                        },
-                        __self: this
-                    },
-                    "save"
-                ),
-                React.createElement(
                     "div",
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 71
+                            lineNumber: 69
                         },
                         __self: this
                     },
@@ -9414,7 +9447,7 @@ var Method = function (_React$Component) {
                         "table",
                         { className: _Method2.default.method, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 72
+                                lineNumber: 70
                             },
                             __self: this
                         },
@@ -9423,7 +9456,7 @@ var Method = function (_React$Component) {
                                 "div",
                                 { className: _Method2.default.eachMethod, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 76
+                                        lineNumber: 74
                                     },
                                     __self: _this2
                                 },
@@ -9431,7 +9464,7 @@ var Method = function (_React$Component) {
                                     "tr",
                                     { className: _Method2.default.tableRow, __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 77
+                                            lineNumber: 75
                                         },
                                         __self: _this2
                                     },
@@ -9440,7 +9473,7 @@ var Method = function (_React$Component) {
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 78
+                                                lineNumber: 76
                                             },
                                             __self: _this2
                                         },
@@ -9449,7 +9482,7 @@ var Method = function (_React$Component) {
                                             {
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 79
+                                                    lineNumber: 77
                                                 },
                                                 __self: _this2
                                             },
@@ -9460,7 +9493,7 @@ var Method = function (_React$Component) {
                                         "td",
                                         { className: _Method2.default.tableCell, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 82
+                                                lineNumber: 80
                                             },
                                             __self: _this2
                                         },
@@ -9474,7 +9507,7 @@ var Method = function (_React$Component) {
                                             align: "center",
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 83
+                                                lineNumber: 81
                                             },
                                             __self: _this2
                                         }),
@@ -9486,7 +9519,7 @@ var Method = function (_React$Component) {
                                                 },
                                                 className: (0, _classnames2.default)(_Method2.default.commentsTrigger, _defineProperty({}, _Method2.default.commented, method.get("title").getCommentCount() > 0)), __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 93
+                                                    lineNumber: 91
                                                 },
                                                 __self: _this2
                                             },
@@ -9495,7 +9528,7 @@ var Method = function (_React$Component) {
                                                 showEmpty: true,
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 99
+                                                    lineNumber: 97
                                                 },
                                                 __self: _this2
                                             })
@@ -9506,7 +9539,7 @@ var Method = function (_React$Component) {
                                     "tr",
                                     { className: _Method2.default.tableRow, __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 106
+                                            lineNumber: 104
                                         },
                                         __self: _this2
                                     },
@@ -9515,7 +9548,7 @@ var Method = function (_React$Component) {
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 107
+                                                lineNumber: 105
                                             },
                                             __self: _this2
                                         },
@@ -9524,7 +9557,7 @@ var Method = function (_React$Component) {
                                             {
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 108
+                                                    lineNumber: 106
                                                 },
                                                 __self: _this2
                                             },
@@ -9535,7 +9568,7 @@ var Method = function (_React$Component) {
                                         "td",
                                         { className: _Method2.default.tableCell, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 110
+                                                lineNumber: 108
                                             },
                                             __self: _this2
                                         },
@@ -9543,7 +9576,7 @@ var Method = function (_React$Component) {
                                             "div",
                                             { style: { float: "left" }, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 111
+                                                    lineNumber: 109
                                                 },
                                                 __self: _this2
                                             },
@@ -9557,7 +9590,7 @@ var Method = function (_React$Component) {
                                                 align: "center",
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 112
+                                                    lineNumber: 110
                                                 },
                                                 __self: _this2
                                             })
@@ -9572,7 +9605,7 @@ var Method = function (_React$Component) {
                                                 style: { float: "left" },
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 122
+                                                    lineNumber: 120
                                                 },
                                                 __self: _this2
                                             },
@@ -9580,7 +9613,7 @@ var Method = function (_React$Component) {
                                                 color: method ? quip.apps.ui.ColorMap.BLUE.VALUE : quip.apps.ui.ColorMap[color].VALUE,
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 127
+                                                    lineNumber: 125
                                                 },
                                                 __self: _this2
                                             })
@@ -9595,7 +9628,7 @@ var Method = function (_React$Component) {
                                                 style: { float: "left", marginTop: "15px", marginRight: "8px" },
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 136
+                                                    lineNumber: 134
                                                 },
                                                 __self: _this2
                                             },
@@ -9604,7 +9637,7 @@ var Method = function (_React$Component) {
                                                 showEmpty: true,
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 144
+                                                    lineNumber: 142
                                                 },
                                                 __self: _this2
                                             })
@@ -9619,7 +9652,7 @@ var Method = function (_React$Component) {
                     "button",
                     { onClick: this.addRow.bind(this), style: { width: "15%" }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 159
+                            lineNumber: 157
                         },
                         __self: this
                     },
@@ -9629,7 +9662,7 @@ var Method = function (_React$Component) {
         }
     }, {
         key: "saveToSalesforce",
-        value: function saveToSalesforce() {
+        value: function saveToSalesforce(v2mobId) {
             var client = quip.apps.getRootRecord().getClient();
             var methods = this.getMethods().getRecords();
 
@@ -9637,7 +9670,8 @@ var Method = function (_React$Component) {
                 var body = {
                     "fields": {
                         "play2win__Text__c": method.get("title").getTextContent(),
-                        "play2win__Description__c": method.get("description").getTextContent()
+                        "play2win__Description__c": method.get("description").getTextContent(),
+                        "play2win__V2MOB__c": v2mobId
                     }
                 };
 
@@ -9980,20 +10014,21 @@ var Obstacle = function (_React$Component) {
         }
     }, {
         key: "saveToSalesforce",
-        value: function saveToSalesforce() {
+        value: function saveToSalesforce(v2mobId) {
             var client = quip.apps.getRootRecord().getClient();
             var cards = this.getCards().getRecords();
 
             cards.forEach(function (card) {
                 var body = {
                     "fields": {
-                        "play2win__Text__c": card.get("title").getTextContent(),
-                        "play2win__Description__c": card.get("description").getTextContent()
+                        "play2win__Title__c": card.get("name").getTextContent(),
+                        "play2win__Description__c": card.get("description").getTextContent(),
+                        "play2win__V2MOB__c": v2mobId
                     }
                 };
 
                 if (!card.get("id")) {
-                    body["apiName"] = "play2win__Methods__c";
+                    body["apiName"] = "play2win__Obsacles__c";
                     client.createRecord(body).then(function (response) {
                         card.set("id", response.id);
                     });
@@ -10034,14 +10069,6 @@ var _Method = __webpack_require__(91);
 
 var _Method2 = _interopRequireDefault(_Method);
 
-var _quipAppsChevron = __webpack_require__(63);
-
-var _quipAppsChevron2 = _interopRequireDefault(_quipAppsChevron);
-
-var _classnames = __webpack_require__(64);
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -10056,65 +10083,21 @@ var Vision = function (_React$Component) {
     function Vision(props) {
         _classCallCheck(this, Vision);
 
-        var _this = _possibleConstructorReturn(this, (Vision.__proto__ || Object.getPrototypeOf(Vision)).call(this, props));
-
-        _this.handleClick = function (e, vision) {
-            var _this$state = _this.state,
-                canAdd = _this$state.canAdd,
-                canDelete = _this$state.canDelete;
-
-            var disabledCommands = [];
-
-            quip.apps.showContextMenu(e, ["deleteMethod", // id from menuCommand in Initialization,
-            quip.apps.DocumentMenuCommands.SEPARATOR, quip.apps.DocumentMenuCommands.DELETE_APP], [], // No highlighted commands
-            disabledCommands, // Disabled commands based on state
-            function () {}, { vision: vision, callback: _this.deleteRow.bind(_this) });
-        };
-
-        _this.state = {
-            vision: _this.getVision()
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (Vision.__proto__ || Object.getPrototypeOf(Vision)).call(this, props));
     }
 
     _createClass(Vision, [{
-        key: "addRow",
-        value: function addRow() {
-            var vision = this.getVision();
-            vision.add({});
-
-            this.setState({
-                vision: vision
-            });
-        }
-    }, {
-        key: "deleteRow",
-        value: function deleteRow() {
-            var vision = this.getVision();
-            this.setState({
-                vision: vision
-            });
-        }
-    }, {
-        key: "getVision",
-        value: function getVision() {
-            var vision = quip.apps.getRootRecord().get("vision");
-            return vision;
-        }
-    }, {
         key: "render",
         value: function render() {
-            var _this2 = this;
-
-            var vision = this.state.vision;
             var rootRecord = quip.apps.getRootRecord();
+            var vision = rootRecord.get("vision");
 
             return React.createElement(
                 "div",
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 59
+                        lineNumber: 13
                     },
                     __self: this
                 },
@@ -10122,7 +10105,7 @@ var Vision = function (_React$Component) {
                     "div",
                     { className: _Method2.default.title, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 60
+                            lineNumber: 14
                         },
                         __self: this
                     },
@@ -10130,67 +10113,26 @@ var Vision = function (_React$Component) {
                 ),
                 React.createElement(
                     "div",
-                    {
+                    { className: _Method2.default.method, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 18
+                        },
+                        __self: this
+                    },
+                    React.createElement(quip.apps.ui.RichTextBox, {
+                        key: vision.getId(),
+                        record: vision,
+                        color: "BLUE",
+                        width: 770,
+                        minHeight: 50,
+                        maxHeight: 280,
+                        align: "center",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 64
+                            lineNumber: 19
                         },
                         __self: this
-                    },
-                    React.createElement(
-                        "table",
-                        { className: _Method2.default.method, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 65
-                            },
-                            __self: this
-                        },
-                        vision && vision.getRecords().map(function (visionItem) {
-                            return React.createElement(
-                                "tr",
-                                { className: _Method2.default.eachMethod, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 69
-                                    },
-                                    __self: _this2
-                                },
-                                React.createElement(
-                                    "td",
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 70
-                                        },
-                                        __self: _this2
-                                    },
-                                    React.createElement(quip.apps.ui.RichTextBox, {
-                                        key: visionItem.getId(),
-                                        record: visionItem,
-                                        color: "BLUE",
-                                        width: 770,
-                                        minHeight: 50,
-                                        maxHeight: 280,
-                                        align: "center",
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 71
-                                        },
-                                        __self: _this2
-                                    })
-                                )
-                            );
-                        })
-                    )
-                ),
-                React.createElement(
-                    "button",
-                    { onClick: this.addRow.bind(this), style: { width: "15%" }, __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 89
-                        },
-                        __self: this
-                    },
-                    "Add Vision"
+                    })
                 )
             );
         }
@@ -10219,14 +10161,6 @@ var _Method = __webpack_require__(91);
 
 var _Method2 = _interopRequireDefault(_Method);
 
-var _quipAppsChevron = __webpack_require__(63);
-
-var _quipAppsChevron2 = _interopRequireDefault(_quipAppsChevron);
-
-var _classnames = __webpack_require__(64);
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -10241,65 +10175,21 @@ var Values = function (_React$Component) {
     function Values(props) {
         _classCallCheck(this, Values);
 
-        var _this = _possibleConstructorReturn(this, (Values.__proto__ || Object.getPrototypeOf(Values)).call(this, props));
-
-        _this.handleClick = function (e, value) {
-            var _this$state = _this.state,
-                canAdd = _this$state.canAdd,
-                canDelete = _this$state.canDelete;
-
-            var disabledCommands = [];
-
-            quip.apps.showContextMenu(e, ["deleteMethod", // id from menuCommand in Initialization,
-            quip.apps.DocumentMenuCommands.SEPARATOR, quip.apps.DocumentMenuCommands.DELETE_APP], [], // No highlighted commands
-            disabledCommands, // Disabled commands based on state
-            function () {}, { value: value, callback: _this.deleteRow.bind(_this) });
-        };
-
-        _this.state = {
-            values: _this.getValues()
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (Values.__proto__ || Object.getPrototypeOf(Values)).call(this, props));
     }
 
     _createClass(Values, [{
-        key: "addRow",
-        value: function addRow() {
-            var values = this.getValues();
-            values.add({});
-
-            this.setState({
-                values: values
-            });
-        }
-    }, {
-        key: "deleteRow",
-        value: function deleteRow() {
-            var values = this.getValues();
-            this.setState({
-                values: values
-            });
-        }
-    }, {
-        key: "getValues",
-        value: function getValues() {
-            var values = quip.apps.getRootRecord().get("values");
-            return values;
-        }
-    }, {
         key: "render",
         value: function render() {
-            var _this2 = this;
-
-            var values = this.state.values;
             var rootRecord = quip.apps.getRootRecord();
+            var values = rootRecord.get("values");
 
             return React.createElement(
                 "div",
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 59
+                        lineNumber: 13
                     },
                     __self: this
                 },
@@ -10307,7 +10197,7 @@ var Values = function (_React$Component) {
                     "div",
                     { className: _Method2.default.title, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 60
+                            lineNumber: 14
                         },
                         __self: this
                     },
@@ -10315,67 +10205,26 @@ var Values = function (_React$Component) {
                 ),
                 React.createElement(
                     "div",
-                    {
+                    { className: _Method2.default.method, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 18
+                        },
+                        __self: this
+                    },
+                    React.createElement(quip.apps.ui.RichTextBox, {
+                        key: values.getId(),
+                        record: values,
+                        color: "BLUE",
+                        width: 770,
+                        minHeight: 50,
+                        maxHeight: 280,
+                        align: "center",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 64
+                            lineNumber: 19
                         },
                         __self: this
-                    },
-                    React.createElement(
-                        "table",
-                        { className: _Method2.default.method, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 65
-                            },
-                            __self: this
-                        },
-                        values && values.getRecords().map(function (value) {
-                            return React.createElement(
-                                "tr",
-                                { className: _Method2.default.eachMethod, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 69
-                                    },
-                                    __self: _this2
-                                },
-                                React.createElement(
-                                    "td",
-                                    {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 70
-                                        },
-                                        __self: _this2
-                                    },
-                                    React.createElement(quip.apps.ui.RichTextBox, {
-                                        key: value.getId(),
-                                        record: value,
-                                        color: "BLUE",
-                                        width: 770,
-                                        minHeight: 50,
-                                        maxHeight: 280,
-                                        align: "center",
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 71
-                                        },
-                                        __self: _this2
-                                    })
-                                )
-                            );
-                        })
-                    )
-                ),
-                React.createElement(
-                    "button",
-                    { onClick: this.addRow.bind(this), style: { width: "15%" }, __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 89
-                        },
-                        __self: this
-                    },
-                    "Add Value"
+                    })
                 )
             );
         }
@@ -10637,13 +10486,12 @@ var SalesforceClient = exports.SalesforceClient = function () {
                     return response.json();
                 });
             } else {
-                console.log("###3 ");
                 if (!this.auth_.isLoggedIn()) {
                     return new Promise(function (resolve, reject) {
                         reject("Unauthorized access");
                     });
                 }
-
+                console.log("###3 ", url, body, method);
                 fetcher = new Promise(function (resolve, reject) {
                     _this2.auth_.request({
                         url: url,
@@ -11352,8 +11200,9 @@ RootRecord.getProperties = function () {
     return {
         obstacles: _quip2.default.apps.RecordList.Type(Obstacle),
         methods: _quip2.default.apps.RecordList.Type(Method),
-        vision: _quip2.default.apps.RecordList.Type(CommentRichText),
-        values: _quip2.default.apps.RecordList.Type(CommentRichText)
+        vision: CommentRichText,
+        values: CommentRichText,
+        id: "string"
     };
 };
 

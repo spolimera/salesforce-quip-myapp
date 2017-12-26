@@ -221,13 +221,13 @@ export class SalesforceClient {
                 }
                 return response.json();
             });
-        } else { console.log("###3 ");
+        } else { 
             if (!this.auth_.isLoggedIn()) {
                 return new Promise((resolve, reject) => {
                     reject("Unauthorized access");
                 });
             }
-            
+            console.log("###3 ", url, body, method);
             fetcher = new Promise((resolve, reject) => {
                 this.auth_.request(
                     {

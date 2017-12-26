@@ -65,9 +65,7 @@ export default class Method extends React.Component {
                 <div className={Styles.title}>
                     METHODS
                 </div>
-                <button onClick={this.saveToSalesforce.bind(this)}>
-                  save
-                </button>
+              
                 <div >
                     <table className={Styles.method}>
                         {
@@ -164,7 +162,7 @@ export default class Method extends React.Component {
         );
     }
 
-    saveToSalesforce() {
+    saveToSalesforce(v2mobId) {
       let client = quip.apps.getRootRecord().getClient();
       let methods = this.getMethods().getRecords();
 
@@ -172,7 +170,8 @@ export default class Method extends React.Component {
         let body = {
           "fields": {
             "play2win__Text__c": method.get("title").getTextContent(),
-            "play2win__Description__c": method.get("description").getTextContent()
+            "play2win__Description__c": method.get("description").getTextContent(),
+            "play2win__V2MOB__c": v2mobId
           }
         }
 
