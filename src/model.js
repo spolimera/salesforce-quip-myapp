@@ -18,11 +18,36 @@ class CommentRichText extends quip.apps.RichTextRecord {
     }
 }
 
+class Measure extends quip.apps.Record {
+    static getProperties = () => ({
+        type: "string",
+        name: "string",
+        status: "string",
+        initial_value: "number",
+        current_value: "number",
+        target_value: "number",
+        due_date: "string"
+    })
+
+    getDom() {
+        return this.node;
+    }
+
+    setDom(node) {
+        this.node = node;
+    }
+
+    supportsComments() {
+        return true;
+    }
+}
+
 class Method extends quip.apps.Record {
     static getProperties = () => ({
         title: CommentRichText,
         description: CommentRichText,
-        id: "string"
+        id: "string",
+        measures: quip.apps.RecordList.Type(Measure),
     })
 
     getDom() {
@@ -93,6 +118,7 @@ class RootRecord extends quip.apps.RootRecord {
 }
 
 export default () => {
+    quip.apps.registerClass(Measure, "measure");
     quip.apps.registerClass(CommentRichText, "commentrichtext");
     quip.apps.registerClass(Method, "method");
     quip.apps.registerClass(Obstacle, "obstacle");

@@ -1,6 +1,7 @@
 import Styles from "./Method.less";
 import Chevron from "quip-apps-chevron";
 import cx from "classnames";
+import Measure from "./Measure.jsx";
 
 export default class Method extends React.Component {
     constructor(props) {
@@ -37,6 +38,7 @@ export default class Method extends React.Component {
           description: {
               RichText_placeholderText:"Add Method Description",
           },
+          measures: [{}],
       });
 
       this.setState({
@@ -70,6 +72,7 @@ export default class Method extends React.Component {
                     <table className={Styles.method}>
                         {
                             methods && methods.getRecords().map((method) => {
+
                                 return(
                                     <div className={Styles.eachMethod}>
                                     <tr className={Styles.tableRow}>
@@ -146,9 +149,11 @@ export default class Method extends React.Component {
                                             </span>
                                         </td>
                                     </tr>
+                                    <div>
+                                      <Measure measures={method.get("measures")}/>
+                                    </div>
                                 </div>
                                 );
-
                             })
                         }
                     </table>

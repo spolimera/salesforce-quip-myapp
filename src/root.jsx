@@ -24,7 +24,8 @@ quip.apps.initialize({
 
             rootRecord.set("methods", [{
                   title: { },
-                  description: { }, 
+                  description: { },
+                  measures: [{}],
                 }]);
             
             rootRecord.set("vision", {});
