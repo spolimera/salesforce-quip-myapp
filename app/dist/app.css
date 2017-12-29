@@ -107,6 +107,7 @@
 }
 .Measure__tableRow {
   border-bottom: 1px solid cadetblue;
+  background-color: #FFDEAD;
 }
 .Measure__tableRow:hover .Measure__commentsTrigger {
   visibility: initial;

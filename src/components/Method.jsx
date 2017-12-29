@@ -150,7 +150,8 @@ export default class Method extends React.Component {
                                         </td>
                                     </tr>
                                     <div>
-                                      <Measure measures={method.get("measures")}/>
+                                      <Measure 
+                                          measures={method.get("measures")}/>
                                     </div>
                                 </div>
                                 );
@@ -184,9 +185,42 @@ export default class Method extends React.Component {
           body["apiName"] = "play2win__Methods__c";
           client.createRecord(body).then((response) => {
             method.set("id", response.id);
+            this.saveMeasures(method);
           });
         } else {
           client.updateRecord(method.get("id"), body).then((response) => {
+            this.saveMeasures(method);
+          });
+        }
+      });
+    }
+
+    saveMeasures(method) {
+      let client = quip.apps.getRootRecord().getClient();
+      let measures = method.get("measures");
+
+      measures.forEach((measure) => {
+        let body = {
+          "fields": {
+            "type": measure.get("type"),
+            "name": measure.get("name"),
+            "status": measure.get("status"),
+            "initial_value": measure.get("initial_value"),
+            "current_value": measure.get("current_value"),
+            "target_value": measure.get("target_value"),
+            "method_id": method.get("id")
+          }
+        }
+
+        if(!measure.get("id")) {
+          body["apiName"] = "play2win__Measures__c";
+          client.createRecord(body).then((response) => {
+            measure.set("id", response.id);
+            this.saveMeasures(method);
+          });
+        } else {
+          client.updateRecord(measure.get("id"), body).then((response) => {
+           
           });
         }
       });

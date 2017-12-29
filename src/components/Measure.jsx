@@ -6,6 +6,10 @@ export default class Measure extends React.Component {
       this.state = {
         measures: props.measures
       };
+      this.type_values = [{ label: "In Progress", value: "in_progress" },
+                          { label: "Completion", value: "completion" }];
+      this.status_values = [{ label: "In Progress", value: "in_progress" },
+                          { label: "Completion", value: "completion" }];                    
     }
 
     handleClick = (e, measure) => {
@@ -62,15 +66,52 @@ export default class Measure extends React.Component {
               </thead>
               {
                 measures && measures.getRecords().map((measure) => {
+                 
                   return (
                     <tr className={Styles.tableRow}>
-                      <td className={Styles.tableCell}>{measure.get("type")}</td>
-                      <td className={Styles.tableCell}>{measure.get("name")}</td>
-                      <td className={Styles.tableCell}>{measure.get("status")}</td>
-                      <td className={Styles.tableCell}>{measure.get("initial_value")}</td>
-                      <td className={Styles.tableCell}>{measure.get("current_value")}</td>
-                      <td className={Styles.tableCell}>{measure.get("target_value")}</td>
-                      <td className={Styles.tableCell}>{measure.get("due_date")}</td>
+                      <td className={Styles.tableCell}>
+                        <select value={measure.get("type")} onChange={(e) => { this.onChange(e.target.value, measure, "type") }}>
+                          {this.type_values.map((type) => {
+                            return <option value={type.value}>
+                                      {type.label}
+                                   </option>
+                          })}
+                        </select>
+                      </td>
+
+                      <td className={Styles.tableCell}>
+                        <input type="text" value={measure.get("name")} 
+                        onChange={(e) => { this.onChange(e.target.value, measure, "name") }}
+                        className={Styles.tableCell}/>
+                      </td>
+
+                      <td className={Styles.tableCell}>
+                        <select value={measure.get("status")} onChange={(e) => { this.onChange(e.target.value, measure, "status") }}>
+                          {this.status_values.map((status) => {
+                            return <option value={status.value}>
+                                      {status.label}
+                                   </option>
+                          })}
+                        </select>
+                      </td>
+
+                      <td className={Styles.tableCell}>
+                        <input type="number" value={measure.get("initial_value")} 
+                        onChange={(e) => { this.onChange(parseInt(e.target.value), measure, "initial_value") }}
+                        className={Styles.tableCell}/>
+                      </td>
+
+                      <td className={Styles.tableCell}>
+                        <input type="number" value={measure.get("current_value")} 
+                        onChange={(e) => { this.onChange(parseInt(e.target.value), measure, "current_value") }}
+                        className={Styles.tableCell}/>
+                      </td>
+
+                      <td className={Styles.tableCell}>
+                        <input type="number" value={measure.get("target_value")} 
+                         onChange={(e) => { this.onChange(parseInt(e.target.value), measure, "target_value") }}
+                        className={Styles.tableCell}/>
+                      </td>
                     </tr>
                   );
                 })
@@ -92,28 +133,8 @@ export default class Measure extends React.Component {
       );
     }
 
-    saveToSalesforce(v2mobId) {
-      let client = quip.apps.getRootRecord().getClient();
-      let methods = this.getMethods().getRecords();
-
-      methods.forEach((method) => {
-        let body = {
-          "fields": {
-            "play2win__Text__c": method.get("title").getTextContent(),
-            "play2win__Description__c": method.get("description").getTextContent(),
-            "play2win__V2MOB__c": v2mobId
-          }
-        }
-
-        if(!method.get("id")) {
-          body["apiName"] = "play2win__Methods__c";
-          client.createRecord(body).then((response) => {
-            method.set("id", response.id);
-          });
-        } else {
-          client.updateRecord(method.get("id"), body).then((response) => {
-          });
-        }
-      });
+    onChange(value, measure, id) {
+      measure.set(id, value);
+      console.log(measure.get(id));
     }
 }

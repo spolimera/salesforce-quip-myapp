@@ -9660,7 +9660,8 @@ var Method = function (_React$Component) {
                                         },
                                         __self: _this2
                                     },
-                                    React.createElement(_Measure2.default, { measures: method.get("measures"), __source: {
+                                    React.createElement(_Measure2.default, {
+                                        measures: method.get("measures"), __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 153
                                         },
@@ -9675,7 +9676,7 @@ var Method = function (_React$Component) {
                     "button",
                     { onClick: this.addRow.bind(this), style: { width: "15%" }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 162
+                            lineNumber: 163
                         },
                         __self: this
                     },
@@ -9686,6 +9687,8 @@ var Method = function (_React$Component) {
     }, {
         key: "saveToSalesforce",
         value: function saveToSalesforce(v2mobId) {
+            var _this3 = this;
+
             var client = quip.apps.getRootRecord().getClient();
             var methods = this.getMethods().getRecords();
 
@@ -9702,9 +9705,44 @@ var Method = function (_React$Component) {
                     body["apiName"] = "play2win__Methods__c";
                     client.createRecord(body).then(function (response) {
                         method.set("id", response.id);
+                        _this3.saveMeasures(method);
                     });
                 } else {
-                    client.updateRecord(method.get("id"), body).then(function (response) {});
+                    client.updateRecord(method.get("id"), body).then(function (response) {
+                        _this3.saveMeasures(method);
+                    });
+                }
+            });
+        }
+    }, {
+        key: "saveMeasures",
+        value: function saveMeasures(method) {
+            var _this4 = this;
+
+            var client = quip.apps.getRootRecord().getClient();
+            var measures = method.get("measures");
+
+            measures.forEach(function (measure) {
+                var body = {
+                    "fields": {
+                        "type": measure.get("type"),
+                        "name": measure.get("name"),
+                        "status": measure.get("status"),
+                        "initial_value": measure.get("initial_value"),
+                        "current_value": measure.get("current_value"),
+                        "target_value": measure.get("target_value"),
+                        "method_id": method.get("id")
+                    }
+                };
+
+                if (!measure.get("id")) {
+                    body["apiName"] = "play2win__Measures__c";
+                    client.createRecord(body).then(function (response) {
+                        measure.set("id", response.id);
+                        _this4.saveMeasures(method);
+                    });
+                } else {
+                    client.updateRecord(measure.get("id"), body).then(function (response) {});
                 }
             });
         }
@@ -11340,6 +11378,8 @@ var Measure = function (_React$Component) {
     _this.state = {
       measures: props.measures
     };
+    _this.type_values = [{ label: "In Progress", value: "in_progress" }, { label: "Completion", value: "completion" }];
+    _this.status_values = [{ label: "In Progress", value: "in_progress" }, { label: "Completion", value: "completion" }];
     return _this;
   }
 
@@ -11374,7 +11414,7 @@ var Measure = function (_React$Component) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 54
           },
           __self: this
         },
@@ -11382,7 +11422,7 @@ var Measure = function (_React$Component) {
           "table",
           { className: _Measure2.default.measure, __source: {
               fileName: _jsxFileName,
-              lineNumber: 51
+              lineNumber: 55
             },
             __self: this
           },
@@ -11390,7 +11430,7 @@ var Measure = function (_React$Component) {
             "thead",
             { className: _Measure2.default.tableHead, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 52
+                lineNumber: 56
               },
               __self: this
             },
@@ -11399,7 +11439,7 @@ var Measure = function (_React$Component) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 53
+                  lineNumber: 57
                 },
                 __self: this
               },
@@ -11407,7 +11447,7 @@ var Measure = function (_React$Component) {
                 "th",
                 { className: _Measure2.default.tableHeadCell, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 54
+                    lineNumber: 58
                   },
                   __self: this
                 },
@@ -11417,7 +11457,7 @@ var Measure = function (_React$Component) {
                 "th",
                 { className: _Measure2.default.tableHeadCell, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 55
+                    lineNumber: 59
                   },
                   __self: this
                 },
@@ -11427,7 +11467,7 @@ var Measure = function (_React$Component) {
                 "th",
                 { className: _Measure2.default.tableHeadCell, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 56
+                    lineNumber: 60
                   },
                   __self: this
                 },
@@ -11437,7 +11477,7 @@ var Measure = function (_React$Component) {
                 "th",
                 { className: _Measure2.default.tableHeadCell, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 57
+                    lineNumber: 61
                   },
                   __self: this
                 },
@@ -11447,7 +11487,7 @@ var Measure = function (_React$Component) {
                 "th",
                 { className: _Measure2.default.tableHeadCell, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 58
+                    lineNumber: 62
                   },
                   __self: this
                 },
@@ -11457,7 +11497,7 @@ var Measure = function (_React$Component) {
                 "th",
                 { className: _Measure2.default.tableHeadCell, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 59
+                    lineNumber: 63
                   },
                   __self: this
                 },
@@ -11467,7 +11507,7 @@ var Measure = function (_React$Component) {
                 "th",
                 { className: _Measure2.default.tableHeadCell, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 60
+                    lineNumber: 64
                   },
                   __self: this
                 },
@@ -11476,64 +11516,15 @@ var Measure = function (_React$Component) {
             )
           ),
           measures && measures.getRecords().map(function (measure) {
+
             return React.createElement(
               "tr",
               { className: _Measure2.default.tableRow, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 66
+                  lineNumber: 71
                 },
                 __self: _this2
               },
-              React.createElement(
-                "td",
-                { className: _Measure2.default.tableCell, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 67
-                  },
-                  __self: _this2
-                },
-                measure.get("type")
-              ),
-              React.createElement(
-                "td",
-                { className: _Measure2.default.tableCell, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 68
-                  },
-                  __self: _this2
-                },
-                measure.get("name")
-              ),
-              React.createElement(
-                "td",
-                { className: _Measure2.default.tableCell, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 69
-                  },
-                  __self: _this2
-                },
-                measure.get("status")
-              ),
-              React.createElement(
-                "td",
-                { className: _Measure2.default.tableCell, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 70
-                  },
-                  __self: _this2
-                },
-                measure.get("initial_value")
-              ),
-              React.createElement(
-                "td",
-                { className: _Measure2.default.tableCell, __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 71
-                  },
-                  __self: _this2
-                },
-                measure.get("current_value")
-              ),
               React.createElement(
                 "td",
                 { className: _Measure2.default.tableCell, __source: {
@@ -11542,17 +11533,137 @@ var Measure = function (_React$Component) {
                   },
                   __self: _this2
                 },
-                measure.get("target_value")
+                React.createElement(
+                  "select",
+                  { value: measure.get("type"), onChange: function onChange(e) {
+                      _this2.onChange(e.target.value, measure, "type");
+                    }, __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 73
+                    },
+                    __self: _this2
+                  },
+                  _this2.type_values.map(function (type) {
+                    return React.createElement(
+                      "option",
+                      { value: type.value, __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 75
+                        },
+                        __self: _this2
+                      },
+                      type.label
+                    );
+                  })
+                )
               ),
               React.createElement(
                 "td",
                 { className: _Measure2.default.tableCell, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 73
+                    lineNumber: 82
                   },
                   __self: _this2
                 },
-                measure.get("due_date")
+                React.createElement("input", { type: "text", value: measure.get("name"),
+                  onChange: function onChange(e) {
+                    _this2.onChange(e.target.value, measure, "name");
+                  },
+                  className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 83
+                  },
+                  __self: _this2
+                })
+              ),
+              React.createElement(
+                "td",
+                { className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 88
+                  },
+                  __self: _this2
+                },
+                React.createElement(
+                  "select",
+                  { value: measure.get("status"), onChange: function onChange(e) {
+                      _this2.onChange(e.target.value, measure, "status");
+                    }, __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 89
+                    },
+                    __self: _this2
+                  },
+                  _this2.status_values.map(function (status) {
+                    return React.createElement(
+                      "option",
+                      { value: status.value, __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 91
+                        },
+                        __self: _this2
+                      },
+                      status.label
+                    );
+                  })
+                )
+              ),
+              React.createElement(
+                "td",
+                { className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 98
+                  },
+                  __self: _this2
+                },
+                React.createElement("input", { type: "number", value: measure.get("initial_value"),
+                  onChange: function onChange(e) {
+                    _this2.onChange(parseInt(e.target.value), measure, "initial_value");
+                  },
+                  className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 99
+                  },
+                  __self: _this2
+                })
+              ),
+              React.createElement(
+                "td",
+                { className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 104
+                  },
+                  __self: _this2
+                },
+                React.createElement("input", { type: "number", value: measure.get("current_value"),
+                  onChange: function onChange(e) {
+                    _this2.onChange(parseInt(e.target.value), measure, "current_value");
+                  },
+                  className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 105
+                  },
+                  __self: _this2
+                })
+              ),
+              React.createElement(
+                "td",
+                { className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 110
+                  },
+                  __self: _this2
+                },
+                React.createElement("input", { type: "number", value: measure.get("target_value"),
+                  onChange: function onChange(e) {
+                    _this2.onChange(parseInt(e.target.value), measure, "target_value");
+                  },
+                  className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 111
+                  },
+                  __self: _this2
+                })
               )
             );
           })
@@ -11569,7 +11680,7 @@ var Measure = function (_React$Component) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 85
+            lineNumber: 126
           },
           __self: this
         },
@@ -11579,7 +11690,7 @@ var Measure = function (_React$Component) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 88
+                lineNumber: 129
               },
               __self: _this3
             },
@@ -11589,29 +11700,10 @@ var Measure = function (_React$Component) {
       );
     }
   }, {
-    key: "saveToSalesforce",
-    value: function saveToSalesforce(v2mobId) {
-      var client = quip.apps.getRootRecord().getClient();
-      var methods = this.getMethods().getRecords();
-
-      methods.forEach(function (method) {
-        var body = {
-          "fields": {
-            "play2win__Text__c": method.get("title").getTextContent(),
-            "play2win__Description__c": method.get("description").getTextContent(),
-            "play2win__V2MOB__c": v2mobId
-          }
-        };
-
-        if (!method.get("id")) {
-          body["apiName"] = "play2win__Methods__c";
-          client.createRecord(body).then(function (response) {
-            method.set("id", response.id);
-          });
-        } else {
-          client.updateRecord(method.get("id"), body).then(function (response) {});
-        }
-      });
+    key: "onChange",
+    value: function onChange(value, measure, id) {
+      measure.set(id, value);
+      console.log(measure.get(id));
     }
   }]);
 
