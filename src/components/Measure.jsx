@@ -1,4 +1,5 @@
 import Styles from "./Measure.less";
+import Chevron from "quip-apps-chevron";
 
 export default class Measure extends React.Component {
     constructor(props) {
@@ -19,19 +20,28 @@ export default class Measure extends React.Component {
       quip.apps.showContextMenu(
           e,
           [
-              "deleteMethod", // id from menuCommand in Initialization,
+              "addMeasure", // add measure
+              "deleteMeasure", // id from menuCommand in Initialization,
               quip.apps.DocumentMenuCommands.SEPARATOR,
               quip.apps.DocumentMenuCommands.DELETE_APP,
           ],
           [], // No highlighted commands
           disabledCommands, // Disabled commands based on state
           () => {},
-          { measure, callback: this.deleteRow.bind(this)},
+          { measure, callback: this.handleCallback.bind(this)},
         );
     }
 
+    handleCallback(id) {
+      if(id === "addMeasure") {
+        this.addRow();
+      } else if(id === "deleteMeasure") {
+        this.deleteRow();
+      }
+    }
+
     addRow(){
-      let measures = this.getMeasures();
+      let measures = this.props.measures;
       measures.add({});
 
       this.setState({
@@ -40,7 +50,7 @@ export default class Measure extends React.Component {
     }
 
     deleteRow() {
-        let measures = this.getMeasures();
+        let measures = this.props.measures;
         this.setState({
             measures
         });
@@ -124,6 +134,22 @@ export default class Measure extends React.Component {
                         onChange={(e) => { this.onChange(e.target.value, measure, "due_date") }}
                        className={Styles.tableCell}/>
                       </td>
+
+                      <td>
+                        <span
+                        className={Styles.chevron}
+                        onClick={(e) => this.handleClick(e, measure)}
+                        style={{ float: "left" }}
+                        >
+                        <Chevron
+                            color={
+                                measure
+                                    ? quip.apps.ui.ColorMap.BLUE.VALUE
+                                : quip.apps.ui.ColorMap[color].VALUE
+                            }
+                            />
+                      </span>
+                      </td>
                     </tr>
                   );
                 })
@@ -146,8 +172,6 @@ export default class Measure extends React.Component {
     }
 
     onChange(value, measure, id) {
-      console.log(value);
       measure.set(id, value);
-      console.log(measure.get(id));
     }
 }

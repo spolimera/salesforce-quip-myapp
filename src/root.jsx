@@ -54,6 +54,24 @@ quip.apps.initialize({
                 payload.callback();
             },
         },
+        {
+            id: "addMeasure",
+            label: "Add Measure",
+            handler: (name, payload) => {
+                payload.callback(name);
+            },
+        },
+        {
+            id: "deleteMeasure",
+            label: "Delete Measure",
+            handler: (name, payload) => { console.log(payload);
+                let measure = payload.measure;
+                console.log(measure);
+                measure && deleteRecord(payload.measure);
+                measure && payload.measure.delete();
+                payload.callback(name);
+            },
+        },
     ],
     });
 
