@@ -71,6 +71,9 @@ export default class Measure extends React.Component {
                     <tr className={Styles.tableRow}>
                       <td className={Styles.tableCell}>
                         <select value={measure.get("type")} onChange={(e) => { this.onChange(e.target.value, measure, "type") }}>
+                            <option>
+                              --select--
+                            </option>
                           {this.type_values.map((type) => {
                             return <option value={type.value}>
                                       {type.label}
@@ -87,6 +90,9 @@ export default class Measure extends React.Component {
 
                       <td className={Styles.tableCell}>
                         <select value={measure.get("status")} onChange={(e) => { this.onChange(e.target.value, measure, "status") }}>
+                            <option>
+                                  --select--
+                            </option>
                           {this.status_values.map((status) => {
                             return <option value={status.value}>
                                       {status.label}
@@ -112,6 +118,12 @@ export default class Measure extends React.Component {
                          onChange={(e) => { this.onChange(parseInt(e.target.value), measure, "target_value") }}
                         className={Styles.tableCell}/>
                       </td>
+
+                      <td className={Styles.tableCell}>
+                       <input type="date" value={measure.get("due_date")} 
+                        onChange={(e) => { this.onChange(e.target.value, measure, "due_date") }}
+                       className={Styles.tableCell}/>
+                      </td>
                     </tr>
                   );
                 })
@@ -134,6 +146,7 @@ export default class Measure extends React.Component {
     }
 
     onChange(value, measure, id) {
+      console.log(value);
       measure.set(id, value);
       console.log(measure.get(id));
     }
