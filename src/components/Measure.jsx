@@ -1,5 +1,6 @@
 import Styles from "./Measure.less";
 import Chevron from "quip-apps-chevron";
+import cx from "classnames";
 
 export default class Measure extends React.Component {
     constructor(props) {
@@ -76,7 +77,6 @@ export default class Measure extends React.Component {
               </thead>
               {
                 measures && measures.getRecords().map((measure) => {
-                 
                   return (
                     <tr className={Styles.tableRow}>
                       <td className={Styles.tableCell}>
@@ -92,13 +92,13 @@ export default class Measure extends React.Component {
                         </select>
                       </td>
 
-                      <td className={Styles.tableCell}>
+                      <td className={cx(Styles.tableCell, (measure.get("type") === "completion" && Styles.disabled))}>
                         <input type="text" value={measure.get("name")} 
                         onChange={(e) => { this.onChange(e.target.value, measure, "name") }}
                         className={Styles.tableCell}/>
                       </td>
 
-                      <td className={Styles.tableCell}>
+                      <td className={cx(Styles.tableCell, measure.get("type") === "in_progress" && Styles.disabled)}>
                         <select value={measure.get("status")} onChange={(e) => { this.onChange(e.target.value, measure, "status") }}>
                             <option>
                                   --select--
@@ -111,25 +111,25 @@ export default class Measure extends React.Component {
                         </select>
                       </td>
 
-                      <td className={Styles.tableCell}>
+                      <td className={cx(Styles.tableCell, measure.get("type") === "completion" && Styles.disabled)}>
                         <input type="number" value={measure.get("initial_value")} 
                         onChange={(e) => { this.onChange(parseInt(e.target.value), measure, "initial_value") }}
                         className={Styles.tableCell}/>
                       </td>
 
-                      <td className={Styles.tableCell}>
+                      <td className={cx(Styles.tableCell, measure.get("type") === "completion" && Styles.disabled)}>
                         <input type="number" value={measure.get("current_value")} 
                         onChange={(e) => { this.onChange(parseInt(e.target.value), measure, "current_value") }}
                         className={Styles.tableCell}/>
                       </td>
 
-                      <td className={Styles.tableCell}>
+                      <td className={cx(Styles.tableCell, measure.get("type") === "completion" && Styles.disabled)}>
                         <input type="number" value={measure.get("target_value")} 
                          onChange={(e) => { this.onChange(parseInt(e.target.value), measure, "target_value") }}
                         className={Styles.tableCell}/>
                       </td>
 
-                      <td className={Styles.tableCell}>
+                      <td className={cx(Styles.tableCell, measure.get("type") === "completion" && Styles.disabled)}>
                        <input type="date" value={measure.get("due_date")} 
                         onChange={(e) => { this.onChange(e.target.value, measure, "due_date") }}
                        className={Styles.tableCell}/>
@@ -173,5 +173,6 @@ export default class Measure extends React.Component {
 
     onChange(value, measure, id) {
       measure.set(id, value);
+      this.setState({});
     }
 }
