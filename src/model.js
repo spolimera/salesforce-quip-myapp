@@ -5,6 +5,12 @@ class CommentRichText extends quip.apps.RichTextRecord {
         return {};
     }
 
+    initialize() {
+        this.listener = this.listen(this.notifyParent);
+        //this.listenToContent(this.validateTextSize.bind(this));
+        this.listenToComments(this.notifyParent);
+    }
+
     getDom() {
         return this.node;
     }
@@ -16,6 +22,23 @@ class CommentRichText extends quip.apps.RichTextRecord {
     supportsComments() {
         return true;
     }
+
+    validateTextSize() {
+        let text = this.getTextContent();
+        if(text.length > 20) {
+            this.replaceContent(text.slice(0,19));
+        }
+    }
+
+    setCallback(_callback) {
+        this._callback = _callback;
+    }
+
+    notifyParent = (dd) => {
+        console.log("## ", dd.getCommentCount());
+        this.getParentRecord().notifyListeners();
+        this._callback && this._callback();
+    };
 }
 
 class Measure extends quip.apps.Record {

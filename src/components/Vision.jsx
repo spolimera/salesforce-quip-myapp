@@ -6,10 +6,16 @@ export default class Vision extends React.Component {
       super(props);
     }
 
+    componentDidMount() {
+        let vision = this.getVision();
+        vision.setCallback(() => {
+            this.setState({});
+        });
+    }
+
     render() {
-        let rootRecord = quip.apps.getRootRecord();
-        let vision = rootRecord.get("vision");
-        console.log("@@@", Styles);
+        let vision = this.getVision();
+
         return (
             <div>
                 <div className={Styles.title}>
@@ -29,7 +35,10 @@ export default class Vision extends React.Component {
 
                     <span 
                         ref={(c) => vision.setDom(c)}
-                        className={Styles.commentsTrigger}>
+                        className={cx(Styles.commentsTrigger, {
+                                    [Styles.commented]:
+                                    vision.getCommentCount() > 0,
+                                })}>
                         <quip.apps.ui.CommentsTrigger
                             record={vision}
                             showEmpty={true}
@@ -38,5 +47,9 @@ export default class Vision extends React.Component {
                 </div>  
             </div>
         );
+    }
+
+    getVision() {
+        return quip.apps.getRootRecord().get("vision");
     }
 }
