@@ -2,10 +2,12 @@ import Method from "./components/Method.jsx";
 import Obstacle from "./components/Obstacle.jsx";
 import Vision from "./components/Vision.jsx";
 import Values from "./components/Values.jsx";
+import Alert from "./Alert.jsx";
 
 export default class App extends React.Component {
     constructor(props) {
       super(props);
+      this.state = { showAlert: true };
     }
 
     render() {
@@ -19,6 +21,12 @@ export default class App extends React.Component {
           <Values/>
           <Method ref={(ele) => this.method = ele}/>
           <Obstacle ref={(ele) => this.obstacle = ele}/>
+          { this.state.showAlert && 
+            <Alert 
+              title="TESTING"
+              body="Testing application"
+              cancel={() => this.setState({ showAlert: false })}/>
+          }
         </div>
       );
     }
