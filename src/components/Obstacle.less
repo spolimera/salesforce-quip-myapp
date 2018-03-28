@@ -1,0 +1,73 @@
+.obstacle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    word-break: break-word;
+}
+
+.title{
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-size: 17px;
+    font-weight:bolder;
+}
+
+.titleContents {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.table {
+    border: 1px solid cadetblue;
+    border-radius: 5px; 
+    background-color:aliceblue;
+    width: 900px;
+}
+
+.tableRow {
+    border-bottom: 1px solid cadetblue;
+    font-weight:bold;
+    width: 860px;
+}
+
+.tableColumn {
+    padding:5px;
+    font-size: 15px;
+    font-weight:bolder;
+    border-right: 1px solid cadetblue;
+
+    &:hover .commentsTrigger {
+        visibility: initial;
+    }
+}
+
+.showContextMenu {
+    float: left;
+}
+
+.showContextMenu::after {
+    content: "\22C1";
+    cursor: pointer;
+    color:cadetblue;
+}
+
+.commentsTrigger {
+    align-self: center;
+    padding: 3px 6px;
+    visibility: hidden;
+
+    &.commented {
+        visibility: initial;
+    }
+}
+
+.chevron {
+    align-self: center;
+    cursor: pointer;
+    height: 20px;
+    text-align: center;
+    width: 20px;
+}

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "dist";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 124);
+/******/ 	return __webpack_require__(__webpack_require__.s = 128);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -189,7 +189,7 @@ module.exports = !__webpack_require__(3)(function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(1);
-var IE8_DOM_DEFINE = __webpack_require__(90);
+var IE8_DOM_DEFINE = __webpack_require__(91);
 var toPrimitive = __webpack_require__(22);
 var dP = Object.defineProperty;
 
@@ -346,7 +346,7 @@ var createDesc = __webpack_require__(31);
 var toIObject = __webpack_require__(15);
 var toPrimitive = __webpack_require__(22);
 var has = __webpack_require__(11);
-var IE8_DOM_DEFINE = __webpack_require__(90);
+var IE8_DOM_DEFINE = __webpack_require__(91);
 var gOPD = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(6) ? gOPD : function getOwnPropertyDescriptor(O, P) {
@@ -566,7 +566,7 @@ if (__webpack_require__(6)) {
   var redefineAll = __webpack_require__(41);
   var toInteger = __webpack_require__(24);
   var toLength = __webpack_require__(8);
-  var toIndex = __webpack_require__(116);
+  var toIndex = __webpack_require__(117);
   var toAbsoluteIndex = __webpack_require__(35);
   var toPrimitive = __webpack_require__(22);
   var has = __webpack_require__(11);
@@ -588,7 +588,7 @@ if (__webpack_require__(6)) {
   var $iterDetect = __webpack_require__(54);
   var setSpecies = __webpack_require__(38);
   var arrayFill = __webpack_require__(83);
-  var arrayCopyWithin = __webpack_require__(106);
+  var arrayCopyWithin = __webpack_require__(107);
   var $DP = __webpack_require__(7);
   var $GOPD = __webpack_require__(16);
   var dP = $DP.f;
@@ -1037,10 +1037,10 @@ if (__webpack_require__(6)) {
 /* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Map = __webpack_require__(111);
+var Map = __webpack_require__(112);
 var $export = __webpack_require__(0);
 var shared = __webpack_require__(49)('metadata');
-var store = shared.store || (shared.store = new (__webpack_require__(114))());
+var store = shared.store || (shared.store = new (__webpack_require__(115))());
 
 var getOrCreateMetadataMap = function (target, targetKey, create) {
   var targetMetadata = store.get(target);
@@ -1199,7 +1199,7 @@ module.exports = false;
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(92);
+var $keys = __webpack_require__(93);
 var enumBugKeys = __webpack_require__(66);
 
 module.exports = Object.keys || function keys(O) {
@@ -1226,7 +1226,7 @@ module.exports = function (index, length) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = __webpack_require__(1);
-var dPs = __webpack_require__(93);
+var dPs = __webpack_require__(94);
 var enumBugKeys = __webpack_require__(66);
 var IE_PROTO = __webpack_require__(65)('IE_PROTO');
 var Empty = function () { /* empty */ };
@@ -1272,7 +1272,7 @@ module.exports = Object.create || function create(O, Properties) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(92);
+var $keys = __webpack_require__(93);
 var hiddenKeys = __webpack_require__(66).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
@@ -1316,7 +1316,7 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(18);
-var call = __webpack_require__(104);
+var call = __webpack_require__(105);
 var isArrayIter = __webpack_require__(79);
 var anObject = __webpack_require__(1);
 var toLength = __webpack_require__(8);
@@ -1855,7 +1855,7 @@ module.exports = function (it) {
 var global = __webpack_require__(2);
 var core = __webpack_require__(21);
 var LIBRARY = __webpack_require__(33);
-var wksExt = __webpack_require__(91);
+var wksExt = __webpack_require__(92);
 var defineProperty = __webpack_require__(7).f;
 module.exports = function (name) {
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -2192,7 +2192,7 @@ module.exports = __webpack_require__(21).getIteratorMethod = function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(217);
+var speciesConstructor = __webpack_require__(221);
 
 module.exports = function (original, length) {
   return new (speciesConstructor(original))(length);
@@ -2228,7 +2228,7 @@ module.exports = function fill(value /* , start = 0, end = @length */) {
 "use strict";
 
 var addToUnscopables = __webpack_require__(30);
-var step = __webpack_require__(107);
+var step = __webpack_require__(108);
 var Iterators = __webpack_require__(44);
 var toIObject = __webpack_require__(15);
 
@@ -2267,7 +2267,7 @@ addToUnscopables('entries');
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx = __webpack_require__(18);
-var invoke = __webpack_require__(97);
+var invoke = __webpack_require__(98);
 var html = __webpack_require__(67);
 var cel = __webpack_require__(63);
 var global = __webpack_require__(2);
@@ -2467,7 +2467,7 @@ var fails = __webpack_require__(3);
 var anInstance = __webpack_require__(39);
 var toInteger = __webpack_require__(24);
 var toLength = __webpack_require__(8);
-var toIndex = __webpack_require__(116);
+var toIndex = __webpack_require__(117);
 var gOPN = __webpack_require__(37).f;
 var dP = __webpack_require__(7).f;
 var arrayFill = __webpack_require__(83);
@@ -2738,6 +2738,13 @@ exports[DATA_VIEW] = $DataView;
 /* 89 */
 /***/ (function(module, exports) {
 
+// removed by extract-text-webpack-plugin
+module.exports = {"method":"Method__method","methodContainer":"Method__methodContainer","title":"Method__title","tableRow":"Method__tableRow","commentsTrigger":"Method__commentsTrigger","tableCell":"Method__tableCell","methodHeader":"Method__methodHeader","commentCell":"Method__commentCell","comments":"Method__comments","eachMethod":"Method__eachMethod","commented":"Method__commented","showContextMenu":"Method__showContextMenu","chevron":"Method__chevron"};
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports) {
+
 var g;
 
 // This works in non-strict mode
@@ -2762,7 +2769,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(6) && !__webpack_require__(3)(function () {
@@ -2771,14 +2778,14 @@ module.exports = !__webpack_require__(6) && !__webpack_require__(3)(function () 
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports.f = __webpack_require__(5);
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var has = __webpack_require__(11);
@@ -2801,7 +2808,7 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(7);
@@ -2820,7 +2827,7 @@ module.exports = __webpack_require__(6) ? Object.defineProperties : function def
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
@@ -2845,7 +2852,7 @@ module.exports.f = function getOwnPropertyNames(it) {
 
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2886,14 +2893,14 @@ module.exports = !$assign || __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var aFunction = __webpack_require__(10);
 var isObject = __webpack_require__(4);
-var invoke = __webpack_require__(97);
+var invoke = __webpack_require__(98);
 var arraySlice = [].slice;
 var factories = {};
 
@@ -2918,7 +2925,7 @@ module.exports = Function.bind || function bind(that /* , ...args */) {
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -2940,7 +2947,7 @@ module.exports = function (fn, args, that) {
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseInt = __webpack_require__(2).parseInt;
@@ -2955,7 +2962,7 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseFloat = __webpack_require__(2).parseFloat;
@@ -2969,7 +2976,7 @@ module.exports = 1 / $parseFloat(__webpack_require__(69) + '-0') !== -Infinity ?
 
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var cof = __webpack_require__(19);
@@ -2980,7 +2987,7 @@ module.exports = function (it, msg) {
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
@@ -2992,7 +2999,7 @@ module.exports = function isInteger(it) {
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports) {
 
 // 20.2.2.20 Math.log1p(x)
@@ -3002,7 +3009,7 @@ module.exports = Math.log1p || function log1p(x) {
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.16 Math.fround(x)
@@ -3031,7 +3038,7 @@ module.exports = Math.fround || function fround(x) {
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -3049,7 +3056,7 @@ module.exports = function (iterator, fn, value, entries) {
 
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var aFunction = __webpack_require__(10);
@@ -3083,7 +3090,7 @@ module.exports = function (that, callbackfn, aLen, memo, isRight) {
 
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3116,7 +3123,7 @@ module.exports = [].copyWithin || function copyWithin(target /* = 0 */, start /*
 
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports) {
 
 module.exports = function (done, value) {
@@ -3125,7 +3132,7 @@ module.exports = function (done, value) {
 
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 21.2.5.3 get RegExp.prototype.flags()
@@ -3136,7 +3143,7 @@ if (__webpack_require__(6) && /./g.flags != 'g') __webpack_require__(7).f(RegExp
 
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -3149,7 +3156,7 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(1);
@@ -3167,12 +3174,12 @@ module.exports = function (C, x) {
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(112);
+var strong = __webpack_require__(113);
 var validate = __webpack_require__(45);
 var MAP = 'Map';
 
@@ -3193,7 +3200,7 @@ module.exports = __webpack_require__(58)(MAP, function (get) {
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3205,7 +3212,7 @@ var ctx = __webpack_require__(18);
 var anInstance = __webpack_require__(39);
 var forOf = __webpack_require__(40);
 var $iterDefine = __webpack_require__(75);
-var step = __webpack_require__(107);
+var step = __webpack_require__(108);
 var setSpecies = __webpack_require__(38);
 var DESCRIPTORS = __webpack_require__(6);
 var fastKey = __webpack_require__(29).fastKey;
@@ -3344,12 +3351,12 @@ module.exports = {
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(112);
+var strong = __webpack_require__(113);
 var validate = __webpack_require__(45);
 var SET = 'Set';
 
@@ -3365,7 +3372,7 @@ module.exports = __webpack_require__(58)(SET, function (get) {
 
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3373,8 +3380,8 @@ module.exports = __webpack_require__(58)(SET, function (get) {
 var each = __webpack_require__(26)(0);
 var redefine = __webpack_require__(13);
 var meta = __webpack_require__(29);
-var assign = __webpack_require__(95);
-var weak = __webpack_require__(115);
+var assign = __webpack_require__(96);
+var weak = __webpack_require__(116);
 var isObject = __webpack_require__(4);
 var fails = __webpack_require__(3);
 var validate = __webpack_require__(45);
@@ -3431,7 +3438,7 @@ if (fails(function () { return new $WeakMap().set((Object.freeze || Object)(tmp)
 
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3523,7 +3530,7 @@ module.exports = {
 
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/ecma262/#sec-toindex
@@ -3539,7 +3546,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all object keys, includes non-enumerable and symbols
@@ -3555,7 +3562,7 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
 
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3601,7 +3608,7 @@ module.exports = flattenIntoArray;
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-string-pad-start-end
@@ -3623,7 +3630,7 @@ module.exports = function (that, maxLength, fillString, left) {
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getKeys = __webpack_require__(34);
@@ -3645,12 +3652,12 @@ module.exports = function (isEntries) {
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var classof = __webpack_require__(48);
-var from = __webpack_require__(122);
+var from = __webpack_require__(123);
 module.exports = function (NAME) {
   return function toJSON() {
     if (classof(this) != NAME) throw TypeError(NAME + "#toJSON isn't generic");
@@ -3660,7 +3667,7 @@ module.exports = function (NAME) {
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var forOf = __webpack_require__(40);
@@ -3673,7 +3680,7 @@ module.exports = function (iter, ITERATOR) {
 
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -3697,25 +3704,93 @@ module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh)
 
 
 /***/ }),
-/* 124 */
+/* 125 */
+/***/ (function(module, exports) {
+
+module.exports = quip;
+
+/***/ }),
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(125);
-module.exports = __webpack_require__(327);
+!function(e,t){if(true)module.exports=t();else if("function"==typeof define&&define.amd)define([],t);else{var n=t();for(var r in n)("object"==typeof exports?exports:e)[r]=n[r]}}(this,function(){return function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};return t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="dist",t(t.s=0)}([function(e,t,n){e.exports=n(1)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={alignItems:"center",display:"flex",flex:1,justifyContent:"center",minWidth:20,minHeight:20},o=function(e){var t=e.color,n=e.style,o=void 0===n?{}:n;return React.createElement("div",{style:Object.assign({},r,o)},React.createElement("svg",{xmlns:"http://www.w3.org/2000/svg",width:"14",height:"14",viewBox:"0 0 14 14"},React.createElement("path",{style:{fill:"none",fillRule:"evenodd",stroke:t,strokeLinecap:"round",strokeLinejoin:"round",strokeWidth:"1.5px"},d:"M4,6L7,9l3-3"})))};t.default=o}])});
+//# sourceMappingURL=Chevron.js.map
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2016 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				classes.push(classNames.apply(null, arg));
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+			return classNames;
+		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {
+		window.classNames = classNames;
+	}
+}());
 
 
 /***/ }),
-/* 125 */
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(129);
+module.exports = __webpack_require__(331);
+
+
+/***/ }),
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-__webpack_require__(126);
+__webpack_require__(130);
 
-__webpack_require__(323);
+__webpack_require__(327);
 
-__webpack_require__(324);
+__webpack_require__(328);
 
 if (global._babelPolyfill) {
   throw new Error("only one instance of babel-polyfill is allowed");
@@ -3737,17 +3812,13 @@ define(String.prototype, "padRight", "".padEnd);
 "pop,reverse,shift,keys,values,entries,indexOf,every,some,forEach,map,filter,find,findIndex,includes,join,slice,concat,push,splice,unshift,sort,lastIndexOf,reduce,reduceRight,copyWithin,fill".split(",").forEach(function (key) {
   [][key] && define(Array, key, Function.call.bind([][key]));
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(89)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(90)))
 
 /***/ }),
-/* 126 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(127);
-__webpack_require__(129);
-__webpack_require__(130);
 __webpack_require__(131);
-__webpack_require__(132);
 __webpack_require__(133);
 __webpack_require__(134);
 __webpack_require__(135);
@@ -3759,10 +3830,10 @@ __webpack_require__(140);
 __webpack_require__(141);
 __webpack_require__(142);
 __webpack_require__(143);
+__webpack_require__(144);
 __webpack_require__(145);
 __webpack_require__(146);
 __webpack_require__(147);
-__webpack_require__(148);
 __webpack_require__(149);
 __webpack_require__(150);
 __webpack_require__(151);
@@ -3820,19 +3891,19 @@ __webpack_require__(202);
 __webpack_require__(203);
 __webpack_require__(204);
 __webpack_require__(205);
+__webpack_require__(206);
 __webpack_require__(207);
 __webpack_require__(208);
-__webpack_require__(210);
+__webpack_require__(209);
 __webpack_require__(211);
 __webpack_require__(212);
-__webpack_require__(213);
 __webpack_require__(214);
 __webpack_require__(215);
 __webpack_require__(216);
+__webpack_require__(217);
 __webpack_require__(218);
 __webpack_require__(219);
 __webpack_require__(220);
-__webpack_require__(221);
 __webpack_require__(222);
 __webpack_require__(223);
 __webpack_require__(224);
@@ -3842,22 +3913,22 @@ __webpack_require__(227);
 __webpack_require__(228);
 __webpack_require__(229);
 __webpack_require__(230);
-__webpack_require__(84);
 __webpack_require__(231);
 __webpack_require__(232);
-__webpack_require__(108);
 __webpack_require__(233);
 __webpack_require__(234);
+__webpack_require__(84);
 __webpack_require__(235);
 __webpack_require__(236);
+__webpack_require__(109);
 __webpack_require__(237);
-__webpack_require__(111);
-__webpack_require__(113);
-__webpack_require__(114);
 __webpack_require__(238);
 __webpack_require__(239);
 __webpack_require__(240);
 __webpack_require__(241);
+__webpack_require__(112);
+__webpack_require__(114);
+__webpack_require__(115);
 __webpack_require__(242);
 __webpack_require__(243);
 __webpack_require__(244);
@@ -3939,11 +4010,15 @@ __webpack_require__(319);
 __webpack_require__(320);
 __webpack_require__(321);
 __webpack_require__(322);
+__webpack_require__(323);
+__webpack_require__(324);
+__webpack_require__(325);
+__webpack_require__(326);
 module.exports = __webpack_require__(21);
 
 
 /***/ }),
-/* 127 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3960,16 +4035,16 @@ var shared = __webpack_require__(49);
 var setToStringTag = __webpack_require__(42);
 var uid = __webpack_require__(32);
 var wks = __webpack_require__(5);
-var wksExt = __webpack_require__(91);
+var wksExt = __webpack_require__(92);
 var wksDefine = __webpack_require__(64);
-var enumKeys = __webpack_require__(128);
+var enumKeys = __webpack_require__(132);
 var isArray = __webpack_require__(52);
 var anObject = __webpack_require__(1);
 var toIObject = __webpack_require__(15);
 var toPrimitive = __webpack_require__(22);
 var createDesc = __webpack_require__(31);
 var _create = __webpack_require__(36);
-var gOPNExt = __webpack_require__(94);
+var gOPNExt = __webpack_require__(95);
 var $GOPD = __webpack_require__(16);
 var $DP = __webpack_require__(7);
 var $keys = __webpack_require__(34);
@@ -4184,7 +4259,7 @@ setToStringTag(global.JSON, 'JSON', true);
 
 
 /***/ }),
-/* 128 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
@@ -4205,7 +4280,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 129 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -4214,7 +4289,7 @@ $export($export.S, 'Object', { create: __webpack_require__(36) });
 
 
 /***/ }),
-/* 130 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -4223,16 +4298,16 @@ $export($export.S + $export.F * !__webpack_require__(6), 'Object', { definePrope
 
 
 /***/ }),
-/* 131 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
 // 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-$export($export.S + $export.F * !__webpack_require__(6), 'Object', { defineProperties: __webpack_require__(93) });
+$export($export.S + $export.F * !__webpack_require__(6), 'Object', { defineProperties: __webpack_require__(94) });
 
 
 /***/ }),
-/* 132 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
@@ -4247,7 +4322,7 @@ __webpack_require__(25)('getOwnPropertyDescriptor', function () {
 
 
 /***/ }),
-/* 133 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 Object.getPrototypeOf(O)
@@ -4262,7 +4337,7 @@ __webpack_require__(25)('getPrototypeOf', function () {
 
 
 /***/ }),
-/* 134 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
@@ -4277,17 +4352,17 @@ __webpack_require__(25)('keys', function () {
 
 
 /***/ }),
-/* 135 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 Object.getOwnPropertyNames(O)
 __webpack_require__(25)('getOwnPropertyNames', function () {
-  return __webpack_require__(94).f;
+  return __webpack_require__(95).f;
 });
 
 
 /***/ }),
-/* 136 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.5 Object.freeze(O)
@@ -4302,7 +4377,7 @@ __webpack_require__(25)('freeze', function ($freeze) {
 
 
 /***/ }),
-/* 137 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.17 Object.seal(O)
@@ -4317,7 +4392,7 @@ __webpack_require__(25)('seal', function ($seal) {
 
 
 /***/ }),
-/* 138 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.15 Object.preventExtensions(O)
@@ -4332,7 +4407,7 @@ __webpack_require__(25)('preventExtensions', function ($preventExtensions) {
 
 
 /***/ }),
-/* 139 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.12 Object.isFrozen(O)
@@ -4346,7 +4421,7 @@ __webpack_require__(25)('isFrozen', function ($isFrozen) {
 
 
 /***/ }),
-/* 140 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.13 Object.isSealed(O)
@@ -4360,7 +4435,7 @@ __webpack_require__(25)('isSealed', function ($isSealed) {
 
 
 /***/ }),
-/* 141 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.11 Object.isExtensible(O)
@@ -4374,26 +4449,26 @@ __webpack_require__(25)('isExtensible', function ($isExtensible) {
 
 
 /***/ }),
-/* 142 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(0);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(95) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(96) });
 
 
 /***/ }),
-/* 143 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.10 Object.is(value1, value2)
 var $export = __webpack_require__(0);
-$export($export.S, 'Object', { is: __webpack_require__(144) });
+$export($export.S, 'Object', { is: __webpack_require__(148) });
 
 
 /***/ }),
-/* 144 */
+/* 148 */
 /***/ (function(module, exports) {
 
 // 7.2.9 SameValue(x, y)
@@ -4404,7 +4479,7 @@ module.exports = Object.is || function is(x, y) {
 
 
 /***/ }),
-/* 145 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
@@ -4413,7 +4488,7 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(68).set });
 
 
 /***/ }),
-/* 146 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4430,17 +4505,17 @@ if (test + '' != '[object z]') {
 
 
 /***/ }),
-/* 147 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Function', { bind: __webpack_require__(96) });
+$export($export.P, 'Function', { bind: __webpack_require__(97) });
 
 
 /***/ }),
-/* 148 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(7).f;
@@ -4462,7 +4537,7 @@ NAME in FProto || __webpack_require__(6) && dP(FProto, NAME, {
 
 
 /***/ }),
-/* 149 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4482,27 +4557,27 @@ if (!(HAS_INSTANCE in FunctionProto)) __webpack_require__(7).f(FunctionProto, HA
 
 
 /***/ }),
-/* 150 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var $parseInt = __webpack_require__(98);
+var $parseInt = __webpack_require__(99);
 // 18.2.5 parseInt(string, radix)
 $export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
 
 
 /***/ }),
-/* 151 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var $parseFloat = __webpack_require__(99);
+var $parseFloat = __webpack_require__(100);
 // 18.2.4 parseFloat(string)
 $export($export.G + $export.F * (parseFloat != $parseFloat), { parseFloat: $parseFloat });
 
 
 /***/ }),
-/* 152 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4578,14 +4653,14 @@ if (!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')) {
 
 
 /***/ }),
-/* 153 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0);
 var toInteger = __webpack_require__(24);
-var aNumberValue = __webpack_require__(100);
+var aNumberValue = __webpack_require__(101);
 var repeat = __webpack_require__(71);
 var $toFixed = 1.0.toFixed;
 var floor = Math.floor;
@@ -4699,14 +4774,14 @@ $export($export.P + $export.F * (!!$toFixed && (
 
 
 /***/ }),
-/* 154 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0);
 var $fails = __webpack_require__(3);
-var aNumberValue = __webpack_require__(100);
+var aNumberValue = __webpack_require__(101);
 var $toPrecision = 1.0.toPrecision;
 
 $export($export.P + $export.F * ($fails(function () {
@@ -4724,7 +4799,7 @@ $export($export.P + $export.F * ($fails(function () {
 
 
 /***/ }),
-/* 155 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.1 Number.EPSILON
@@ -4734,7 +4809,7 @@ $export($export.S, 'Number', { EPSILON: Math.pow(2, -52) });
 
 
 /***/ }),
-/* 156 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.2 Number.isFinite(number)
@@ -4749,17 +4824,17 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 157 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Number', { isInteger: __webpack_require__(101) });
+$export($export.S, 'Number', { isInteger: __webpack_require__(102) });
 
 
 /***/ }),
-/* 158 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.4 Number.isNaN(number)
@@ -4774,12 +4849,12 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 159 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.5 Number.isSafeInteger(number)
 var $export = __webpack_require__(0);
-var isInteger = __webpack_require__(101);
+var isInteger = __webpack_require__(102);
 var abs = Math.abs;
 
 $export($export.S, 'Number', {
@@ -4790,7 +4865,7 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 160 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.6 Number.MAX_SAFE_INTEGER
@@ -4800,7 +4875,7 @@ $export($export.S, 'Number', { MAX_SAFE_INTEGER: 0x1fffffffffffff });
 
 
 /***/ }),
-/* 161 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.10 Number.MIN_SAFE_INTEGER
@@ -4810,32 +4885,32 @@ $export($export.S, 'Number', { MIN_SAFE_INTEGER: -0x1fffffffffffff });
 
 
 /***/ }),
-/* 162 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var $parseFloat = __webpack_require__(99);
+var $parseFloat = __webpack_require__(100);
 // 20.1.2.12 Number.parseFloat(string)
 $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', { parseFloat: $parseFloat });
 
 
 /***/ }),
-/* 163 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-var $parseInt = __webpack_require__(98);
+var $parseInt = __webpack_require__(99);
 // 20.1.2.13 Number.parseInt(string, radix)
 $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', { parseInt: $parseInt });
 
 
 /***/ }),
-/* 164 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.3 Math.acosh(x)
 var $export = __webpack_require__(0);
-var log1p = __webpack_require__(102);
+var log1p = __webpack_require__(103);
 var sqrt = Math.sqrt;
 var $acosh = Math.acosh;
 
@@ -4854,7 +4929,7 @@ $export($export.S + $export.F * !($acosh
 
 
 /***/ }),
-/* 165 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.5 Math.asinh(x)
@@ -4870,7 +4945,7 @@ $export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', { asinh:
 
 
 /***/ }),
-/* 166 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.7 Math.atanh(x)
@@ -4886,7 +4961,7 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
 
 
 /***/ }),
-/* 167 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.9 Math.cbrt(x)
@@ -4901,7 +4976,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 168 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.11 Math.clz32(x)
@@ -4915,7 +4990,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 169 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.12 Math.cosh(x)
@@ -4930,7 +5005,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 170 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.14 Math.expm1(x)
@@ -4941,17 +5016,17 @@ $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', { expm1: $expm1 
 
 
 /***/ }),
-/* 171 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.16 Math.fround(x)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { fround: __webpack_require__(103) });
+$export($export.S, 'Math', { fround: __webpack_require__(104) });
 
 
 /***/ }),
-/* 172 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
@@ -4982,7 +5057,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 173 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.18 Math.imul(x, y)
@@ -5005,7 +5080,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 174 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.21 Math.log10(x)
@@ -5019,17 +5094,17 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 175 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.20 Math.log1p(x)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { log1p: __webpack_require__(102) });
+$export($export.S, 'Math', { log1p: __webpack_require__(103) });
 
 
 /***/ }),
-/* 176 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.22 Math.log2(x)
@@ -5043,7 +5118,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 177 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.28 Math.sign(x)
@@ -5053,7 +5128,7 @@ $export($export.S, 'Math', { sign: __webpack_require__(72) });
 
 
 /***/ }),
-/* 178 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.30 Math.sinh(x)
@@ -5074,7 +5149,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 179 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.33 Math.tanh(x)
@@ -5092,7 +5167,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 180 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.34 Math.trunc(x)
@@ -5106,7 +5181,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 181 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -5135,7 +5210,7 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
 
 
 /***/ }),
-/* 182 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -5159,7 +5234,7 @@ $export($export.S, 'String', {
 
 
 /***/ }),
-/* 183 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5173,7 +5248,7 @@ __webpack_require__(43)('trim', function ($trim) {
 
 
 /***/ }),
-/* 184 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5197,7 +5272,7 @@ __webpack_require__(75)(String, 'String', function (iterated) {
 
 
 /***/ }),
-/* 185 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5213,7 +5288,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 186 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5240,7 +5315,7 @@ $export($export.P + $export.F * __webpack_require__(78)(ENDS_WITH), 'String', {
 
 
 /***/ }),
-/* 187 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5259,7 +5334,7 @@ $export($export.P + $export.F * __webpack_require__(78)(INCLUDES), 'String', {
 
 
 /***/ }),
-/* 188 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -5271,7 +5346,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 189 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5296,7 +5371,7 @@ $export($export.P + $export.F * __webpack_require__(78)(STARTS_WITH), 'String', 
 
 
 /***/ }),
-/* 190 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5310,7 +5385,7 @@ __webpack_require__(14)('anchor', function (createHTML) {
 
 
 /***/ }),
-/* 191 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5324,7 +5399,7 @@ __webpack_require__(14)('big', function (createHTML) {
 
 
 /***/ }),
-/* 192 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5338,7 +5413,7 @@ __webpack_require__(14)('blink', function (createHTML) {
 
 
 /***/ }),
-/* 193 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5352,7 +5427,7 @@ __webpack_require__(14)('bold', function (createHTML) {
 
 
 /***/ }),
-/* 194 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5366,7 +5441,7 @@ __webpack_require__(14)('fixed', function (createHTML) {
 
 
 /***/ }),
-/* 195 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5380,7 +5455,7 @@ __webpack_require__(14)('fontcolor', function (createHTML) {
 
 
 /***/ }),
-/* 196 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5394,7 +5469,7 @@ __webpack_require__(14)('fontsize', function (createHTML) {
 
 
 /***/ }),
-/* 197 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5408,7 +5483,7 @@ __webpack_require__(14)('italics', function (createHTML) {
 
 
 /***/ }),
-/* 198 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5422,7 +5497,7 @@ __webpack_require__(14)('link', function (createHTML) {
 
 
 /***/ }),
-/* 199 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5436,7 +5511,7 @@ __webpack_require__(14)('small', function (createHTML) {
 
 
 /***/ }),
-/* 200 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5450,7 +5525,7 @@ __webpack_require__(14)('strike', function (createHTML) {
 
 
 /***/ }),
-/* 201 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5464,7 +5539,7 @@ __webpack_require__(14)('sub', function (createHTML) {
 
 
 /***/ }),
-/* 202 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5478,7 +5553,7 @@ __webpack_require__(14)('sup', function (createHTML) {
 
 
 /***/ }),
-/* 203 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.3.3.1 / 15.9.4.4 Date.now()
@@ -5488,7 +5563,7 @@ $export($export.S, 'Date', { now: function () { return new Date().getTime(); } }
 
 
 /***/ }),
-/* 204 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5511,12 +5586,12 @@ $export($export.P + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 205 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.3.4.36 / 15.9.5.43 Date.prototype.toISOString()
 var $export = __webpack_require__(0);
-var toISOString = __webpack_require__(206);
+var toISOString = __webpack_require__(210);
 
 // PhantomJS / old WebKit has a broken implementations
 $export($export.P + $export.F * (Date.prototype.toISOString !== toISOString), 'Date', {
@@ -5525,7 +5600,7 @@ $export($export.P + $export.F * (Date.prototype.toISOString !== toISOString), 'D
 
 
 /***/ }),
-/* 206 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5558,7 +5633,7 @@ module.exports = (fails(function () {
 
 
 /***/ }),
-/* 207 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var DateProto = Date.prototype;
@@ -5576,17 +5651,17 @@ if (new Date(NaN) + '' != INVALID_DATE) {
 
 
 /***/ }),
-/* 208 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var TO_PRIMITIVE = __webpack_require__(5)('toPrimitive');
 var proto = Date.prototype;
 
-if (!(TO_PRIMITIVE in proto)) __webpack_require__(12)(proto, TO_PRIMITIVE, __webpack_require__(209));
+if (!(TO_PRIMITIVE in proto)) __webpack_require__(12)(proto, TO_PRIMITIVE, __webpack_require__(213));
 
 
 /***/ }),
-/* 209 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5602,7 +5677,7 @@ module.exports = function (hint) {
 
 
 /***/ }),
-/* 210 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
@@ -5612,7 +5687,7 @@ $export($export.S, 'Array', { isArray: __webpack_require__(52) });
 
 
 /***/ }),
-/* 211 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5620,7 +5695,7 @@ $export($export.S, 'Array', { isArray: __webpack_require__(52) });
 var ctx = __webpack_require__(18);
 var $export = __webpack_require__(0);
 var toObject = __webpack_require__(9);
-var call = __webpack_require__(104);
+var call = __webpack_require__(105);
 var isArrayIter = __webpack_require__(79);
 var toLength = __webpack_require__(8);
 var createProperty = __webpack_require__(80);
@@ -5656,7 +5731,7 @@ $export($export.S + $export.F * !__webpack_require__(54)(function (iter) { Array
 
 
 /***/ }),
-/* 212 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5682,7 +5757,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 213 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5701,7 +5776,7 @@ $export($export.P + $export.F * (__webpack_require__(46) != Object || !__webpack
 
 
 /***/ }),
-/* 214 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5736,7 +5811,7 @@ $export($export.P + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 215 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5766,7 +5841,7 @@ $export($export.P + $export.F * (fails(function () {
 
 
 /***/ }),
-/* 216 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5784,7 +5859,7 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 
 
 /***/ }),
-/* 217 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(4);
@@ -5806,7 +5881,7 @@ module.exports = function (original) {
 
 
 /***/ }),
-/* 218 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5823,7 +5898,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].map, true), 'Array',
 
 
 /***/ }),
-/* 219 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5840,7 +5915,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].filter, true), 'Arra
 
 
 /***/ }),
-/* 220 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5857,7 +5932,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].some, true), 'Array'
 
 
 /***/ }),
-/* 221 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5874,13 +5949,13 @@ $export($export.P + $export.F * !__webpack_require__(20)([].every, true), 'Array
 
 
 /***/ }),
-/* 222 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0);
-var $reduce = __webpack_require__(105);
+var $reduce = __webpack_require__(106);
 
 $export($export.P + $export.F * !__webpack_require__(20)([].reduce, true), 'Array', {
   // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
@@ -5891,13 +5966,13 @@ $export($export.P + $export.F * !__webpack_require__(20)([].reduce, true), 'Arra
 
 
 /***/ }),
-/* 223 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0);
-var $reduce = __webpack_require__(105);
+var $reduce = __webpack_require__(106);
 
 $export($export.P + $export.F * !__webpack_require__(20)([].reduceRight, true), 'Array', {
   // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
@@ -5908,7 +5983,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].reduceRight, true), 
 
 
 /***/ }),
-/* 224 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5930,7 +6005,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(20)($nati
 
 
 /***/ }),
-/* 225 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5959,19 +6034,19 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(20)($nati
 
 
 /***/ }),
-/* 226 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Array', { copyWithin: __webpack_require__(106) });
+$export($export.P, 'Array', { copyWithin: __webpack_require__(107) });
 
 __webpack_require__(30)('copyWithin');
 
 
 /***/ }),
-/* 227 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
@@ -5983,7 +6058,7 @@ __webpack_require__(30)('fill');
 
 
 /***/ }),
-/* 228 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6004,7 +6079,7 @@ __webpack_require__(30)(KEY);
 
 
 /***/ }),
-/* 229 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6025,14 +6100,14 @@ __webpack_require__(30)(KEY);
 
 
 /***/ }),
-/* 230 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(38)('Array');
 
 
 /***/ }),
-/* 231 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(2);
@@ -6081,12 +6156,12 @@ __webpack_require__(38)('RegExp');
 
 
 /***/ }),
-/* 232 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-__webpack_require__(108);
+__webpack_require__(109);
 var anObject = __webpack_require__(1);
 var $flags = __webpack_require__(55);
 var DESCRIPTORS = __webpack_require__(6);
@@ -6113,7 +6188,7 @@ if (__webpack_require__(3)(function () { return $toString.call({ source: 'a', fl
 
 
 /***/ }),
-/* 233 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@match logic
@@ -6129,7 +6204,7 @@ __webpack_require__(56)('match', 1, function (defined, MATCH, $match) {
 
 
 /***/ }),
-/* 234 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@replace logic
@@ -6147,7 +6222,7 @@ __webpack_require__(56)('replace', 2, function (defined, REPLACE, $replace) {
 
 
 /***/ }),
-/* 235 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@search logic
@@ -6163,7 +6238,7 @@ __webpack_require__(56)('search', 1, function (defined, SEARCH, $search) {
 
 
 /***/ }),
-/* 236 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@split logic
@@ -6240,7 +6315,7 @@ __webpack_require__(56)('split', 2, function (defined, SPLIT, $split) {
 
 
 /***/ }),
-/* 237 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6258,8 +6333,8 @@ var speciesConstructor = __webpack_require__(57);
 var task = __webpack_require__(85).set;
 var microtask = __webpack_require__(86)();
 var newPromiseCapabilityModule = __webpack_require__(87);
-var perform = __webpack_require__(109);
-var promiseResolve = __webpack_require__(110);
+var perform = __webpack_require__(110);
+var promiseResolve = __webpack_require__(111);
 var PROMISE = 'Promise';
 var TypeError = global.TypeError;
 var process = global.process;
@@ -6527,12 +6602,12 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(54)(function
 
 
 /***/ }),
-/* 238 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var weak = __webpack_require__(115);
+var weak = __webpack_require__(116);
 var validate = __webpack_require__(45);
 var WEAK_SET = 'WeakSet';
 
@@ -6548,7 +6623,7 @@ __webpack_require__(58)(WEAK_SET, function (get) {
 
 
 /***/ }),
-/* 239 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6601,7 +6676,7 @@ __webpack_require__(38)(ARRAY_BUFFER);
 
 
 /***/ }),
-/* 240 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -6611,7 +6686,7 @@ $export($export.G + $export.W + $export.F * !__webpack_require__(59).ABV, {
 
 
 /***/ }),
-/* 241 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Int8', 1, function (init) {
@@ -6622,7 +6697,7 @@ __webpack_require__(27)('Int8', 1, function (init) {
 
 
 /***/ }),
-/* 242 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint8', 1, function (init) {
@@ -6633,7 +6708,7 @@ __webpack_require__(27)('Uint8', 1, function (init) {
 
 
 /***/ }),
-/* 243 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint8', 1, function (init) {
@@ -6644,7 +6719,7 @@ __webpack_require__(27)('Uint8', 1, function (init) {
 
 
 /***/ }),
-/* 244 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Int16', 2, function (init) {
@@ -6655,7 +6730,7 @@ __webpack_require__(27)('Int16', 2, function (init) {
 
 
 /***/ }),
-/* 245 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint16', 2, function (init) {
@@ -6666,7 +6741,7 @@ __webpack_require__(27)('Uint16', 2, function (init) {
 
 
 /***/ }),
-/* 246 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Int32', 4, function (init) {
@@ -6677,7 +6752,7 @@ __webpack_require__(27)('Int32', 4, function (init) {
 
 
 /***/ }),
-/* 247 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint32', 4, function (init) {
@@ -6688,7 +6763,7 @@ __webpack_require__(27)('Uint32', 4, function (init) {
 
 
 /***/ }),
-/* 248 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Float32', 4, function (init) {
@@ -6699,7 +6774,7 @@ __webpack_require__(27)('Float32', 4, function (init) {
 
 
 /***/ }),
-/* 249 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Float64', 8, function (init) {
@@ -6710,7 +6785,7 @@ __webpack_require__(27)('Float64', 8, function (init) {
 
 
 /***/ }),
-/* 250 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
@@ -6732,7 +6807,7 @@ $export($export.S + $export.F * !__webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 251 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
@@ -6742,7 +6817,7 @@ var aFunction = __webpack_require__(10);
 var anObject = __webpack_require__(1);
 var isObject = __webpack_require__(4);
 var fails = __webpack_require__(3);
-var bind = __webpack_require__(96);
+var bind = __webpack_require__(97);
 var rConstruct = (__webpack_require__(2).Reflect || {}).construct;
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
@@ -6785,7 +6860,7 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 
 
 /***/ }),
-/* 252 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
@@ -6814,7 +6889,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 
 
 /***/ }),
-/* 253 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
@@ -6831,7 +6906,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 254 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6864,7 +6939,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 255 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
@@ -6891,7 +6966,7 @@ $export($export.S, 'Reflect', { get: get });
 
 
 /***/ }),
-/* 256 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
@@ -6907,7 +6982,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 257 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.8 Reflect.getPrototypeOf(target)
@@ -6923,7 +6998,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 258 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.9 Reflect.has(target, propertyKey)
@@ -6937,7 +7012,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 259 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.10 Reflect.isExtensible(target)
@@ -6954,17 +7029,17 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 260 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.11 Reflect.ownKeys(target)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Reflect', { ownKeys: __webpack_require__(117) });
+$export($export.S, 'Reflect', { ownKeys: __webpack_require__(118) });
 
 
 /***/ }),
-/* 261 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.12 Reflect.preventExtensions(target)
@@ -6986,7 +7061,7 @@ $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 262 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
@@ -7023,7 +7098,7 @@ $export($export.S, 'Reflect', { set: set });
 
 
 /***/ }),
-/* 263 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
@@ -7044,7 +7119,7 @@ if (setProto) $export($export.S, 'Reflect', {
 
 
 /***/ }),
-/* 264 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7063,14 +7138,14 @@ __webpack_require__(30)('includes');
 
 
 /***/ }),
-/* 265 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatMap
 var $export = __webpack_require__(0);
-var flattenIntoArray = __webpack_require__(118);
+var flattenIntoArray = __webpack_require__(119);
 var toObject = __webpack_require__(9);
 var toLength = __webpack_require__(8);
 var aFunction = __webpack_require__(10);
@@ -7092,14 +7167,14 @@ __webpack_require__(30)('flatMap');
 
 
 /***/ }),
-/* 266 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatten
 var $export = __webpack_require__(0);
-var flattenIntoArray = __webpack_require__(118);
+var flattenIntoArray = __webpack_require__(119);
 var toObject = __webpack_require__(9);
 var toLength = __webpack_require__(8);
 var toInteger = __webpack_require__(24);
@@ -7120,7 +7195,7 @@ __webpack_require__(30)('flatten');
 
 
 /***/ }),
-/* 267 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7137,14 +7212,14 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 268 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0);
-var $pad = __webpack_require__(119);
+var $pad = __webpack_require__(120);
 
 $export($export.P, 'String', {
   padStart: function padStart(maxLength /* , fillString = ' ' */) {
@@ -7154,14 +7229,14 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 269 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0);
-var $pad = __webpack_require__(119);
+var $pad = __webpack_require__(120);
 
 $export($export.P, 'String', {
   padEnd: function padEnd(maxLength /* , fillString = ' ' */) {
@@ -7171,7 +7246,7 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 270 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7185,7 +7260,7 @@ __webpack_require__(43)('trimLeft', function ($trim) {
 
 
 /***/ }),
-/* 271 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7199,7 +7274,7 @@ __webpack_require__(43)('trimRight', function ($trim) {
 
 
 /***/ }),
-/* 272 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7236,26 +7311,26 @@ $export($export.P, 'String', {
 
 
 /***/ }),
-/* 273 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(64)('asyncIterator');
 
 
 /***/ }),
-/* 274 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(64)('observable');
 
 
 /***/ }),
-/* 275 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-getownpropertydescriptors
 var $export = __webpack_require__(0);
-var ownKeys = __webpack_require__(117);
+var ownKeys = __webpack_require__(118);
 var toIObject = __webpack_require__(15);
 var gOPD = __webpack_require__(16);
 var createProperty = __webpack_require__(80);
@@ -7278,12 +7353,12 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 276 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(0);
-var $values = __webpack_require__(120)(false);
+var $values = __webpack_require__(121)(false);
 
 $export($export.S, 'Object', {
   values: function values(it) {
@@ -7293,12 +7368,12 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 277 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(0);
-var $entries = __webpack_require__(120)(true);
+var $entries = __webpack_require__(121)(true);
 
 $export($export.S, 'Object', {
   entries: function entries(it) {
@@ -7308,7 +7383,7 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 278 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7327,7 +7402,7 @@ __webpack_require__(6) && $export($export.P + __webpack_require__(60), 'Object',
 
 
 /***/ }),
-/* 279 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7346,7 +7421,7 @@ __webpack_require__(6) && $export($export.P + __webpack_require__(60), 'Object',
 
 
 /***/ }),
-/* 280 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7371,7 +7446,7 @@ __webpack_require__(6) && $export($export.P + __webpack_require__(60), 'Object',
 
 
 /***/ }),
-/* 281 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7396,27 +7471,27 @@ __webpack_require__(6) && $export($export.P + __webpack_require__(60), 'Object',
 
 
 /***/ }),
-/* 282 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export = __webpack_require__(0);
 
-$export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(121)('Map') });
+$export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(122)('Map') });
 
 
 /***/ }),
-/* 283 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export = __webpack_require__(0);
 
-$export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(121)('Set') });
+$export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(122)('Set') });
 
 
 /***/ }),
-/* 284 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-map.of
@@ -7424,7 +7499,7 @@ __webpack_require__(61)('Map');
 
 
 /***/ }),
-/* 285 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-set.of
@@ -7432,7 +7507,7 @@ __webpack_require__(61)('Set');
 
 
 /***/ }),
-/* 286 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.of
@@ -7440,7 +7515,7 @@ __webpack_require__(61)('WeakMap');
 
 
 /***/ }),
-/* 287 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.of
@@ -7448,7 +7523,7 @@ __webpack_require__(61)('WeakSet');
 
 
 /***/ }),
-/* 288 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-map.from
@@ -7456,7 +7531,7 @@ __webpack_require__(62)('Map');
 
 
 /***/ }),
-/* 289 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-set.from
@@ -7464,7 +7539,7 @@ __webpack_require__(62)('Set');
 
 
 /***/ }),
-/* 290 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.from
@@ -7472,7 +7547,7 @@ __webpack_require__(62)('WeakMap');
 
 
 /***/ }),
-/* 291 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.from
@@ -7480,7 +7555,7 @@ __webpack_require__(62)('WeakSet');
 
 
 /***/ }),
-/* 292 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-global
@@ -7490,7 +7565,7 @@ $export($export.G, { global: __webpack_require__(2) });
 
 
 /***/ }),
-/* 293 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-global
@@ -7500,7 +7575,7 @@ $export($export.S, 'System', { global: __webpack_require__(2) });
 
 
 /***/ }),
-/* 294 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/ljharb/proposal-is-error
@@ -7515,7 +7590,7 @@ $export($export.S, 'Error', {
 
 
 /***/ }),
-/* 295 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7529,7 +7604,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 296 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7539,7 +7614,7 @@ $export($export.S, 'Math', { DEG_PER_RAD: Math.PI / 180 });
 
 
 /***/ }),
-/* 297 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7554,13 +7629,13 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 298 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = __webpack_require__(0);
-var scale = __webpack_require__(123);
-var fround = __webpack_require__(103);
+var scale = __webpack_require__(124);
+var fround = __webpack_require__(104);
 
 $export($export.S, 'Math', {
   fscale: function fscale(x, inLow, inHigh, outLow, outHigh) {
@@ -7570,7 +7645,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 299 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -7587,7 +7662,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 300 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -7604,7 +7679,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 301 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -7626,7 +7701,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 302 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7636,7 +7711,7 @@ $export($export.S, 'Math', { RAD_PER_DEG: 180 / Math.PI });
 
 
 /***/ }),
-/* 303 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
@@ -7651,17 +7726,17 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 304 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { scale: __webpack_require__(123) });
+$export($export.S, 'Math', { scale: __webpack_require__(124) });
 
 
 /***/ }),
-/* 305 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -7683,7 +7758,7 @@ $export($export.S, 'Math', {
 
 
 /***/ }),
-/* 306 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // http://jfbastien.github.io/papers/Math.signbit.html
@@ -7696,7 +7771,7 @@ $export($export.S, 'Math', { signbit: function signbit(x) {
 
 
 /***/ }),
-/* 307 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7706,7 +7781,7 @@ var $export = __webpack_require__(0);
 var core = __webpack_require__(21);
 var global = __webpack_require__(2);
 var speciesConstructor = __webpack_require__(57);
-var promiseResolve = __webpack_require__(110);
+var promiseResolve = __webpack_require__(111);
 
 $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
   var C = speciesConstructor(this, core.Promise || global.Promise);
@@ -7723,7 +7798,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 
 
 /***/ }),
-/* 308 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7731,7 +7806,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 // https://github.com/tc39/proposal-promise-try
 var $export = __webpack_require__(0);
 var newPromiseCapability = __webpack_require__(87);
-var perform = __webpack_require__(109);
+var perform = __webpack_require__(110);
 
 $export($export.S, 'Promise', { 'try': function (callbackfn) {
   var promiseCapability = newPromiseCapability.f(this);
@@ -7742,7 +7817,7 @@ $export($export.S, 'Promise', { 'try': function (callbackfn) {
 
 
 /***/ }),
-/* 309 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -7756,7 +7831,7 @@ metadata.exp({ defineMetadata: function defineMetadata(metadataKey, metadataValu
 
 
 /***/ }),
-/* 310 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -7777,7 +7852,7 @@ metadata.exp({ deleteMetadata: function deleteMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 311 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -7800,11 +7875,11 @@ metadata.exp({ getMetadata: function getMetadata(metadataKey, target /* , target
 
 
 /***/ }),
-/* 312 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Set = __webpack_require__(113);
-var from = __webpack_require__(122);
+var Set = __webpack_require__(114);
+var from = __webpack_require__(123);
 var metadata = __webpack_require__(28);
 var anObject = __webpack_require__(1);
 var getPrototypeOf = __webpack_require__(17);
@@ -7825,7 +7900,7 @@ metadata.exp({ getMetadataKeys: function getMetadataKeys(target /* , targetKey *
 
 
 /***/ }),
-/* 313 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -7840,7 +7915,7 @@ metadata.exp({ getOwnMetadata: function getOwnMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 314 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -7854,7 +7929,7 @@ metadata.exp({ getOwnMetadataKeys: function getOwnMetadataKeys(target /* , targe
 
 
 /***/ }),
-/* 315 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -7876,7 +7951,7 @@ metadata.exp({ hasMetadata: function hasMetadata(metadataKey, target /* , target
 
 
 /***/ }),
-/* 316 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata = __webpack_require__(28);
@@ -7891,7 +7966,7 @@ metadata.exp({ hasOwnMetadata: function hasOwnMetadata(metadataKey, target /* , 
 
 
 /***/ }),
-/* 317 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $metadata = __webpack_require__(28);
@@ -7912,7 +7987,7 @@ $metadata.exp({ metadata: function metadata(metadataKey, metadataValue) {
 
 
 /***/ }),
-/* 318 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-09/sept-25.md#510-globalasap-for-enqueuing-a-microtask
@@ -7930,7 +8005,7 @@ $export($export.G, {
 
 
 /***/ }),
-/* 319 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8136,7 +8211,7 @@ __webpack_require__(38)('Observable');
 
 
 /***/ }),
-/* 320 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // ie9- setTimeout & setInterval additional parameters fix
@@ -8162,7 +8237,7 @@ $export($export.G + $export.B + $export.F * MSIE, {
 
 
 /***/ }),
-/* 321 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -8174,7 +8249,7 @@ $export($export.G + $export.B, {
 
 
 /***/ }),
-/* 322 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $iterators = __webpack_require__(84);
@@ -8238,7 +8313,7 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 
 
 /***/ }),
-/* 323 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -8978,29 +9053,29 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
   typeof self === "object" ? self : this
 );
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(89)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(90)))
 
 /***/ }),
-/* 324 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(325);
+__webpack_require__(329);
 module.exports = __webpack_require__(21).RegExp.escape;
 
 
 /***/ }),
-/* 325 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/benjamingr/RexExp.escape
 var $export = __webpack_require__(0);
-var $re = __webpack_require__(326)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
+var $re = __webpack_require__(330)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
 
 $export($export.S, 'RegExp', { escape: function escape(it) { return $re(it); } });
 
 
 /***/ }),
-/* 326 */
+/* 330 */
 /***/ (function(module, exports) {
 
 module.exports = function (regExp, replace) {
@@ -9014,7 +9089,7 @@ module.exports = function (regExp, replace) {
 
 
 /***/ }),
-/* 327 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9022,115 +9097,113 @@ module.exports = function (regExp, replace) {
 
 var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/root.jsx";
 
-var _quip = __webpack_require__(328);
+var _quip = __webpack_require__(125);
 
 var _quip2 = _interopRequireDefault(_quip);
 
-var _App = __webpack_require__(329);
+var _App = __webpack_require__(332);
 
 var _App2 = _interopRequireDefault(_App);
 
+var _client = __webpack_require__(338);
+
+var _model = __webpack_require__(340);
+
+var _model2 = _interopRequireDefault(_model);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Row = function (_quip$apps$Record) {
-    _inherits(Row, _quip$apps$Record);
-
-    function Row() {
-        _classCallCheck(this, Row);
-
-        return _possibleConstructorReturn(this, (Row.__proto__ || Object.getPrototypeOf(Row)).apply(this, arguments));
-    }
-
-    return Row;
-}(_quip2.default.apps.Record);
-
-Row.getProperties = function () {
-    return {
-        name: _quip2.default.apps.RichTextRecord,
-        description: _quip2.default.apps.RichTextRecord
-    };
-};
-
-_quip2.default.apps.registerClass(Row, "table-row");
-
-var RootRecord = function (_quip$apps$RootRecord) {
-    _inherits(RootRecord, _quip$apps$RootRecord);
-
-    function RootRecord() {
-        _classCallCheck(this, RootRecord);
-
-        return _possibleConstructorReturn(this, (RootRecord.__proto__ || Object.getPrototypeOf(RootRecord)).apply(this, arguments));
-    }
-
-    return RootRecord;
-}(_quip2.default.apps.RootRecord);
-
-RootRecord.getProperties = function () {
-    return {
-        title: _quip2.default.apps.RichTextRecord,
-        cards: _quip2.default.apps.RecordList.Type(Row)
-    };
-};
-
-RootRecord.getDefaultProperties = function () {
-    return {
-        cards: []
-    };
-};
-
-_quip2.default.apps.registerClass(RootRecord, "root");
+(0, _model2.default)();
 
 _quip2.default.apps.initialize({
     initializationCallback: function initializationCallback(root, params) {
         var rootRecord = _quip2.default.apps.getRootRecord();
-        rootRecord.set("cards", [{
-            name: {},
-            description: {}
-        }]);
+        var auth = _quip2.default.apps.auth("salesforce");
+        var client = new _client.SalesforceClient(auth);
 
-        ReactDOM.render(React.createElement(
-            "div",
-            {
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 34
-                },
-                __self: undefined
+        rootRecord.setClient(client);
+
+        if (params.isCreation) {
+            rootRecord.set("obstacles", [{
+                name: {},
+                description: {}
+            }, {
+                name: {},
+                description: {}
+            }]);
+
+            rootRecord.set("methods", [{
+                title: {},
+                description: {},
+                measures: [{}]
+            }]);
+
+            rootRecord.set("vision", {});
+
+            rootRecord.set("values", {});
+        }
+
+        ReactDOM.render(React.createElement(_App2.default, {
+            __source: {
+                fileName: _jsxFileName,
+                lineNumber: 36
             },
-            "Hello World"
-        ), root);
-    }
+            __self: undefined
+        }), root);
+    },
+    menuCommands: [{
+        id: "deleteItem",
+        label: "Delete Row",
+        handler: function handler(name, payload) {
+            deleteRecord(payload.card);
+            payload.card.delete();
+            payload.callback();
+        }
+    }, {
+        id: "deleteMethod",
+        label: "Delete Method",
+        handler: function handler(name, payload) {
+            deleteRecord(payload.method);
+            payload.method.delete();
+            payload.callback();
+        }
+    }]
 });
 
-/***/ }),
-/* 328 */
-/***/ (function(module, exports) {
+function deleteRecord(record) {
+    var client = _quip2.default.apps.getRootRecord().getClient();
+    client.deleteRecord(record.get("id"));
+}
 
-module.exports = quip;
-
 /***/ }),
-/* 329 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/App.jsx";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _App = __webpack_require__(330);
+var _Method = __webpack_require__(333);
 
-var _App2 = _interopRequireDefault(_App);
+var _Method2 = _interopRequireDefault(_Method);
+
+var _Obstacle = __webpack_require__(334);
+
+var _Obstacle2 = _interopRequireDefault(_Obstacle);
+
+var _Vision = __webpack_require__(336);
+
+var _Vision2 = _interopRequireDefault(_Vision);
+
+var _Values = __webpack_require__(337);
+
+var _Values2 = _interopRequireDefault(_Values);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9141,64 +9214,668 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var App = function (_React$Component) {
-    _inherits(App, _React$Component);
+  _inherits(App, _React$Component);
 
-    function App(props) {
-        _classCallCheck(this, App);
+  function App(props) {
+    _classCallCheck(this, App);
 
-        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+  }
+
+  _createClass(App, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return React.createElement(
+        "div",
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13
+          },
+          __self: this
+        },
+        React.createElement(
+          "button",
+          { onClick: this.pushToSalesforce.bind(this), __source: {
+              fileName: _jsxFileName,
+              lineNumber: 14
+            },
+            __self: this
+          },
+          "Push to Salesforce"
+        ),
+        React.createElement(_Vision2.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 18
+          },
+          __self: this
+        }),
+        React.createElement(_Values2.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19
+          },
+          __self: this
+        }),
+        React.createElement(_Method2.default, { ref: function ref(ele) {
+            return _this2.method = ele;
+          }, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20
+          },
+          __self: this
+        }),
+        React.createElement(_Obstacle2.default, { ref: function ref(ele) {
+            return _this2.obstacle = ele;
+          }, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 21
+          },
+          __self: this
+        })
+      );
+    }
+  }, {
+    key: "pushToSalesforce",
+    value: function pushToSalesforce() {
+      var rootRecord = quip.apps.getRootRecord();
+      var client = rootRecord.getClient();
+
+      var vision = rootRecord.get("vision").getTextContent();
+      var values = rootRecord.get("values").getTextContent();
+      var id = rootRecord.get("id");
+
+      var body = {
+        "fields": {
+          "play2win__Vision__c": vision,
+          "play2win__Values__c": values
+        }
+      };
+
+      if (!id) {
+        body["apiName"] = "play2win__V2MOB__c";
+        client.createRecord(body).then(function (response) {
+          rootRecord.set("id", response.id);
+        });
+      } else {
+        client.updateRecord(rootRecord.get("id"), body).then(function (response) {});
+      }
+
+      this.method.saveToSalesforce(id);
+      this.obstacle.saveToSalesforce(id);
+    }
+  }]);
+
+  return App;
+}(React.Component);
+
+exports.default = App;
+
+/***/ }),
+/* 333 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/components/Method.jsx";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Method = __webpack_require__(89);
+
+var _Method2 = _interopRequireDefault(_Method);
+
+var _quipAppsChevron = __webpack_require__(126);
+
+var _quipAppsChevron2 = _interopRequireDefault(_quipAppsChevron);
+
+var _classnames = __webpack_require__(127);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _Measure = __webpack_require__(346);
+
+var _Measure2 = _interopRequireDefault(_Measure);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Method = function (_React$Component) {
+    _inherits(Method, _React$Component);
+
+    function Method(props) {
+        _classCallCheck(this, Method);
+
+        var _this = _possibleConstructorReturn(this, (Method.__proto__ || Object.getPrototypeOf(Method)).call(this, props));
+
+        _this.handleClick = function (e, method) {
+            var _this$state = _this.state,
+                canAdd = _this$state.canAdd,
+                canDelete = _this$state.canDelete;
+
+            var disabledCommands = [];
+
+            quip.apps.showContextMenu(e, ["deleteMethod", // id from menuCommand in Initialization,
+            quip.apps.DocumentMenuCommands.SEPARATOR, quip.apps.DocumentMenuCommands.DELETE_APP], [], // No highlighted commands
+            disabledCommands, // Disabled commands based on state
+            function () {}, { method: method, callback: _this.deleteRow.bind(_this) });
+        };
 
         _this.state = {
-            rowCount: 0,
-            cards: quip.app.getRootRecord().get("cards")
+            methods: _this.getMethods()
         };
         return _this;
     }
 
-    _createClass(App, [{
+    _createClass(Method, [{
+        key: "addRow",
+        value: function addRow() {
+            var methods = this.getMethods();
+            methods.add({
+                title: {
+                    RichText_placeholderText: "Add Method Title"
+                },
+                description: {
+                    RichText_placeholderText: "Add Method Description"
+                },
+                measures: [{}]
+            });
+
+            this.setState({
+                methods: methods
+            });
+        }
+    }, {
+        key: "deleteRow",
+        value: function deleteRow() {
+            var methods = this.getMethods();
+            this.setState({
+                methods: methods
+            });
+        }
+    }, {
+        key: "getMethods",
+        value: function getMethods() {
+            var methods = quip.apps.getRootRecord().get("methods");
+            return methods;
+        }
+    }, {
         key: "render",
         value: function render() {
             var _this2 = this;
 
-            var cards = this.state.cards;
-
+            var methods = this.state.methods;
+            var rootRecord = quip.apps.getRootRecord();
 
             return React.createElement(
                 "div",
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 17
+                        lineNumber: 66
                     },
                     __self: this
                 },
                 React.createElement(
                     "div",
-                    {
-                        __source: {
+                    { className: _Method2.default.title, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 19
+                            lineNumber: 67
                         },
                         __self: this
                     },
-                    "Obstacle",
+                    "METHODS"
+                ),
+                React.createElement(
+                    "div",
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 71
+                        },
+                        __self: this
+                    },
                     React.createElement(
-                        "button",
-                        { onClick: this.addRow.bind(this), __source: {
+                        "table",
+                        { className: _Method2.default.method, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 21
+                                lineNumber: 72
                             },
                             __self: this
                         },
-                        "AddRow"
+                        methods && methods.getRecords().map(function (method) {
+
+                            return React.createElement(
+                                "div",
+                                { className: _Method2.default.eachMethod, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 77
+                                    },
+                                    __self: _this2
+                                },
+                                React.createElement(
+                                    "tr",
+                                    { className: _Method2.default.tableRow, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 78
+                                        },
+                                        __self: _this2
+                                    },
+                                    React.createElement(
+                                        "td",
+                                        {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 79
+                                            },
+                                            __self: _this2
+                                        },
+                                        React.createElement(
+                                            "span",
+                                            {
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 80
+                                                },
+                                                __self: _this2
+                                            },
+                                            "Method Title"
+                                        )
+                                    ),
+                                    React.createElement(
+                                        "td",
+                                        { className: _Method2.default.tableCell, __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 83
+                                            },
+                                            __self: _this2
+                                        },
+                                        React.createElement(quip.apps.ui.RichTextBox, {
+                                            key: method.getId(),
+                                            record: method.get("title"),
+                                            color: "BLUE",
+                                            width: 770,
+                                            minHeight: 50,
+                                            maxHeight: 280,
+                                            align: "center",
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 84
+                                            },
+                                            __self: _this2
+                                        }),
+                                        React.createElement(
+                                            "span",
+                                            {
+                                                ref: function ref(c) {
+                                                    return method.get("title").setDom(c);
+                                                },
+                                                className: (0, _classnames2.default)(_Method2.default.commentsTrigger, _defineProperty({}, _Method2.default.commented, method.get("title").getCommentCount() > 0)), __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 94
+                                                },
+                                                __self: _this2
+                                            },
+                                            React.createElement(quip.apps.ui.CommentsTrigger, {
+                                                record: method.get("title"),
+                                                showEmpty: true,
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 100
+                                                },
+                                                __self: _this2
+                                            })
+                                        )
+                                    )
+                                ),
+                                React.createElement(
+                                    "tr",
+                                    { className: _Method2.default.tableRow, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 107
+                                        },
+                                        __self: _this2
+                                    },
+                                    React.createElement(
+                                        "td",
+                                        {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 108
+                                            },
+                                            __self: _this2
+                                        },
+                                        React.createElement(
+                                            "span",
+                                            {
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 109
+                                                },
+                                                __self: _this2
+                                            },
+                                            "Method Description"
+                                        )
+                                    ),
+                                    React.createElement(
+                                        "td",
+                                        { className: _Method2.default.tableCell, __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 111
+                                            },
+                                            __self: _this2
+                                        },
+                                        React.createElement(
+                                            "div",
+                                            { style: { float: "left" }, __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 112
+                                                },
+                                                __self: _this2
+                                            },
+                                            React.createElement(quip.apps.ui.RichTextBox, {
+                                                key: method.getId(),
+                                                record: method.get("description"),
+                                                color: "BLUE",
+                                                width: 770,
+                                                minHeight: 50,
+                                                maxHeight: 280,
+                                                align: "center",
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 113
+                                                },
+                                                __self: _this2
+                                            })
+                                        ),
+                                        React.createElement(
+                                            "span",
+                                            {
+                                                className: _Method2.default.chevron,
+                                                onClick: function onClick(e) {
+                                                    return _this2.handleClick(e, method);
+                                                },
+                                                style: { float: "left" },
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 123
+                                                },
+                                                __self: _this2
+                                            },
+                                            React.createElement(_quipAppsChevron2.default, {
+                                                color: method ? quip.apps.ui.ColorMap.BLUE.VALUE : quip.apps.ui.ColorMap[color].VALUE,
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 128
+                                                },
+                                                __self: _this2
+                                            })
+                                        ),
+                                        React.createElement(
+                                            "span",
+                                            {
+                                                ref: function ref(c) {
+                                                    return method.get("description").setDom(c);
+                                                },
+                                                className: (0, _classnames2.default)(_Method2.default.commentsTrigger, _defineProperty({}, _Method2.default.commented, method.get("description").getCommentCount() > 0)),
+                                                style: { float: "left", marginTop: "15px", marginRight: "8px" },
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 137
+                                                },
+                                                __self: _this2
+                                            },
+                                            React.createElement(quip.apps.ui.CommentsTrigger, {
+                                                record: method.get("description"),
+                                                showEmpty: true,
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 145
+                                                },
+                                                __self: _this2
+                                            })
+                                        )
+                                    )
+                                ),
+                                React.createElement(
+                                    "div",
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 152
+                                        },
+                                        __self: _this2
+                                    },
+                                    React.createElement(_Measure2.default, {
+                                        measures: method.get("measures"), __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 153
+                                        },
+                                        __self: _this2
+                                    })
+                                )
+                            );
+                        })
                     )
                 ),
-                "Hello",
+                React.createElement(
+                    "button",
+                    { onClick: this.addRow.bind(this), style: { width: "15%" }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 163
+                        },
+                        __self: this
+                    },
+                    "Add Method"
+                )
+            );
+        }
+    }, {
+        key: "saveToSalesforce",
+        value: function saveToSalesforce(v2mobId) {
+            var _this3 = this;
+
+            var client = quip.apps.getRootRecord().getClient();
+            var methods = this.getMethods().getRecords();
+
+            methods.forEach(function (method) {
+                var body = {
+                    "fields": {
+                        "play2win__Text__c": method.get("title").getTextContent(),
+                        "play2win__Description__c": method.get("description").getTextContent(),
+                        "play2win__V2MOB__c": v2mobId
+                    }
+                };
+
+                if (!method.get("id")) {
+                    body["apiName"] = "play2win__Methods__c";
+                    client.createRecord(body).then(function (response) {
+                        method.set("id", response.id);
+                        _this3.saveMeasures(method);
+                    });
+                } else {
+                    client.updateRecord(method.get("id"), body).then(function (response) {
+                        _this3.saveMeasures(method);
+                    });
+                }
+            });
+        }
+    }, {
+        key: "saveMeasures",
+        value: function saveMeasures(method) {
+            var _this4 = this;
+
+            var client = quip.apps.getRootRecord().getClient();
+            var measures = method.get("measures");
+
+            measures.forEach(function (measure) {
+                var body = {
+                    "fields": {
+                        "type": measure.get("type"),
+                        "name": measure.get("name"),
+                        "status": measure.get("status"),
+                        "initial_value": measure.get("initial_value"),
+                        "current_value": measure.get("current_value"),
+                        "target_value": measure.get("target_value"),
+                        "method_id": method.get("id")
+                    }
+                };
+
+                if (!measure.get("id")) {
+                    body["apiName"] = "play2win__Measures__c";
+                    client.createRecord(body).then(function (response) {
+                        measure.set("id", response.id);
+                        _this4.saveMeasures(method);
+                    });
+                } else {
+                    client.updateRecord(measure.get("id"), body).then(function (response) {});
+                }
+            });
+        }
+    }]);
+
+    return Method;
+}(React.Component);
+
+exports.default = Method;
+
+/***/ }),
+/* 334 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/components/Obstacle.jsx";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Obstacle = __webpack_require__(335);
+
+var _Obstacle2 = _interopRequireDefault(_Obstacle);
+
+var _classnames = __webpack_require__(127);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _quipAppsChevron = __webpack_require__(126);
+
+var _quipAppsChevron2 = _interopRequireDefault(_quipAppsChevron);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Obstacle = function (_React$Component) {
+    _inherits(Obstacle, _React$Component);
+
+    function Obstacle(props) {
+        _classCallCheck(this, Obstacle);
+
+        var _this = _possibleConstructorReturn(this, (Obstacle.__proto__ || Object.getPrototypeOf(Obstacle)).call(this, props));
+
+        _this.handleClick = function (e, card) {
+            var _this$state = _this.state,
+                canAdd = _this$state.canAdd,
+                canDelete = _this$state.canDelete;
+
+            var disabledCommands = [];
+
+            quip.apps.showContextMenu(e, ["deleteItem", // id from menuCommand in Initialization,
+            quip.apps.DocumentMenuCommands.SEPARATOR, quip.apps.DocumentMenuCommands.DELETE_APP], [], // No highlighted commands
+            disabledCommands, // Disabled commands based on state
+            function () {}, { card: card, callback: _this.deleteRow.bind(_this) });
+        };
+
+        _this.state = {
+            cards: _this.getCards()
+        };
+        return _this;
+    }
+
+    _createClass(Obstacle, [{
+        key: "addRow",
+        value: function addRow() {
+            var cards = this.getCards();
+            cards.add({
+                name: {
+                    RichText_placeholderText: "Add Obstacle Title"
+                },
+                description: {
+                    RichText_placeholderText: "Add Obstacle Description"
+                }
+            });
+
+            this.setState({
+                cards: cards
+            });
+        }
+    }, {
+        key: "deleteRow",
+        value: function deleteRow(card) {
+            var cards = this.getCards();
+            this.setState({
+                cards: cards
+            });
+        }
+    }, {
+        key: "getCards",
+        value: function getCards() {
+            var cards = quip.apps.getRootRecord().get("obstacles");
+            return cards;
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var _this2 = this;
+
+            var cards = this.state.cards;
+            return React.createElement(
+                "div",
+                { className: _Obstacle2.default.obstacle, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 62
+                    },
+                    __self: this
+                },
+                React.createElement(
+                    "div",
+                    { className: _Obstacle2.default.title, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 64
+                        },
+                        __self: this
+                    },
+                    "OBSTACLES"
+                ),
                 React.createElement(
                     "table",
-                    { className: _App2.default.table, __source: {
+                    { className: _Obstacle2.default.table, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 26
+                            lineNumber: 68
                         },
                         __self: this
                     },
@@ -9207,119 +9884,1840 @@ var App = function (_React$Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 28
+                                lineNumber: 70
                             },
                             __self: this
                         },
                         React.createElement(
                             "tr",
-                            {
-                                __source: {
+                            { className: _Obstacle2.default.tableRow, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 29
+                                    lineNumber: 71
                                 },
                                 __self: this
                             },
                             React.createElement(
                                 "td",
-                                { colspan: "4", __source: {
+                                { className: _Obstacle2.default.tableColumn, style: { width: "20%" }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 30
+                                        lineNumber: 72
                                     },
                                     __self: this
                                 },
-                                "Name"
+                                "Obstacle Title"
                             ),
                             React.createElement(
                                 "td",
-                                { colspan: "4", __source: {
+                                { className: _Obstacle2.default.tableColumn, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 31
+                                        lineNumber: 76
                                     },
                                     __self: this
                                 },
-                                "Description"
+                                "Obstacle Description"
                             )
                         )
                     ),
-                    cards.getRecords().map(function (card) {
+                    cards && cards.getRecords().map(function (card) {
                         return React.createElement(
                             "tr",
-                            {
-                                __source: {
+                            { className: _Obstacle2.default.tableRow, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 37
+                                    lineNumber: 84
                                 },
                                 __self: _this2
                             },
                             React.createElement(
                                 "td",
-                                { style: { border: "solid 1px black" }, __source: {
+                                { className: _Obstacle2.default.tableColumn, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 38
+                                        lineNumber: 85
                                     },
                                     __self: _this2
                                 },
-                                React.createElement(quip.apps.ui.RichTextBox, {
-                                    key: cards.getId(),
-                                    record: card.get("name"),
-                                    color: "BLUE",
-                                    width: 200,
-                                    minHeight: 50,
-                                    maxHeight: 280,
-                                    align: "center",
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 39
+                                React.createElement(
+                                    "div",
+                                    { style: { float: "left" }, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 86
+                                        },
+                                        __self: _this2
                                     },
-                                    __self: _this2
-                                })
+                                    React.createElement(quip.apps.ui.RichTextBox, {
+                                        key: card.getId(),
+                                        record: card.get("name"),
+                                        color: "BLUE",
+                                        width: 140,
+                                        minHeight: 50,
+                                        maxHeight: 280,
+                                        align: "center",
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 87
+                                        },
+                                        __self: _this2
+                                    })
+                                ),
+                                React.createElement(
+                                    "span",
+                                    { ref: function ref(c) {
+                                            return card.get("name").setDom(c);
+                                        }, style: { float: "left" },
+                                        className: (0, _classnames2.default)(_Obstacle2.default.commentsTrigger, _defineProperty({}, _Obstacle2.default.commented, card.get("name").getCommentCount() > 0)), __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 97
+                                        },
+                                        __self: _this2
+                                    },
+                                    React.createElement(quip.apps.ui.CommentsTrigger, {
+                                        record: card.get("name"),
+                                        showEmpty: true,
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 102
+                                        },
+                                        __self: _this2
+                                    })
+                                )
                             ),
                             React.createElement(
                                 "td",
-                                {
-                                    __source: {
+                                { className: _Obstacle2.default.tableColumn, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 50
+                                        lineNumber: 109
                                     },
                                     __self: _this2
                                 },
-                                React.createElement(quip.apps.ui.RichTextBox, {
-                                    key: cards.getId(),
-                                    record: card.get("description"),
-                                    color: "BLUE",
-                                    width: 200,
-                                    minHeight: 50,
-                                    maxHeight: 280,
-                                    align: "center",
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 51
+                                React.createElement(
+                                    "div",
+                                    { style: { float: "left" }, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 110
+                                        },
+                                        __self: _this2
                                     },
-                                    __self: _this2
-                                })
+                                    React.createElement(quip.apps.ui.RichTextBox, {
+                                        key: card.getId(),
+                                        record: card.get("description"),
+                                        color: "BLUE",
+                                        width: 660,
+                                        minHeight: 50,
+                                        maxHeight: 280,
+                                        align: "center",
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 111
+                                        },
+                                        __self: _this2
+                                    })
+                                ),
+                                React.createElement(
+                                    "span",
+                                    {
+                                        className: _Obstacle2.default.chevron,
+                                        onClick: function onClick(e) {
+                                            return _this2.handleClick(e, card);
+                                        },
+                                        style: { float: "left" },
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 122
+                                        },
+                                        __self: _this2
+                                    },
+                                    React.createElement(_quipAppsChevron2.default, {
+                                        color: card ? quip.apps.ui.ColorMap.BLUE.VALUE : quip.apps.ui.ColorMap[color].VALUE,
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 127
+                                        },
+                                        __self: _this2
+                                    })
+                                ),
+                                React.createElement(
+                                    "span",
+                                    { ref: function ref(c) {
+                                            return card.get("description").setDom(c);
+                                        },
+                                        className: (0, _classnames2.default)(_Obstacle2.default.commentsTrigger, _defineProperty({}, _Obstacle2.default.commented, card.get("description").getCommentCount() > 0)),
+                                        style: { float: "left" },
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 136
+                                        },
+                                        __self: _this2
+                                    },
+                                    React.createElement(quip.apps.ui.CommentsTrigger, {
+                                        record: card.get("description"),
+                                        showEmpty: true,
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 143
+                                        },
+                                        __self: _this2
+                                    })
+                                )
                             )
                         );
                     })
+                ),
+                React.createElement(
+                    "button",
+                    { onClick: this.addRow.bind(this), style: { margin: "5px", width: "15%" }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 157
+                        },
+                        __self: this
+                    },
+                    "Add Obstacle"
                 )
             );
         }
     }, {
-        key: "addRow",
-        value: function addRow() {}
+        key: "saveToSalesforce",
+        value: function saveToSalesforce(v2mobId) {
+            var client = quip.apps.getRootRecord().getClient();
+            var cards = this.getCards().getRecords();
+
+            cards.forEach(function (card) {
+                var body = {
+                    "fields": {
+                        "play2win__Title__c": card.get("name").getTextContent(),
+                        "play2win__Description__c": card.get("description").getTextContent(),
+                        "play2win__V2MOB__c": v2mobId
+                    }
+                };
+
+                if (!card.get("id")) {
+                    body["apiName"] = "play2win__Obsacles__c";
+                    client.createRecord(body).then(function (response) {
+                        card.set("id", response.id);
+                    });
+                } else {
+                    client.updateRecord(card.get("id"), body).then(function (response) {});
+                }
+            });
+        }
     }]);
 
-    return App;
+    return Obstacle;
 }(React.Component);
 
-exports.default = App;
+exports.default = Obstacle;
 
 /***/ }),
-/* 330 */
+/* 335 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"hello":"App__hello"};
+module.exports = {"obstacle":"Obstacle__obstacle","title":"Obstacle__title","titleContents":"Obstacle__titleContents","table":"Obstacle__table","tableRow":"Obstacle__tableRow","tableColumn":"Obstacle__tableColumn","commentsTrigger":"Obstacle__commentsTrigger","showContextMenu":"Obstacle__showContextMenu","commented":"Obstacle__commented","chevron":"Obstacle__chevron"};
+
+/***/ }),
+/* 336 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/components/Vision.jsx";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Method = __webpack_require__(89);
+
+var _Method2 = _interopRequireDefault(_Method);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Vision = function (_React$Component) {
+    _inherits(Vision, _React$Component);
+
+    function Vision(props) {
+        _classCallCheck(this, Vision);
+
+        return _possibleConstructorReturn(this, (Vision.__proto__ || Object.getPrototypeOf(Vision)).call(this, props));
+    }
+
+    _createClass(Vision, [{
+        key: "render",
+        value: function render() {
+            var rootRecord = quip.apps.getRootRecord();
+            var vision = rootRecord.get("vision");
+
+            return React.createElement(
+                "div",
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 13
+                    },
+                    __self: this
+                },
+                React.createElement(
+                    "div",
+                    { className: _Method2.default.title, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 14
+                        },
+                        __self: this
+                    },
+                    "VISION"
+                ),
+                React.createElement(
+                    "div",
+                    { className: _Method2.default.method, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 18
+                        },
+                        __self: this
+                    },
+                    React.createElement(quip.apps.ui.RichTextBox, {
+                        key: vision.getId(),
+                        record: vision,
+                        color: "BLUE",
+                        width: 770,
+                        minHeight: 50,
+                        maxHeight: 280,
+                        align: "center",
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 19
+                        },
+                        __self: this
+                    })
+                )
+            );
+        }
+    }]);
+
+    return Vision;
+}(React.Component);
+
+exports.default = Vision;
+
+/***/ }),
+/* 337 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/components/Values.jsx";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Method = __webpack_require__(89);
+
+var _Method2 = _interopRequireDefault(_Method);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Values = function (_React$Component) {
+    _inherits(Values, _React$Component);
+
+    function Values(props) {
+        _classCallCheck(this, Values);
+
+        return _possibleConstructorReturn(this, (Values.__proto__ || Object.getPrototypeOf(Values)).call(this, props));
+    }
+
+    _createClass(Values, [{
+        key: "render",
+        value: function render() {
+            var rootRecord = quip.apps.getRootRecord();
+            var values = rootRecord.get("values");
+
+            return React.createElement(
+                "div",
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 13
+                    },
+                    __self: this
+                },
+                React.createElement(
+                    "div",
+                    { className: _Method2.default.title, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 14
+                        },
+                        __self: this
+                    },
+                    "VALUES"
+                ),
+                React.createElement(
+                    "div",
+                    { className: _Method2.default.method, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 18
+                        },
+                        __self: this
+                    },
+                    React.createElement(quip.apps.ui.RichTextBox, {
+                        key: values.getId(),
+                        record: values,
+                        color: "BLUE",
+                        width: 770,
+                        minHeight: 50,
+                        maxHeight: 280,
+                        align: "center",
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 19
+                        },
+                        __self: this
+                    })
+                )
+            );
+        }
+    }]);
+
+    return Values;
+}(React.Component);
+
+exports.default = Values;
+
+/***/ }),
+/* 338 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.SalesforceClient = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); // Copyright 2017 Quip
+
+__webpack_require__(339);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var OBJECT_INFO_ENDPOINT = "ui-api/object-info";
+
+var RECORDS_ENDPOINT = "ui-api/records";
+var RECORDS_BATCH_ENDPOINT = "ui-api/records/batch";
+
+var SOQL_ENDPOINT = "query";
+
+var API_VERSION = "services/data/v41.0";
+
+// Access toke for local development
+var ACCESS_TOKEN = "";
+
+var TIMEOUT = 15000;
+
+var SalesforceClient = exports.SalesforceClient = function () {
+    function SalesforceClient(auth) {
+        _classCallCheck(this, SalesforceClient);
+
+        if (auth) {
+            this.auth_ = auth;
+            this.instanceUrl_ = undefined;
+            if (auth.getTokenResponseParam("instance_url")) {
+                this.instanceUrl_ = auth.getTokenResponseParam("instance_url").toLowerCase();
+            }
+        } else {
+            this.instanceUrl_ = "http://localhost:8080";
+        }
+        this.apiUrl_ = this.instanceUrl_ + "/" + API_VERSION;
+    }
+
+    _createClass(SalesforceClient, [{
+        key: "setAPIEndpoints_",
+        value: function setAPIEndpoints_() {
+            this.instanceUrl_ = this.auth_.getTokenResponseParam("instance_url").toLowerCase();
+            this.apiUrl_ = this.instanceUrl_ + "/" + API_VERSION;
+        }
+    }, {
+        key: "logout",
+        value: function logout(callback) {
+            this.auth_.logout(callback);
+        }
+    }, {
+        key: "getInstanceUrl",
+        value: function getInstanceUrl() {
+            return this.instanceUrl_;
+        }
+    }, {
+        key: "getHostname",
+        value: function getHostname() {
+            if (this.instanceUrl_.includes("://")) {
+                var segs = this.instanceUrl_.split("://");
+                return segs[1];
+            }
+            return this.instanceUrl_;
+        }
+    }, {
+        key: "salesforceUrl",
+        value: function salesforceUrl(instanceUrl, recordId) {
+            if (!instanceUrl) {
+                instanceUrl = this.instanceUrl_;
+            }
+            return instanceUrl + "/one/one.app#/sObject/" + recordId + "/view";
+        }
+    }, {
+        key: "isLoggedIn",
+        value: function isLoggedIn() {
+            if (this.auth_) {
+                return this.auth_.isLoggedIn();
+            } else {
+                // For dev environment
+                return true;
+            }
+        }
+    }, {
+        key: "login",
+        value: function login(onAuthenticated) {
+            var _this = this;
+
+            if (this.isLoggedIn()) {
+                onAuthenticated();
+            } else {
+                this.auth_.login({
+                    prompt: "login"
+                }, function (result) {
+                    if (result) {
+                        console.log("!!!! ", result);
+                        _this.setAPIEndpoints_();
+                        onAuthenticated();
+                    }
+                }).catch(function (error) {
+                    if (error.error_code) {
+                        quip.apps.openLink("https://quip.com/dev/liveapps/salesforce/config");
+                    }
+                });
+            }
+        }
+    }, {
+        key: "fetchListViews",
+        value: function fetchListViews(recordType) {
+            var fetchType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "recent";
+
+            if (fetchType) {
+                var query = void 0;
+                switch (fetchType) {
+                    case "recent":
+                        query = "SELECT name,id,developerName FROM ListView where sobjecttype" + ("='" + recordType + "' AND LastViewedDate != NULL ORDER BY ") + "LastViewedDate DESC limit 10";
+                        break;
+                    case "all":
+                        query = "SELECT name,id,developerName FROM ListView where sobjecttype" + ("='" + recordType + "'");
+                        break;
+                    default:
+                        break;
+                }
+                if (query) {
+                    return this.fetchSoqlQuery(query);
+                }
+            }
+            return new Promise(function (resolve, reject) {
+                reject("The fetchType is not supported: ", fetchType);
+            });
+        }
+    }, {
+        key: "fetchApiLink",
+        value: function fetchApiLink(link) {
+            var url = this.instanceUrl_ + "/" + API_VERSION + "/" + link;
+            return this.request("GET", url);
+        }
+    }, {
+        key: "fetchPicklistOptions",
+        value: function fetchPicklistOptions(recordType, recordTypeId, fieldName) {
+            var url = this.apiUrl_ + "/" + OBJECT_INFO_ENDPOINT + "/" + recordType + "/picklist-values/" + recordTypeId + "/" + fieldName;
+            return this.request("GET", url);
+        }
+    }, {
+        key: "fetchSoqlQuery",
+        value: function fetchSoqlQuery(query) {
+            var params = { q: query };
+            var soqlUrl = this.apiUrl_ + "/" + SOQL_ENDPOINT + "/";
+            return this.request("GET", soqlUrl, params);
+        }
+    }, {
+        key: "fetchObjectInfo",
+        value: function fetchObjectInfo(recordType) {
+            var objectInfoUrl = this.apiUrl_ + "/" + OBJECT_INFO_ENDPOINT + "/" + recordType;
+            return this.request("GET", objectInfoUrl);
+        }
+    }, {
+        key: "fetchRecord",
+        value: function fetchRecord(recordId) {
+            return this.fetchRecords([recordId]);
+        }
+    }, {
+        key: "fetchRecords",
+        value: function fetchRecords(recordIds) {
+            var params = { layoutTypes: "Full" };
+            var recordsUrl = this.apiUrl_ + "/" + RECORDS_BATCH_ENDPOINT + "/" + recordIds.join(",");
+            return this.request("GET", recordsUrl, params);
+        }
+    }, {
+        key: "fetchRelatedLists",
+        value: function fetchRelatedLists(recordType) {
+            var url = this.apiUrl_ + "/sobjects/" + recordType + "/describe/layouts";
+            return this.request("GET", url);
+        }
+    }, {
+        key: "toQueryString",
+        value: function toQueryString(params) {
+            return Object.keys(params).map(function (key) {
+                return encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
+            }).join("&");
+        }
+    }, {
+        key: "updateRecord",
+        value: function updateRecord(recordId) {
+            var body = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            var url = this.apiUrl_ + "/" + RECORDS_ENDPOINT + "/" + recordId;
+            return this.request("PATCH", url, body);
+        }
+    }, {
+        key: "createRecord",
+        value: function createRecord() {
+            var body = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+            var url = this.apiUrl_ + "/" + RECORDS_ENDPOINT;
+            return this.request("POST", url, body);
+        }
+    }, {
+        key: "deleteRecord",
+        value: function deleteRecord(recordId) {
+            var url = this.apiUrl_ + "/" + RECORDS_ENDPOINT + "/" + recordId;
+            return this.request("DELETE", url);
+        }
+    }, {
+        key: "request",
+        value: function request(fetchMethod, baseUrl) {
+            var _this2 = this;
+
+            var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+            var tryRefreshToken = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+
+            var method = fetchMethod.trim().toUpperCase();
+            var url = baseUrl;
+            var body = void 0;
+            if (method === "GET" || method === "HEAD") {
+                var queryString = this.toQueryString(data);
+                url = queryString ? baseUrl + "?" + queryString : baseUrl;
+            } else {
+                body = data;
+            }
+
+            var timeout = new Promise(function (resolve, reject) {
+                window.setTimeout(reject, TIMEOUT, new Error("Request timed out"));
+            });
+
+            var fetcher = void 0;
+            if (!this.auth_) {
+                console.log("####2 ");
+                fetcher = fetch(url, {
+                    method: method,
+                    mode: "cors",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer " + ACCESS_TOKEN
+                    },
+                    body: JSON.stringify(body)
+                }).then(function (response) {
+                    if (!response.ok) {
+                        throw Error(response.statusText);
+                    }
+                    return response.json();
+                });
+            } else {
+                if (!this.auth_.isLoggedIn()) {
+                    return new Promise(function (resolve, reject) {
+                        reject("Unauthorized access");
+                    });
+                }
+                console.log("###3 ", url, body, method);
+                fetcher = new Promise(function (resolve, reject) {
+                    _this2.auth_.request({
+                        url: url,
+                        data: body,
+                        method: method
+                    }, resolve);
+                }).then(function (response) {
+                    if (response.status == 401 && tryRefreshToken) {
+                        // refetch the endpoint after refresh
+                        return _this2.refreshToken_().then(function (response) {
+                            return _this2.request(fetchMethod, baseUrl, data, false);
+                        });
+                    } else if (response.status >= 400) {
+                        var error = void 0;
+                        switch (response.status) {
+                            case 400:
+                                error = "BAD_REQUEST_ERROR";
+                                break;
+                            case 401:
+                                error = "Unauthorized";
+                                break;
+                            case 403:
+                                error = "ForbiddenError";
+                                break;
+                            case 404:
+                                error = "NotFoundError";
+                                break;
+                            case 500:
+                                error = "InternalServerError";
+                                break;
+                            case 503:
+                                error = "ServiceUnavailableError";
+                                break;
+                            default:
+                                error = "DEFAULT_ERROR";
+                                break;
+                        }
+                        return Promise.reject(error);
+                    } else {
+                        return response.json();
+                    }
+                });
+            }
+            return Promise.race([timeout, fetcher]);
+        }
+    }, {
+        key: "refreshToken_",
+        value: function refreshToken_() {
+            var _this3 = this;
+
+            return new Promise(function (resolve, reject) {
+                _this3.auth_.refreshToken(function (response) {
+                    if (response && response.status >= 400) {
+                        reject(response);
+                    } else {
+                        resolve(response);
+                    }
+                });
+            });
+        }
+    }]);
+
+    return SalesforceClient;
+}();
+
+/***/ }),
+/* 339 */
+/***/ (function(module, exports) {
+
+(function(self) {
+  'use strict';
+
+  if (self.fetch) {
+    return
+  }
+
+  var support = {
+    searchParams: 'URLSearchParams' in self,
+    iterable: 'Symbol' in self && 'iterator' in Symbol,
+    blob: 'FileReader' in self && 'Blob' in self && (function() {
+      try {
+        new Blob()
+        return true
+      } catch(e) {
+        return false
+      }
+    })(),
+    formData: 'FormData' in self,
+    arrayBuffer: 'ArrayBuffer' in self
+  }
+
+  if (support.arrayBuffer) {
+    var viewClasses = [
+      '[object Int8Array]',
+      '[object Uint8Array]',
+      '[object Uint8ClampedArray]',
+      '[object Int16Array]',
+      '[object Uint16Array]',
+      '[object Int32Array]',
+      '[object Uint32Array]',
+      '[object Float32Array]',
+      '[object Float64Array]'
+    ]
+
+    var isDataView = function(obj) {
+      return obj && DataView.prototype.isPrototypeOf(obj)
+    }
+
+    var isArrayBufferView = ArrayBuffer.isView || function(obj) {
+      return obj && viewClasses.indexOf(Object.prototype.toString.call(obj)) > -1
+    }
+  }
+
+  function normalizeName(name) {
+    if (typeof name !== 'string') {
+      name = String(name)
+    }
+    if (/[^a-z0-9\-#$%&'*+.\^_`|~]/i.test(name)) {
+      throw new TypeError('Invalid character in header field name')
+    }
+    return name.toLowerCase()
+  }
+
+  function normalizeValue(value) {
+    if (typeof value !== 'string') {
+      value = String(value)
+    }
+    return value
+  }
+
+  // Build a destructive iterator for the value list
+  function iteratorFor(items) {
+    var iterator = {
+      next: function() {
+        var value = items.shift()
+        return {done: value === undefined, value: value}
+      }
+    }
+
+    if (support.iterable) {
+      iterator[Symbol.iterator] = function() {
+        return iterator
+      }
+    }
+
+    return iterator
+  }
+
+  function Headers(headers) {
+    this.map = {}
+
+    if (headers instanceof Headers) {
+      headers.forEach(function(value, name) {
+        this.append(name, value)
+      }, this)
+    } else if (Array.isArray(headers)) {
+      headers.forEach(function(header) {
+        this.append(header[0], header[1])
+      }, this)
+    } else if (headers) {
+      Object.getOwnPropertyNames(headers).forEach(function(name) {
+        this.append(name, headers[name])
+      }, this)
+    }
+  }
+
+  Headers.prototype.append = function(name, value) {
+    name = normalizeName(name)
+    value = normalizeValue(value)
+    var oldValue = this.map[name]
+    this.map[name] = oldValue ? oldValue+','+value : value
+  }
+
+  Headers.prototype['delete'] = function(name) {
+    delete this.map[normalizeName(name)]
+  }
+
+  Headers.prototype.get = function(name) {
+    name = normalizeName(name)
+    return this.has(name) ? this.map[name] : null
+  }
+
+  Headers.prototype.has = function(name) {
+    return this.map.hasOwnProperty(normalizeName(name))
+  }
+
+  Headers.prototype.set = function(name, value) {
+    this.map[normalizeName(name)] = normalizeValue(value)
+  }
+
+  Headers.prototype.forEach = function(callback, thisArg) {
+    for (var name in this.map) {
+      if (this.map.hasOwnProperty(name)) {
+        callback.call(thisArg, this.map[name], name, this)
+      }
+    }
+  }
+
+  Headers.prototype.keys = function() {
+    var items = []
+    this.forEach(function(value, name) { items.push(name) })
+    return iteratorFor(items)
+  }
+
+  Headers.prototype.values = function() {
+    var items = []
+    this.forEach(function(value) { items.push(value) })
+    return iteratorFor(items)
+  }
+
+  Headers.prototype.entries = function() {
+    var items = []
+    this.forEach(function(value, name) { items.push([name, value]) })
+    return iteratorFor(items)
+  }
+
+  if (support.iterable) {
+    Headers.prototype[Symbol.iterator] = Headers.prototype.entries
+  }
+
+  function consumed(body) {
+    if (body.bodyUsed) {
+      return Promise.reject(new TypeError('Already read'))
+    }
+    body.bodyUsed = true
+  }
+
+  function fileReaderReady(reader) {
+    return new Promise(function(resolve, reject) {
+      reader.onload = function() {
+        resolve(reader.result)
+      }
+      reader.onerror = function() {
+        reject(reader.error)
+      }
+    })
+  }
+
+  function readBlobAsArrayBuffer(blob) {
+    var reader = new FileReader()
+    var promise = fileReaderReady(reader)
+    reader.readAsArrayBuffer(blob)
+    return promise
+  }
+
+  function readBlobAsText(blob) {
+    var reader = new FileReader()
+    var promise = fileReaderReady(reader)
+    reader.readAsText(blob)
+    return promise
+  }
+
+  function readArrayBufferAsText(buf) {
+    var view = new Uint8Array(buf)
+    var chars = new Array(view.length)
+
+    for (var i = 0; i < view.length; i++) {
+      chars[i] = String.fromCharCode(view[i])
+    }
+    return chars.join('')
+  }
+
+  function bufferClone(buf) {
+    if (buf.slice) {
+      return buf.slice(0)
+    } else {
+      var view = new Uint8Array(buf.byteLength)
+      view.set(new Uint8Array(buf))
+      return view.buffer
+    }
+  }
+
+  function Body() {
+    this.bodyUsed = false
+
+    this._initBody = function(body) {
+      this._bodyInit = body
+      if (!body) {
+        this._bodyText = ''
+      } else if (typeof body === 'string') {
+        this._bodyText = body
+      } else if (support.blob && Blob.prototype.isPrototypeOf(body)) {
+        this._bodyBlob = body
+      } else if (support.formData && FormData.prototype.isPrototypeOf(body)) {
+        this._bodyFormData = body
+      } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+        this._bodyText = body.toString()
+      } else if (support.arrayBuffer && support.blob && isDataView(body)) {
+        this._bodyArrayBuffer = bufferClone(body.buffer)
+        // IE 10-11 can't handle a DataView body.
+        this._bodyInit = new Blob([this._bodyArrayBuffer])
+      } else if (support.arrayBuffer && (ArrayBuffer.prototype.isPrototypeOf(body) || isArrayBufferView(body))) {
+        this._bodyArrayBuffer = bufferClone(body)
+      } else {
+        throw new Error('unsupported BodyInit type')
+      }
+
+      if (!this.headers.get('content-type')) {
+        if (typeof body === 'string') {
+          this.headers.set('content-type', 'text/plain;charset=UTF-8')
+        } else if (this._bodyBlob && this._bodyBlob.type) {
+          this.headers.set('content-type', this._bodyBlob.type)
+        } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+          this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8')
+        }
+      }
+    }
+
+    if (support.blob) {
+      this.blob = function() {
+        var rejected = consumed(this)
+        if (rejected) {
+          return rejected
+        }
+
+        if (this._bodyBlob) {
+          return Promise.resolve(this._bodyBlob)
+        } else if (this._bodyArrayBuffer) {
+          return Promise.resolve(new Blob([this._bodyArrayBuffer]))
+        } else if (this._bodyFormData) {
+          throw new Error('could not read FormData body as blob')
+        } else {
+          return Promise.resolve(new Blob([this._bodyText]))
+        }
+      }
+
+      this.arrayBuffer = function() {
+        if (this._bodyArrayBuffer) {
+          return consumed(this) || Promise.resolve(this._bodyArrayBuffer)
+        } else {
+          return this.blob().then(readBlobAsArrayBuffer)
+        }
+      }
+    }
+
+    this.text = function() {
+      var rejected = consumed(this)
+      if (rejected) {
+        return rejected
+      }
+
+      if (this._bodyBlob) {
+        return readBlobAsText(this._bodyBlob)
+      } else if (this._bodyArrayBuffer) {
+        return Promise.resolve(readArrayBufferAsText(this._bodyArrayBuffer))
+      } else if (this._bodyFormData) {
+        throw new Error('could not read FormData body as text')
+      } else {
+        return Promise.resolve(this._bodyText)
+      }
+    }
+
+    if (support.formData) {
+      this.formData = function() {
+        return this.text().then(decode)
+      }
+    }
+
+    this.json = function() {
+      return this.text().then(JSON.parse)
+    }
+
+    return this
+  }
+
+  // HTTP methods whose capitalization should be normalized
+  var methods = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT']
+
+  function normalizeMethod(method) {
+    var upcased = method.toUpperCase()
+    return (methods.indexOf(upcased) > -1) ? upcased : method
+  }
+
+  function Request(input, options) {
+    options = options || {}
+    var body = options.body
+
+    if (input instanceof Request) {
+      if (input.bodyUsed) {
+        throw new TypeError('Already read')
+      }
+      this.url = input.url
+      this.credentials = input.credentials
+      if (!options.headers) {
+        this.headers = new Headers(input.headers)
+      }
+      this.method = input.method
+      this.mode = input.mode
+      if (!body && input._bodyInit != null) {
+        body = input._bodyInit
+        input.bodyUsed = true
+      }
+    } else {
+      this.url = String(input)
+    }
+
+    this.credentials = options.credentials || this.credentials || 'omit'
+    if (options.headers || !this.headers) {
+      this.headers = new Headers(options.headers)
+    }
+    this.method = normalizeMethod(options.method || this.method || 'GET')
+    this.mode = options.mode || this.mode || null
+    this.referrer = null
+
+    if ((this.method === 'GET' || this.method === 'HEAD') && body) {
+      throw new TypeError('Body not allowed for GET or HEAD requests')
+    }
+    this._initBody(body)
+  }
+
+  Request.prototype.clone = function() {
+    return new Request(this, { body: this._bodyInit })
+  }
+
+  function decode(body) {
+    var form = new FormData()
+    body.trim().split('&').forEach(function(bytes) {
+      if (bytes) {
+        var split = bytes.split('=')
+        var name = split.shift().replace(/\+/g, ' ')
+        var value = split.join('=').replace(/\+/g, ' ')
+        form.append(decodeURIComponent(name), decodeURIComponent(value))
+      }
+    })
+    return form
+  }
+
+  function parseHeaders(rawHeaders) {
+    var headers = new Headers()
+    rawHeaders.split(/\r?\n/).forEach(function(line) {
+      var parts = line.split(':')
+      var key = parts.shift().trim()
+      if (key) {
+        var value = parts.join(':').trim()
+        headers.append(key, value)
+      }
+    })
+    return headers
+  }
+
+  Body.call(Request.prototype)
+
+  function Response(bodyInit, options) {
+    if (!options) {
+      options = {}
+    }
+
+    this.type = 'default'
+    this.status = 'status' in options ? options.status : 200
+    this.ok = this.status >= 200 && this.status < 300
+    this.statusText = 'statusText' in options ? options.statusText : 'OK'
+    this.headers = new Headers(options.headers)
+    this.url = options.url || ''
+    this._initBody(bodyInit)
+  }
+
+  Body.call(Response.prototype)
+
+  Response.prototype.clone = function() {
+    return new Response(this._bodyInit, {
+      status: this.status,
+      statusText: this.statusText,
+      headers: new Headers(this.headers),
+      url: this.url
+    })
+  }
+
+  Response.error = function() {
+    var response = new Response(null, {status: 0, statusText: ''})
+    response.type = 'error'
+    return response
+  }
+
+  var redirectStatuses = [301, 302, 303, 307, 308]
+
+  Response.redirect = function(url, status) {
+    if (redirectStatuses.indexOf(status) === -1) {
+      throw new RangeError('Invalid status code')
+    }
+
+    return new Response(null, {status: status, headers: {location: url}})
+  }
+
+  self.Headers = Headers
+  self.Request = Request
+  self.Response = Response
+
+  self.fetch = function(input, init) {
+    return new Promise(function(resolve, reject) {
+      var request = new Request(input, init)
+      var xhr = new XMLHttpRequest()
+
+      xhr.onload = function() {
+        var options = {
+          status: xhr.status,
+          statusText: xhr.statusText,
+          headers: parseHeaders(xhr.getAllResponseHeaders() || '')
+        }
+        options.url = 'responseURL' in xhr ? xhr.responseURL : options.headers.get('X-Request-URL')
+        var body = 'response' in xhr ? xhr.response : xhr.responseText
+        resolve(new Response(body, options))
+      }
+
+      xhr.onerror = function() {
+        reject(new TypeError('Network request failed'))
+      }
+
+      xhr.ontimeout = function() {
+        reject(new TypeError('Network request failed'))
+      }
+
+      xhr.open(request.method, request.url, true)
+
+      if (request.credentials === 'include') {
+        xhr.withCredentials = true
+      }
+
+      if ('responseType' in xhr && support.blob) {
+        xhr.responseType = 'blob'
+      }
+
+      request.headers.forEach(function(value, name) {
+        xhr.setRequestHeader(name, value)
+      })
+
+      xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit)
+    })
+  }
+  self.fetch.polyfill = true
+})(typeof self !== 'undefined' ? self : this);
+
+
+/***/ }),
+/* 340 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _quip = __webpack_require__(125);
+
+var _quip2 = _interopRequireDefault(_quip);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CommentRichText = function (_quip$apps$RichTextRe) {
+    _inherits(CommentRichText, _quip$apps$RichTextRe);
+
+    function CommentRichText() {
+        _classCallCheck(this, CommentRichText);
+
+        return _possibleConstructorReturn(this, (CommentRichText.__proto__ || Object.getPrototypeOf(CommentRichText)).apply(this, arguments));
+    }
+
+    _createClass(CommentRichText, [{
+        key: "getDom",
+        value: function getDom() {
+            return this.node;
+        }
+    }, {
+        key: "setDom",
+        value: function setDom(node) {
+            this.node = node;
+        }
+    }, {
+        key: "supportsComments",
+        value: function supportsComments() {
+            return true;
+        }
+    }], [{
+        key: "getProperties",
+        value: function getProperties() {
+            return {};
+        }
+    }]);
+
+    return CommentRichText;
+}(_quip2.default.apps.RichTextRecord);
+
+var Measure = function (_quip$apps$Record) {
+    _inherits(Measure, _quip$apps$Record);
+
+    function Measure() {
+        _classCallCheck(this, Measure);
+
+        return _possibleConstructorReturn(this, (Measure.__proto__ || Object.getPrototypeOf(Measure)).apply(this, arguments));
+    }
+
+    _createClass(Measure, [{
+        key: "getDom",
+        value: function getDom() {
+            return this.node;
+        }
+    }, {
+        key: "setDom",
+        value: function setDom(node) {
+            this.node = node;
+        }
+    }, {
+        key: "supportsComments",
+        value: function supportsComments() {
+            return true;
+        }
+    }]);
+
+    return Measure;
+}(_quip2.default.apps.Record);
+
+Measure.getProperties = function () {
+    return {
+        type: "string",
+        name: "string",
+        status: "string",
+        initial_value: "number",
+        current_value: "number",
+        target_value: "number",
+        due_date: "string"
+    };
+};
+
+var Method = function (_quip$apps$Record2) {
+    _inherits(Method, _quip$apps$Record2);
+
+    function Method() {
+        _classCallCheck(this, Method);
+
+        return _possibleConstructorReturn(this, (Method.__proto__ || Object.getPrototypeOf(Method)).apply(this, arguments));
+    }
+
+    _createClass(Method, [{
+        key: "getDom",
+        value: function getDom() {
+            return this.node;
+        }
+    }, {
+        key: "setDom",
+        value: function setDom(node) {
+            this.node = node;
+        }
+    }, {
+        key: "supportsComments",
+        value: function supportsComments() {
+            return true;
+        }
+    }]);
+
+    return Method;
+}(_quip2.default.apps.Record);
+
+Method.getProperties = function () {
+    return {
+        title: CommentRichText,
+        description: CommentRichText,
+        id: "string",
+        measures: _quip2.default.apps.RecordList.Type(Measure)
+    };
+};
+
+var Obstacle = function (_quip$apps$Record3) {
+    _inherits(Obstacle, _quip$apps$Record3);
+
+    function Obstacle() {
+        _classCallCheck(this, Obstacle);
+
+        return _possibleConstructorReturn(this, (Obstacle.__proto__ || Object.getPrototypeOf(Obstacle)).apply(this, arguments));
+    }
+
+    _createClass(Obstacle, [{
+        key: "getDom",
+        value: function getDom() {
+            return this.node;
+        }
+    }, {
+        key: "setDom",
+        value: function setDom(node) {
+            this.node = node;
+        }
+    }, {
+        key: "supportsComments",
+        value: function supportsComments() {
+            return true;
+        }
+    }]);
+
+    return Obstacle;
+}(_quip2.default.apps.Record);
+
+Obstacle.getProperties = function () {
+    return {
+        name: CommentRichText,
+        description: CommentRichText,
+        id: "string"
+    };
+};
+
+var RootRecord = function (_quip$apps$RootRecord) {
+    _inherits(RootRecord, _quip$apps$RootRecord);
+
+    function RootRecord() {
+        _classCallCheck(this, RootRecord);
+
+        return _possibleConstructorReturn(this, (RootRecord.__proto__ || Object.getPrototypeOf(RootRecord)).apply(this, arguments));
+    }
+
+    _createClass(RootRecord, [{
+        key: "getDom",
+        value: function getDom() {
+            return this.node;
+        }
+    }, {
+        key: "setDom",
+        value: function setDom(node) {
+            this.node = node;
+        }
+    }, {
+        key: "supportsComments",
+        value: function supportsComments() {
+            return true;
+        }
+    }, {
+        key: "setClient",
+        value: function setClient(client) {
+            this.salesforceClient_ = client;
+        }
+    }, {
+        key: "getClient",
+        value: function getClient() {
+            return this.salesforceClient_;
+        }
+    }]);
+
+    return RootRecord;
+}(_quip2.default.apps.RootRecord);
+
+RootRecord.getProperties = function () {
+    return {
+        obstacles: _quip2.default.apps.RecordList.Type(Obstacle),
+        methods: _quip2.default.apps.RecordList.Type(Method),
+        vision: CommentRichText,
+        values: CommentRichText,
+        id: "string"
+    };
+};
+
+RootRecord.getDefaultProperties = function () {
+    return {
+        obstacles: []
+    };
+};
+
+exports.default = function () {
+    _quip2.default.apps.registerClass(Measure, "measure");
+    _quip2.default.apps.registerClass(CommentRichText, "commentrichtext");
+    _quip2.default.apps.registerClass(Method, "method");
+    _quip2.default.apps.registerClass(Obstacle, "obstacle");
+    _quip2.default.apps.registerClass(RootRecord, "root");
+};
+
+/***/ }),
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _jsxFileName = "/Users/sitaramireddypolimera/salesforce-quip/salesforce-quip-myapp/src/components/Measure.jsx";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Measure = __webpack_require__(347);
+
+var _Measure2 = _interopRequireDefault(_Measure);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Measure = function (_React$Component) {
+  _inherits(Measure, _React$Component);
+
+  function Measure(props) {
+    _classCallCheck(this, Measure);
+
+    var _this = _possibleConstructorReturn(this, (Measure.__proto__ || Object.getPrototypeOf(Measure)).call(this, props));
+
+    _this.handleClick = function (e, measure) {
+      var _this$state = _this.state,
+          canAdd = _this$state.canAdd,
+          canDelete = _this$state.canDelete;
+
+      var disabledCommands = [];
+
+      quip.apps.showContextMenu(e, ["deleteMethod", // id from menuCommand in Initialization,
+      quip.apps.DocumentMenuCommands.SEPARATOR, quip.apps.DocumentMenuCommands.DELETE_APP], [], // No highlighted commands
+      disabledCommands, // Disabled commands based on state
+      function () {}, { measure: measure, callback: _this.deleteRow.bind(_this) });
+    };
+
+    _this.state = {
+      measures: props.measures
+    };
+    _this.type_values = [{ label: "In Progress", value: "in_progress" }, { label: "Completion", value: "completion" }];
+    _this.status_values = [{ label: "In Progress", value: "in_progress" }, { label: "Completion", value: "completion" }];
+    return _this;
+  }
+
+  _createClass(Measure, [{
+    key: "addRow",
+    value: function addRow() {
+      var measures = this.getMeasures();
+      measures.add({});
+
+      this.setState({
+        measures: measures
+      });
+    }
+  }, {
+    key: "deleteRow",
+    value: function deleteRow() {
+      var measures = this.getMeasures();
+      this.setState({
+        measures: measures
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var measures = this.state.measures;
+      var rootRecord = quip.apps.getRootRecord();
+
+      return React.createElement(
+        "div",
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 54
+          },
+          __self: this
+        },
+        React.createElement(
+          "table",
+          { className: _Measure2.default.measure, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 55
+            },
+            __self: this
+          },
+          React.createElement(
+            "thead",
+            { className: _Measure2.default.tableHead, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 56
+              },
+              __self: this
+            },
+            React.createElement(
+              "tr",
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 57
+                },
+                __self: this
+              },
+              React.createElement(
+                "th",
+                { className: _Measure2.default.tableHeadCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 58
+                  },
+                  __self: this
+                },
+                "Type"
+              ),
+              React.createElement(
+                "th",
+                { className: _Measure2.default.tableHeadCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 59
+                  },
+                  __self: this
+                },
+                "Measure Name"
+              ),
+              React.createElement(
+                "th",
+                { className: _Measure2.default.tableHeadCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 60
+                  },
+                  __self: this
+                },
+                "Status"
+              ),
+              React.createElement(
+                "th",
+                { className: _Measure2.default.tableHeadCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 61
+                  },
+                  __self: this
+                },
+                "Initial Value"
+              ),
+              React.createElement(
+                "th",
+                { className: _Measure2.default.tableHeadCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 62
+                  },
+                  __self: this
+                },
+                "Current Value"
+              ),
+              React.createElement(
+                "th",
+                { className: _Measure2.default.tableHeadCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 63
+                  },
+                  __self: this
+                },
+                "Target Value"
+              ),
+              React.createElement(
+                "th",
+                { className: _Measure2.default.tableHeadCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 64
+                  },
+                  __self: this
+                },
+                "Due Date"
+              )
+            )
+          ),
+          measures && measures.getRecords().map(function (measure) {
+
+            return React.createElement(
+              "tr",
+              { className: _Measure2.default.tableRow, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 71
+                },
+                __self: _this2
+              },
+              React.createElement(
+                "td",
+                { className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 72
+                  },
+                  __self: _this2
+                },
+                React.createElement(
+                  "select",
+                  { value: measure.get("type"), onChange: function onChange(e) {
+                      _this2.onChange(e.target.value, measure, "type");
+                    }, __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 73
+                    },
+                    __self: _this2
+                  },
+                  _this2.type_values.map(function (type) {
+                    return React.createElement(
+                      "option",
+                      { value: type.value, __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 75
+                        },
+                        __self: _this2
+                      },
+                      type.label
+                    );
+                  })
+                )
+              ),
+              React.createElement(
+                "td",
+                { className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 82
+                  },
+                  __self: _this2
+                },
+                React.createElement("input", { type: "text", value: measure.get("name"),
+                  onChange: function onChange(e) {
+                    _this2.onChange(e.target.value, measure, "name");
+                  },
+                  className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 83
+                  },
+                  __self: _this2
+                })
+              ),
+              React.createElement(
+                "td",
+                { className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 88
+                  },
+                  __self: _this2
+                },
+                React.createElement(
+                  "select",
+                  { value: measure.get("status"), onChange: function onChange(e) {
+                      _this2.onChange(e.target.value, measure, "status");
+                    }, __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 89
+                    },
+                    __self: _this2
+                  },
+                  _this2.status_values.map(function (status) {
+                    return React.createElement(
+                      "option",
+                      { value: status.value, __source: {
+                          fileName: _jsxFileName,
+                          lineNumber: 91
+                        },
+                        __self: _this2
+                      },
+                      status.label
+                    );
+                  })
+                )
+              ),
+              React.createElement(
+                "td",
+                { className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 98
+                  },
+                  __self: _this2
+                },
+                React.createElement("input", { type: "number", value: measure.get("initial_value"),
+                  onChange: function onChange(e) {
+                    _this2.onChange(parseInt(e.target.value), measure, "initial_value");
+                  },
+                  className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 99
+                  },
+                  __self: _this2
+                })
+              ),
+              React.createElement(
+                "td",
+                { className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 104
+                  },
+                  __self: _this2
+                },
+                React.createElement("input", { type: "number", value: measure.get("current_value"),
+                  onChange: function onChange(e) {
+                    _this2.onChange(parseInt(e.target.value), measure, "current_value");
+                  },
+                  className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 105
+                  },
+                  __self: _this2
+                })
+              ),
+              React.createElement(
+                "td",
+                { className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 110
+                  },
+                  __self: _this2
+                },
+                React.createElement("input", { type: "number", value: measure.get("target_value"),
+                  onChange: function onChange(e) {
+                    _this2.onChange(parseInt(e.target.value), measure, "target_value");
+                  },
+                  className: _Measure2.default.tableCell, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 111
+                  },
+                  __self: _this2
+                })
+              )
+            );
+          })
+        )
+      );
+    }
+  }, {
+    key: "displayOption",
+    value: function displayOption(list) {
+      var _this3 = this;
+
+      return React.createElement(
+        "select",
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 126
+          },
+          __self: this
+        },
+        list.map(function (l) {
+          return React.createElement(
+            "option",
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 129
+              },
+              __self: _this3
+            },
+            l
+          );
+        })
+      );
+    }
+  }, {
+    key: "onChange",
+    value: function onChange(value, measure, id) {
+      measure.set(id, value);
+      console.log(measure.get(id));
+    }
+  }]);
+
+  return Measure;
+}(React.Component);
+
+exports.default = Measure;
+
+/***/ }),
+/* 347 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"measure":"Measure__measure","tableHead":"Measure__tableHead","tableHeadCell":"Measure__tableHeadCell","tableRow":"Measure__tableRow","commentsTrigger":"Measure__commentsTrigger","tableCell":"Measure__tableCell"};
 
 /***/ })
 /******/ ]);

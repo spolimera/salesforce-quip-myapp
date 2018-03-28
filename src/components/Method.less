@@ -1,0 +1,89 @@
+.method {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // border-radius: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    background-color: aliceblue;
+    word-break: break-word;
+
+    &:last-child {
+
+    }
+   
+}
+
+.methodContainer {
+    margin-bottom: 5px;
+    border: 1px solid black;
+}
+
+.title{
+
+    margin-bottom: 8px;
+    font-size: 17px;
+    font-weight:bolder;
+}
+
+.tableRow {
+    border-bottom: 1px solid cadetblue;
+
+    &:hover .commentsTrigger {
+        visibility: initial;
+    }
+}
+
+.tableCell {
+    border-left: 1px solid cadetblue;
+
+}
+
+.methodHeader{
+    font-size: 15px;
+    font-weight:bolder;
+    padding: 5px;
+}
+
+.commentCell{
+    border-top: 1px solid cadetblue;
+    align-content: center;
+    margin-right: 5px;
+}
+
+.comments{
+
+    height: 50px;
+}
+
+.eachMethod {
+    background-color: aliceblue;
+    border: 1px solid;
+    border-color: cadetblue;
+    margin-bottom: 10px;
+}
+
+.commentsTrigger {
+    height: 50px;
+    margin-left: 8px;
+    visibility: hidden;
+    width: 16px;
+    &.commented {
+        visibility: visible;
+    }
+}
+
+.showContextMenu::after {
+    color: cadetblue;
+    content: "\22C1";
+    cursor: pointer;
+}
+
+.chevron {
+    align-self: center;
+    cursor: pointer;
+    height: 20px;
+    text-align: center;
+    width: 20px;
+}

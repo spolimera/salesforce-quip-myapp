@@ -1,77 +1,62 @@
-import Styles from "./App.less";
+import Method from "./components/Method.jsx";
+import Obstacle from "./components/Obstacle.jsx";
+import Vision from "./components/Vision.jsx";
+import Values from "./components/Values.jsx";
+import Alert from "./Alert.jsx";
 
 export default class App extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {
-        rowCount: 0,
-        cards: quip.app.getRootRecord().get("cards")
-      };
+      this.state = { showAlert: true };
     }
 
     render() {
-        let { cards } = this.state;
-        
-        return (
-            
-            <div>
+      return (
+        <div>
+          <button onClick={this.pushToSalesforce.bind(this)}>
+            Push to Salesforce
+          </button>
 
-             <div>
-                Obstacle 
-                 <button onClick={this.addRow.bind(this)}>
-                    AddRow
-                  </button>
-              </div>
-              Hello
-              <table className={Styles.table}>
-                    
-                   <thead>
-                        <tr>
-                        <td colspan = "4">Name</td>
-                        <td colspan = "4">Description</td>
-                        </tr>
-                   </thead>
-                     
-                   {   cards.getRecords().map((card) => {
-                            return(
-                                <tr>
-                                    <td style={{ border: "solid 1px black"}}>
-                                        <quip.apps.ui.RichTextBox
-                                         key={cards.getId()}
-                                         record={card.get("name")}
-                                         color={"BLUE"}
-                                         width={200}
-                                         minHeight={50}
-                                         maxHeight={280}
-                                         align={"center" }  
-                                        />
-                                    </td>
-
-                                    <td>
-                                        <quip.apps.ui.RichTextBox
-                                         key={cards.getId()}
-                                         record={card.get("description")}
-                                         color={"BLUE"}
-                                         width={200}
-                                         minHeight={50}
-                                         maxHeight={280}
-                                         align={"center" }  
-                                        />
-                                    </td>
-                                </tr>
-                            );
-
-                        }) 
-                    }
-                    
-                
-                </table>         
-            </div>
-            
-        );
+          <Vision/>
+          <Values/>
+          <Method ref={(ele) => this.method = ele}/>
+          <Obstacle ref={(ele) => this.obstacle = ele}/>
+          { this.state.showAlert && 
+            <Alert 
+              title="TESTING"
+              body="Testing application"
+              cancel={() => this.setState({ showAlert: false })}/>
+          }
+        </div>
+      );
     }
 
-    addRow(){
-         
+    pushToSalesforce() {
+      let rootRecord = quip.apps.getRootRecord();
+      let client = rootRecord.getClient();
+
+      let vision = rootRecord.get("vision").getTextContent();
+      let values = rootRecord.get("values").getTextContent();
+      let id = rootRecord.get("id");
+
+      let body = {
+        "fields": {
+            "play2win__Vision__c": vision,
+            "play2win__Values__c": values
+          }
+      };
+
+      if(!id) {
+        body["apiName"] = "play2win__V2MOB__c";
+        client.createRecord(body).then((response) => {
+          rootRecord.set("id", response.id);
+        });
+      } else {
+        client.updateRecord(rootRecord.get("id"), body).then((response) => {
+        });
+      }
+
+      this.method.saveToSalesforce(id);
+      this.obstacle.saveToSalesforce(id);
     }
 }
